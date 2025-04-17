@@ -1,9 +1,7 @@
 DELIMITER //
 
 -- Procedure: ReplenishStock
--- Replenishes stock for a specific product or all low-stock products with optional quantity override
-
-DELIMITER //
+-- Replenishes stock for a specific product or all low-stock products based don stock needed
 
 CREATE PROCEDURE ReplenishStock (
     IN p_product_id INT, 
@@ -16,13 +14,16 @@ BEGIN
     DECLARE v_restock_quantity INT;
     DECLARE v_updated INT DEFAULT 0;
     DECLARE done INT DEFAULT FALSE;
+
+    -- Adjusted cursor logic: include all low-stock or forced product
     DECLARE cur CURSOR FOR 
         SELECT 
             product_id,
-            (reorder_level - stock_quantity) AS restock_needed
+            GREATEST(reorder_level - stock_quantity, 0) AS restock_needed
         FROM Products
-        WHERE stock_quantity < reorder_level
-        AND (p_product_id IS NULL OR product_id = p_product_id);
+        WHERE (p_product_id IS NULL AND stock_quantity < reorder_level)
+           OR (p_product_id IS NOT NULL AND product_id = p_product_id);
+
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
     DECLARE EXIT HANDLER FOR SQLEXCEPTION 
     BEGIN
@@ -32,7 +33,7 @@ BEGIN
 
     START TRANSACTION;
 
-    -- Validate inputs
+    -- Input validations
     IF p_product_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM Products WHERE product_id = p_product_id) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Invalid product ID';
     END IF;
@@ -41,7 +42,7 @@ BEGIN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Restock quantity must be positive';
     END IF;
 
-    -- Process low-stock products
+    -- Begin cursor-based restocking
     OPEN cur;
     read_loop: LOOP
         FETCH cur INTO v_product_id, v_restock_needed;
@@ -49,7 +50,16 @@ BEGIN
             LEAVE read_loop;
         END IF;
 
-        SET v_restock_quantity = IF(p_quantity IS NULL, v_restock_needed + v_buffer, p_quantity);
+        IF p_quantity IS NULL THEN
+			-- Skip if restock is not needed
+			IF v_restock_needed <= 0 THEN
+				ITERATE read_loop;
+			END IF;
+			SET v_restock_quantity = v_restock_needed + v_buffer;
+		ELSE
+			SET v_restock_quantity = p_quantity;
+		END IF;
+
 
         UPDATE Products
         SET stock_quantity = stock_quantity + v_restock_quantity
@@ -69,7 +79,6 @@ BEGIN
 
     COMMIT;
 
-    -- Notify if no product requires update
     IF v_updated = 0 THEN
         SELECT 'No products needed replenishment' AS message;
     END IF;
