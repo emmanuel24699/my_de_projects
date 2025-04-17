@@ -121,7 +121,7 @@ BEGIN
         -- Update order total amount
         SET v_total_amount = v_total_amount + (v_quantity * v_discounted_price);
 
-        -- Move to next product
+        -- Move to the next product
         SET v_index = v_index + 1;
     END WHILE;
 
