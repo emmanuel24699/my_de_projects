@@ -62,3 +62,17 @@ SELECT
 FROM Inventory_Logs il
 JOIN Products p ON il.product_id = p.product_id
 ORDER BY il.change_date DESC;
+
+
+
+-- Retrieve customer tiers view
+    SELECT * FROM vw_customer_tiers;
+
+-- Retrieve order summary view
+    SELECT * FROM vw_order_summary;
+
+-- Retrieve stock insights view
+    SELECT * FROM vw_stock_insights;
+
+-- Retrieve inventory changes view
+    SELECT * FROM vw_inventory_changes;
