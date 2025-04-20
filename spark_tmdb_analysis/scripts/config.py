@@ -1,10 +1,15 @@
+"""
+Configuration settings for the TMDB Spark project.
+Loads API key from .env file and defines constants for API and file paths.
+"""
+
 import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
 
-# Get the API key from environment variables
+# Get the API key from environment variables and define necessary variables
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 BASE_URL = "https://api.themoviedb.org/3"
 MOVIE_IDS = [
