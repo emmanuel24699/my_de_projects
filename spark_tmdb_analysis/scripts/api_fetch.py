@@ -6,7 +6,7 @@ import json
 import os
 from pathlib import Path
 from pyspark.sql import SparkSession, Row, DataFrame
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType, ArrayType, MapType
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType, ArrayType, MapType, BooleanType, LongType
 from datetime import datetime
 import logging
 import time
@@ -15,6 +15,56 @@ from config import TMDB_API_KEY, BASE_URL, RAW_DATA_DIR, MOVIE_IDS
 # Setup logging for debugging and monitoring
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+# Define schema based on TMDb API output
+tmdb_schema = StructType([
+    StructField("adult", BooleanType(), True),
+    StructField("backdrop_path", StringType(), True),
+    StructField("belongs_to_collection", StructType([
+        StructField("id", IntegerType(), True),
+        StructField("name", StringType(), True),
+        StructField("poster_path", StringType(), True),
+        StructField("backdrop_path", StringType(), True)
+    ]), True),
+    StructField("budget", LongType(), True),
+    StructField("genres", ArrayType(StructType([
+        StructField("id", IntegerType(), True),
+        StructField("name", StringType(), True)
+    ])), True),
+    StructField("homepage", StringType(), True),
+    StructField("id", IntegerType(), True),
+    StructField("imdb_id", StringType(), True),
+    StructField("origin_country", ArrayType(StringType()), True),
+    StructField("original_language", StringType(), True),
+    StructField("original_title", StringType(), True),
+    StructField("overview", StringType(), True),
+    StructField("popularity", DoubleType(), True),
+    StructField("poster_path", StringType(), True),
+    StructField("production_companies", ArrayType(StructType([
+        StructField("id", IntegerType(), True),
+        StructField("logo_path", StringType(), True),
+        StructField("name", StringType(), True),
+        StructField("origin_country", StringType(), True)
+    ])), True),
+    StructField("production_countries", ArrayType(StructType([
+        StructField("iso_3166_1", StringType(), True),
+        StructField("name", StringType(), True)
+    ])), True),
+    StructField("release_date", StringType(), True),
+    StructField("revenue", LongType(), True),
+    StructField("runtime", IntegerType(), True),
+    StructField("spoken_languages", ArrayType(StructType([
+        StructField("english_name", StringType(), True),
+        StructField("iso_639_1", StringType(), True),
+        StructField("name", StringType(), True)
+    ])), True),
+    StructField("status", StringType(), True),
+    StructField("tagline", StringType(), True),
+    StructField("title", StringType(), True),
+    StructField("video", BooleanType(), True),
+    StructField("vote_average", DoubleType(), True),
+    StructField("vote_count", IntegerType(), True)
+])
 
 def load_cached_data(cache_dir: str = RAW_DATA_DIR) -> list:
     """
@@ -128,9 +178,9 @@ def create_movie_dataframe(movie_ids: list = MOVIE_IDS, api_key: str = TMDB_API_
         f.write(timestamp)
     logger.info(f"Latest timestamp recorded: {timestamp}")
 
-    # Create Spark DataFrame
+    # Create Spark DataFrame with defined schema
     try:
-        df = spark.createDataFrame([Row(**data) for data in movie_data])
+        df = spark.createDataFrame(movie_data, schema=tmdb_schema)
         logger.info(f"Created Spark DataFrame with {df.count()} rows")
         if failed_ids:
             logger.info(f"Failed IDs: {failed_ids}")
