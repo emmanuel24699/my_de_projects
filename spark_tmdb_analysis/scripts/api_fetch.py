@@ -63,7 +63,36 @@ tmdb_schema = StructType([
     StructField("title", StringType(), True),
     StructField("video", BooleanType(), True),
     StructField("vote_average", DoubleType(), True),
-    StructField("vote_count", IntegerType(), True)
+    StructField("vote_count", IntegerType(), True),
+    StructField("credits", StructType([
+        StructField("cast", ArrayType(StructType([
+            StructField("adult", BooleanType(), True),
+            StructField("gender", IntegerType(), True),
+            StructField("id", IntegerType(), True),
+            StructField("known_for_department", StringType(), True),
+            StructField("name", StringType(), True),
+            StructField("original_name", StringType(), True),
+            StructField("popularity", DoubleType(), True),
+            StructField("profile_path", StringType(), True),
+            StructField("cast_id", IntegerType(), True),
+            StructField("character", StringType(), True),
+            StructField("credit_id", StringType(), True),
+            StructField("order", IntegerType(), True)
+        ])), True),
+        StructField("crew", ArrayType(StructType([
+            StructField("adult", BooleanType(), True),
+            StructField("gender", IntegerType(), True),
+            StructField("id", IntegerType(), True),
+            StructField("known_for_department", StringType(), True),
+            StructField("name", StringType(), True),
+            StructField("original_name", StringType(), True),
+            StructField("popularity", DoubleType(), True),
+            StructField("profile_path", StringType(), True),
+            StructField("credit_id", StringType(), True),
+            StructField("department", StringType(), True),
+            StructField("job", StringType(), True)
+        ])), True)
+    ]), True)
 ])
 
 def load_cached_data(cache_dir: str = RAW_DATA_DIR) -> list:
