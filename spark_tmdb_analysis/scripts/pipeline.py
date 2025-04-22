@@ -4,6 +4,7 @@ Main pipeline script to orchestrate the TMDB movie data analysis.
 from api_fetch import initialize_spark, create_movie_dataframe
 from data_cleaning import clean_data
 from config import TMDB_API_KEY, BASE_URL, MOVIE_IDS, RAW_DATA_DIR, PROCESSED_DATA_DIR
+from analysis import analyze_data
 import logging
 from pathlib import Path
 
@@ -31,8 +32,12 @@ def run_pipeline():
         cleaned_df = clean_data(df_raw, PROCESSED_DATA_DIR)
         cleaned_df.cache()
         logger.info(f"Cleaned DataFrame with {cleaned_df.count()} rows")
+
+        # Perform analysis
+        analysis_results = analyze_data(cleaned_df, PROCESSED_DATA_DIR)
+        logger.info(f"Analysis completed, KPIs saved to {PROCESSED_DATA_DIR}/kpi_results.parquet")
         
-        # TODO: Add analysis, and visualization steps
+        # TODO: visualization steps
         
         # Stop Spark session
         spark.stop()
