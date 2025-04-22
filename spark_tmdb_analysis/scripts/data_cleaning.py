@@ -1,3 +1,6 @@
+"""
+Functions for cleaning and preprocessing TMDb movie data in Spark.
+"""
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql import functions as F
 from pyspark.sql.types import FloatType, StringType, IntegerType
@@ -140,8 +143,6 @@ def clean_data(df: DataFrame, output_dir: str = PROCESSED_DATA_DIR) -> DataFrame
         logger.info(f"Reordering columns: {final_columns}")
         df = df.select([F.col(c) for c in final_columns])
         
-        # Reset index
-
         # Save cleaned DataFrame as a single Parquet file
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         output_dir_path = Path(output_dir)
@@ -153,10 +154,12 @@ def clean_data(df: DataFrame, output_dir: str = PROCESSED_DATA_DIR) -> DataFrame
         df.coalesce(1).write.mode("overwrite").parquet(str(temp_output_path))
         
         # Move the single part-*.parquet file to the final path
-        for file in temp_output_path.glob("part-*.parquet"):
-            shutil.move(file, final_output_path)
-            logger.info(f"Moved Parquet file to {final_output_path}")
-            break
+        parquet_files = list(temp_output_path.glob("part-*.parquet"))
+        if not parquet_files:
+            logger.error("No Parquet file found in temporary directory")
+            raise RuntimeError("Failed to create Parquet file")
+        shutil.move(parquet_files[0], final_output_path)
+        logger.info(f"Moved Parquet file to {final_output_path}")
         
         # Clean up the temporary directory
         shutil.rmtree(temp_output_path, ignore_errors=True)

@@ -231,6 +231,7 @@ def initialize_spark(app_name: str = "TMDB_Movie_Analysis") -> SparkSession:
             .config("spark.hadoop.fs.file.impl.disable.cache", "true") \
             .config("spark.network.timeout", "800s") \
             .config("spark.executor.heartbeatInterval", "60s") \
+            .config("spark.sql.debug.maxToStringFields", "100") \
             .getOrCreate()
         logger.info("Spark session initialized with custom configurations")
         return spark
