@@ -1,4 +1,5 @@
 from data_fetching import create_movie_dataframe
+from data_cleaning import clean_data
 from config import TMDB_API_KEY, BASE_URL, MOVIE_IDS, RAW_DATA_DIR, PROCESSED_DATA_DIR
 import logging
 from pathlib import Path
@@ -17,10 +18,13 @@ def run_pipeline():
         # Fetch and process data
         logger.info("Starting ETL pipeline")
         logger.info("Starting Data Fetching process...")
-        df_raw = create_movie_dataframe(MOVIE_IDS, TMDB_API_KEY, BASE_URL, RAW_DATA_DIR)
+        raw_df = create_movie_dataframe(MOVIE_IDS, TMDB_API_KEY, BASE_URL, RAW_DATA_DIR)
         logger.info("Data fetched")
 
-        #
+        # Clean the data
+        logger.info("Starting Data Cleaning process...")
+        cleaned_df = clean_data(raw_df, save_path=Path(PROCESSED_DATA_DIR) / "cleaned_movies.parquet")
+        logger.info("Data Cleand and saved successfully")
 
     except Exception as e:
         logger.error(f"Error during pipeline execution: {e}")
