@@ -1,66 +1,133 @@
 import requests
-import pandas as pd
 import json
-from datetime import datetime
+import pandas as pd
 import os
-from src.config import TMDB_API_KEY, BASE_URL, MOVIE_IDS
+from pathlib import Path
+from datetime import datetime
+import logging
+import time
+from config import TMDB_API_KEY, BASE_URL, RAW_DATA_DIR, MOVIE_IDS
+import pandas as pd
 
+# Setup logging for debugging and monitoring
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
-def fetch_movie_data(movie_ids=MOVIE_IDS, save_path=None):
-    """Fetch movie data from TMDb API for given movie IDs, skipping any that return errors."""
-    movies = []
+# load_cache_data (for pandas)
+def load_cached_data(cache_dir: str = RAW_DATA_DIR) -> list:
+    """
+    Load cached movie data from the latest raw_movies_*.json file in cache_dir.
+    
+    Args:
+        cache_dir: Directory containing cached JSON files.
+    
+    Returns:
+        List of movie data dictionaries from the latest JSON file, or empty list if none found.
+    """
+    try:
+        cache_dir = Path(cache_dir)
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        # Find all raw_movies_*.json files and sort by modification time (newest first)
+        json_files = sorted(cache_dir.glob("raw_movies_*.json"), key=lambda x: x.stat().st_mtime, reverse=True)
+        for file in json_files:
+            try:
+                with open(file, 'r') as f:
+                    data = json.load(f)
+                    logger.info(f"Loaded cached data from {file}")
+                    return data if isinstance(data, list) else [data]
+            except (PermissionError, json.JSONDecodeError) as e:
+                logger.warning(f"Failed to load {file}: {e}")
+        logger.info("No valid cached JSON files found")
+        return []
+    except Exception as e:
+        logger.warning(f"Failed to load cached data: {e}")
+        return []
+    
+def fetch_movie_data(movie_id: int, api_key: str = TMDB_API_KEY, base_url: str = BASE_URL, 
+                     cache_dir: str = RAW_DATA_DIR, max_retries: int = 3) -> dict:
+    """
+    Fetch movie data for a given movie ID.
+    
+    Args:
+        movie_id: Movie ID to fetch.
+        api_key: TMDb API key.
+        base_url: TMDb API base URL.
+        max_retries: Maximum number of retry attempts.
+    
+    Returns:
+        Movie data dictionary or None if fetch fails.
+    """
+    url = f"{base_url}/{movie_id}?api_key={api_key}&append_to_response=credits"
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            data = response.json()
+            logger.info(f"Fetched data for movie ID {movie_id}")
+            return data
+        except requests.exceptions.RequestException as e:
+            logger.warning(f"Attempt {attempt + 1} failed for movie ID {movie_id}: {e}")
+            if attempt + 1 == max_retries:
+                logger.error(f"Max retries reached for movie ID {movie_id}")
+                return None
+            time.sleep(2 ** attempt)  # Exponential backoff
+    return None
+
+def create_movie_dataframe(movie_ids: list = MOVIE_IDS, api_key: str = TMDB_API_KEY, base_url: str = BASE_URL, cache_dir: str = RAW_DATA_DIR):
+    """
+    Fetch movie data for a list of IDs and create a Pandas DataFrame.
+    
+    Args:
+        movie_ids: List of movie IDs.
+        api_key: TMDb API key.
+        base_url: TMDb API base URL.
+        cache_dir: Directory for cached JSON files.    
+    Returns:
+        Pandas DataFrame with movie data.
+    """
+    # Load cached data
+    cached_data = load_cached_data(cache_dir)
+    cached_ids = {data.get('id') for data in cached_data if data.get('id')}
+    movie_data = cached_data[:]
     failed_ids = []
 
-    for movie_id in movie_ids:
-        url = f"{BASE_URL}/{movie_id}?api_key={TMDB_API_KEY}&append_to_response=credits"
 
-        try:
-            response = requests.get(url)
-            if response.status_code == 200:
-                movie_data = response.json()
-                movies.append(movie_data)
+
+    # Fetch only new or missing movie IDs
+    for movie_id in movie_ids:
+        if movie_id not in cached_ids:
+            data = fetch_movie_data(movie_id, api_key, base_url, cache_dir)
+            if data and 'success' not in data:  # Skip failed requests (e.g., 404 responses)
+                movie_data.append(data)
             else:
-                print(f"❌ Movie ID {movie_id} failed with status {response.status_code}")
+                logger.warning(f"Skipping movie ID {movie_id} due to fetch failure")
                 failed_ids.append(movie_id)
 
-        except requests.exceptions.RequestException as e:
-            print(f"❌ Network error for movie ID {movie_id}: {e}")
-            failed_ids.append(movie_id)
+        else:
+            logger.info(f"Using cached data for movie ID {movie_id}")
 
-        except json.JSONDecodeError:
-            print(f"❌ Invalid JSON for movie ID {movie_id}")
-            failed_ids.append(movie_id)
-
-    df = pd.DataFrame(movies)
-
-    # Ensure save directories exist
-    os.makedirs("data/raw", exist_ok=True)
-
-    # Generate save path with timestamp if not provided
-    if not df.empty:
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        save_path = save_path or f"data/raw/movies_{timestamp}.json"
-
-        # Save the movie data
-        df.to_json(save_path, orient="records", lines=True)
-        print(f"\n💾 Data saved to {save_path}")
-
-        # Save the latest timestamp for use in cleaning step
-        with open("data/latest_timestamp.txt", "w") as f:
-            f.write(timestamp)
-        print("🕒 Latest timestamp recorded.")
-
-    else:
-        print("\n⚠️ No data to save.")
-
-    print(f"\n✅ Successfully fetched {len(df)} movies.")
+    # Check if any data is available
+    if not movie_data:
+        logger.error("No movie data available")
+        return pd.DataFrame()  # Return an empty DataFrame if no data is available
     if failed_ids:
-        print(f"❌ These movie IDs failed: {failed_ids}")
+        logger.warning(f"Failed to fetch data for movie IDs: {failed_ids}")
+    
+    # Save combined data as timestamped JSON
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    raw_output = Path(cache_dir) / f"raw_movies_{timestamp}.json"
+    Path(cache_dir).mkdir(parents=True, exist_ok=True)
+    with open(raw_output, 'w') as f:
+        json.dump(movie_data, f)
+    logger.info(f"Saved combined movie data to {raw_output}")
 
+    # Save timestamp
+    timestamp_file = Path(cache_dir) / "latest_timestamp.txt"
+    with open(timestamp_file, 'w') as f:
+        f.write(timestamp)
+    logger.info(f"Latest timestamp recorded: {timestamp}")
+
+    df = pd.DataFrame(movie_data)
+    logger.info(f"Returning DataFrame with shape: {df.shape}")
     return df
 
-
-if __name__ == "__main__":
-    df = fetch_movie_data()
-    print("\n🔍 Sample of fetched data:")
-    print(df.head())
