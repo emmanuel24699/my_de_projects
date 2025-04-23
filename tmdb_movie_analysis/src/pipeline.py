@@ -1,6 +1,7 @@
 from data_fetching import create_movie_dataframe
 from data_cleaning import clean_data
-from analysis_test import perform_analysis
+from analysis import perform_analysis
+from visualization import create_visualization
 from config import TMDB_API_KEY, BASE_URL, MOVIE_IDS, RAW_DATA_DIR, PROCESSED_DATA_DIR
 import logging
 from pathlib import Path
@@ -30,6 +31,10 @@ def run_pipeline():
         # Perform analysis
         logger.info("Starting Analysis process...")
         analysis_df = perform_analysis(cleaned_df)
+
+        # Visualize the data
+        logger.info("Starting Visualization process...")
+        create_visualization(analysis_df['full_dataframe'])
 
     except Exception as e:
         logger.error(f"Error during pipeline execution: {e}")
