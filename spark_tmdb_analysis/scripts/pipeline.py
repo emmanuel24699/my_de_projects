@@ -34,8 +34,8 @@ def run_pipeline():
         logger.info(f"Cleaned DataFrame with {cleaned_df.count()} rows")
 
         # Perform analysis
-        analysis_results = analyze_data(cleaned_df, PROCESSED_DATA_DIR)
-        logger.info(f"Analysis completed, KPIs saved to {PROCESSED_DATA_DIR}/kpi_results.parquet")
+        updated_df, analysis_results = analyze_data(cleaned_df, PROCESSED_DATA_DIR)
+        logger.info(f"Analysis completed")
         
         # TODO: visualization steps
         
