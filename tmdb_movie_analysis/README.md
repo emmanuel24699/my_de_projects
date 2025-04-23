@@ -1,4 +1,4 @@
-# TMDB Movie Data Analysis 🎬
+# TMDB Movie Data Analysis
 
 This project analyzes movie data from The Movie Database (TMDb) using Python, Pandas, and APIs. 
 It includes data extraction, cleaning, KPI analysis, and visualizations.
@@ -7,7 +7,7 @@ It includes data extraction, cleaning, KPI analysis, and visualizations.
 - `data/`: Raw and processed data
 - `scripts/`: Reusable Python functions
 - `notebooks/`: Jupyter notebooks per phase
-- `visuals/`: Graphs and figures
+- `reports/`: Graphs and figures
 
 
 ---
@@ -113,7 +113,7 @@ tmdb_movie_analysis/
      - Aggregated by `belongs_to_collection` for number of movies, total/mean budget, total/mean revenue, mean rating.
   5. **Director Analysis**:
      - Aggregated by `director` for number of movies, total revenue, mean rating.
-- **Output**: Dictionary of results; updated DataFrame saved as `analyzed_movies_{timestamp}.parquet`.
+- **Output**: Dictionary of results; updated DataFrame saved as `cleaned_movies_{timestamp}.parquet`.
 
 ### Step 4: Data Visualization
 
@@ -132,7 +132,7 @@ tmdb_movie_analysis/
 
 ### Complete Workflow
 
-- **Script**: `main.py`
+- **Script**: `src/pipeline.py`
 - **Description**: Orchestrates the pipeline:
   1. Fetches data.
   2. Cleans and saves it.
@@ -141,7 +141,7 @@ tmdb_movie_analysis/
 - **Execution**:
   ```bash
   cd tmdb_movie_analysis
-  py -m src.main
+  py src/pipeline.py
   ```
 
 ### Final Report
@@ -195,7 +195,7 @@ tmdb_movie_analysis/
 3. Add `.env` with your TMDb API key.
 4. Run the pipeline:
    ```bash
-   py -m src.main
+   py src/pipeline.py
    ```
 
 ---
