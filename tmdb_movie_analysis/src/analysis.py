@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 from datetime import datetime
-from config import MOVIE_IDS,TMDB_API_KEY,BASE_URL,RAW_DATA_DIR, PROCESSED_DATA_DIR
+from config import PROCESSED_DATA_DIR
 
 def rank_movies(df, metric, ascending=False, min_votes=10, min_budget=10):
     """Rank movies based on a specified metric with optional filtering."""
@@ -17,8 +17,11 @@ def rank_movies(df, metric, ascending=False, min_votes=10, min_budget=10):
 def calculate_metrics(df):
     """Calculate profit_musd and roi for the DataFrame."""
     df = df.copy()
-    df['profit_musd'] = (df['revenue_musd'] - df['budget_musd']).round(2)
-    df['roi'] = (df['revenue_musd'] / df['budget_musd']).round(2)
+    if 'revenue_musd' in df.columns and 'budget_musd' in df.columns:
+        df['profit_musd'] = (df['revenue_musd'] - df['budget_musd']).round(2)
+        df['roi'] = (df['revenue_musd'] / df['budget_musd']).round(2)
+    else:
+        print("Warning: Missing 'revenue_musd' or 'budget_musd' for metrics calculation")
     return df
 
 def compute_kpi_rankings(df):
@@ -39,14 +42,12 @@ def compute_kpi_rankings(df):
 
 def filter_specific_movies(df):
     """Filter for specific movie categories (Bruce Willis Sci-Fi Action, Uma Thurman/Tarantino)."""
-    # Best rated Sci-Fi Action movies with Bruce Willis
     sci_fi_action_bruce_willis = df[
         df['genres'].str.contains('Science Fiction', na=False) &
         df['genres'].str.contains('Action', na=False) &
         df['cast'].str.contains('Bruce Willis', na=False)
     ].sort_values(by='vote_average', ascending=False)
 
-    # Movies with Uma Thurman directed by Quentin Tarantino
     uma_thurman_tarentino_directed = df[
         df['cast'].str.contains('Uma Thurman', na=False) &
         (df['director'] == 'Quentin Tarantino')
@@ -114,6 +115,10 @@ def compute_director_performance(df):
 
 def save_analysis_results(df, save_path=None):
     """Save the DataFrame with analysis results to a Parquet file named cleaned_analyzed_movies_{timestamp}.parquet.
+    
+    Args:
+        df (pd.DataFrame): DataFrame to save.
+        save_path (str, optional): If provided, triggers the save operation.
     """
     if save_path:
         try:
@@ -131,7 +136,7 @@ def save_analysis_results(df, save_path=None):
             output_dir.mkdir(parents=True, exist_ok=True)
             
             # Save DataFrame to Parquet file
-            df.to_parquet(timestamped_filename, engine='pyarrow', index=False)
+            df.to_parquet(timestamped_path, engine='pyarrow', index=False)
             print(f"DataFrame saved successfully to {timestamped_path}")
             
             # Save timestamp to latest_timestamp.txt
@@ -144,7 +149,15 @@ def save_analysis_results(df, save_path=None):
             print(f"Error saving DataFrame or timestamp: {e}")
 
 def perform_analysis(df, save_path=None):
-    """Perform comprehensive movie data analysis"""
+    """Perform comprehensive movie data analysis and return the DataFrame with metrics.
+    
+    Args:
+        df (pd.DataFrame): Input DataFrame with cleaned movie data.
+        save_path (str, optional): Path to save the analyzed DataFrame.
+    
+    Returns:
+        dict: Analysis results including the full DataFrame with profit_musd and roi.
+    """
     df = calculate_metrics(df)
     kpis = compute_kpi_rankings(df)
     specific_movies = filter_specific_movies(df)
@@ -156,6 +169,7 @@ def perform_analysis(df, save_path=None):
         save_analysis_results(df, save_path)
 
     return {
+        'full_dataframe': df, 
         'kpis': kpis,
         'sci_fi_action_bruce_willis': specific_movies['sci_fi_action_bruce_willis'],
         'uma_thurman_tarentino_directed': specific_movies['uma_thurman_tarentino_directed'],
