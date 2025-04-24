@@ -3,9 +3,10 @@ Main pipeline script to orchestrate the TMDB movie data analysis.
 """
 from api_fetch import initialize_spark, create_movie_dataframe
 from data_cleaning import clean_data
-from config import TMDB_API_KEY, BASE_URL, MOVIE_IDS, RAW_DATA_DIR, PROCESSED_DATA_DIR, FIGURES_DIR
 from analysis import analyze_data
 from visualization import visualize_data
+from config import TMDB_API_KEY, BASE_URL, MOVIE_IDS, RAW_DATA_DIR, PROCESSED_DATA_DIR, FIGURES_DIR
+
 
 def run_pipeline():
     """
