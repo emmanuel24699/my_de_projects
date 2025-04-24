@@ -40,6 +40,7 @@ def run_pipeline():
         # Perform analysis
         updated_df, analysis_results = analyze_data(cleaned_df, PROCESSED_DATA_DIR)
         logger.info(f"Analysis completed")
+        updated_df.cache()
         
         # Generate visualizations
         visualize_data(updated_df, FIGURES_DIR)
