@@ -221,7 +221,9 @@ def analyze_data(df: DataFrame, output_dir: str = PROCESSED_DATA_DIR) -> tuple:
 
         # Add profit_musd and roi to the DataFrame
         df = df.withColumn("profit_musd", F.col("revenue_musd") - F.col("budget_musd"))
-        df = df.withColumn("roi", F.col("revenue_musd") / F.col("budget_musd"))
+        df = df.withColumn("roi", F.when(F.col("budget_musd") >= 10, 
+                                F.col("revenue_musd") / F.col("budget_musd"))
+                          .otherwise(None).cast(FloatType()))
 
         # Compute KPIs and print results
         logger.info("Computing KPIs")
