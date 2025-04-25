@@ -23,12 +23,15 @@ def plot_revenue_vs_budget(df: DataFrame, output_dir: str = FIGURES_DIR) -> None
                 .filter(F.col("budget_musd").isNotNull() & F.col("revenue_musd").isNotNull()) \
                 .toPandas()
         
-        plt.figure(figsize=(10,10))
+        plt.figure(figsize=(10,6))
         sns.scatterplot(x="budget_musd", y="revenue_musd", data=df_pd, alpha=0.6)
         plt.title("Revenue vs Budget")
         plt.xlabel("Budget (MUSD)")
         plt.ylabel("Revenue (MUSD)")
         plt.grid(True)
+        plt.show(block=False)
+        plt.pause(5)
+        plt.close()
 
         output_path = Path(output_dir) / "revenue_vs_budget.png"
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -50,13 +53,16 @@ def plot_roi_by_genre(df: DataFrame, output_dir: str = FIGURES_DIR) -> None:
         
         df_pd = df_exploded.toPandas()
 
-        plt.figure(figsize=(12, 8))
+        plt.figure(figsize=(10, 6))
         sns.boxplot(x="genres", y="roi", data=df_pd)
         plt.title("ROI Distribution by Genre")
         plt.xlabel("Genre")
         plt.ylabel("ROI (Revenue/Budget)")
         plt.xticks(rotation=45, ha="right")
         plt.grid(True, axis="y")
+        plt.show(block=False)
+        plt.pause(5)
+        plt.close()
 
         output_path = Path(output_dir) / "roi_by_genre.png"
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -82,6 +88,9 @@ def plot_popularity_vs_rating(df: DataFrame, output_dir: str = FIGURES_DIR) -> N
         plt.xlabel("Popularity")
         plt.ylabel("Average Rating")
         plt.grid(True)
+        plt.show(block=False)
+        plt.pause(5)
+        plt.close()
         
         output_path = Path(output_dir) / "popularity_vs_rating.png"
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -104,7 +113,7 @@ def plot_yearly_trends(df: DataFrame, output_dir: str = FIGURES_DIR) -> None:
                             F.avg("budget_musd").alias("avg_budget_musd")) \
                         .orderBy("year") \
                         .toPandas()
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(10, 6))
         plt.plot(df_yearly["year"], df_yearly["avg_revenue_musd"], label="Average Revenue (MUSD)", marker="o")
         plt.plot(df_yearly["year"], df_yearly["avg_budget_musd"], label="Average Budget (MUSD)", marker="s")
         plt.title("Yearly Trends in Box Office Performance")
@@ -112,6 +121,9 @@ def plot_yearly_trends(df: DataFrame, output_dir: str = FIGURES_DIR) -> None:
         plt.ylabel("Amount (MUSD)")
         plt.legend()
         plt.grid(True)
+        plt.show(block=False)
+        plt.pause(5)
+        plt.close()
         
         output_path = Path(output_dir) / "yearly_trends.png"
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -153,6 +165,9 @@ def plot_franchise_vs_standalone(df:DataFrame, output_dir: str = FIGURES_DIR) ->
         plt.ylabel("Value")
         plt.legend()
         plt.grid(True, axis="y")
+        plt.show(block=False)
+        plt.pause(5)
+        plt.close()
         
         output_path = Path(output_dir) / "franchise_vs_standalone.png"
         output_path.parent.mkdir(parents=True, exist_ok=True)
