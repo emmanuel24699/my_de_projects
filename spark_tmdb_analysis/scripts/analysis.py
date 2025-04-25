@@ -32,7 +32,7 @@ def rank_movies_udf(column: str, ascending: bool = False, top_n: int = 5) -> Dat
                                  F.col("title"))  
                         .limit(top_n)
                         .select("id", "title", column))
-            logger.info(f"Ranked movies by {column} (ascending={ascending}, top_n={top_n})")
+            
             return ranked_df
         except Exception as e:
             logger.error(f"Failed to rank movies by {column}: {e}")
@@ -53,53 +53,53 @@ def compute_kpis(df: DataFrame) -> dict:
         kpi_results = {}
 
         # 1. Highest Revenue
+        print("Top 5 Movies by Revenue (MUSD):")
         kpi_results["highest_revenue"] = rank_movies_udf("revenue_musd")(df)
-        logger.info("Top 5 Movies by Revenue (MUSD):")
         kpi_results["highest_revenue"].show(truncate=False)
 
         # 2. Highest Budget
+        print("Top 5 Movies by Budget (MUSD):")
         kpi_results["highest_budget"] = rank_movies_udf("budget_musd")(df)
-        logger.info("Top 5 Movies by Budget (MUSD):")
         kpi_results["highest_budget"].show(truncate=False)
 
         # 3. Highest Profit
+        print("Top 5 Movies by Profit (MUSD):")
         kpi_results["highest_profit"] = rank_movies_udf("profit_musd")(df)
-        logger.info("Top 5 Movies by Profit (MUSD):")
         kpi_results["highest_profit"].show(truncate=False)
 
         # 4. Lowest Profit
+        print("Bottom 5 Movies by Profit (MUSD):")
         kpi_results["lowest_profit"] = rank_movies_udf("profit_musd", ascending=True)(df)
-        logger.info("Bottom 5 Movies by Profit (MUSD):")
         kpi_results["lowest_profit"].show(truncate=False)
 
         # 5. Highest ROI (Budget >= 10M)
+        print("Top 5 Movies by ROI (Budget >= 10M):")
         kpi_results["highest_roi"] = rank_movies_udf("roi")(df.filter(F.col("budget_musd") >= 10))
-        logger.info("Top 5 Movies by ROI (Budget >= 10M):")
         kpi_results["highest_roi"].show(truncate=False)
 
         # 6. Lowest ROI (Budget >= 10M)
+        print("Bottom 5 Movies by ROI (Budget >= 10M):")
         kpi_results["lowest_roi"] = rank_movies_udf("roi", ascending=True)(df.filter(F.col("budget_musd") >= 10))
-        logger.info("Bottom 5 Movies by ROI (Budget >= 10M):")
         kpi_results["lowest_roi"].show(truncate=False)
 
         # 7. Most Voted Movies
-        kpi_results["most_voted"] = rank_movies_udf("vote_count")(df)
-        logger.info("Top 5 Most Voted Movies:")
+        print("Top 5 Most Voted Movies:")
+        kpi_results["most_voted"] = rank_movies_udf("vote_count")(df)   
         kpi_results["most_voted"].show(truncate=False)
 
         # 8. Highest Rated Movies (>=10 votes)
+        print("Top 5 Highest Rated Movies (>=10 votes):")
         kpi_results["highest_rated"] = rank_movies_udf("vote_average")(df.filter(F.col("vote_count") >= 10))
-        logger.info("Top 5 Highest Rated Movies (>=10 votes):")
         kpi_results["highest_rated"].show(truncate=False)
 
         # 9. Lowest Rated Movies (>=10 votes)
+        print("Bottom 5 Lowest Rated Movies (>=10 votes):")
         kpi_results["lowest_rated"] = rank_movies_udf("vote_average", ascending=True)(df.filter(F.col("vote_count") >= 10))
-        logger.info("Bottom 5 Lowest Rated Movies (>=10 votes):")
         kpi_results["lowest_rated"].show(truncate=False)
 
         # 10. Most Popular Movies
+        print("Top 5 Most Popular Movies:")
         kpi_results["most_popular"] = rank_movies_udf("popularity")(df)
-        logger.info("Top 5 Most Popular Movies:")
         kpi_results["most_popular"].show(truncate=False)
 
         return kpi_results
