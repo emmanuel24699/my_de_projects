@@ -1,6 +1,6 @@
 import uuid
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 import pandas as pd
 import random
 import os
@@ -8,8 +8,8 @@ import os
 # Configuration
 OUTPUT_DIR = "data/input/"
 CATALOG_DIR = "data/catalog/"
-BATCH_SIZE = 100
-SLEEP_INTERVAL = 10
+BATCH_SIZE = 300
+SLEEP_INTERVAL = 30
 EVENT_TYPES = ["view", "click", "buy"]
 CATEGORIES = ["Electronics", "Fashion", "Books", "Home & Kitchen", "Toys"]
 
@@ -71,13 +71,17 @@ def save_product_catalog():
     print(f"Saved product catalog to {CATALOG_DIR}/products.csv")
 
 def generate_session_events():
-    """Generate events for a user session, simulating view -> click -> buy funnel."""
+    """Generate events for a user session, simulating view -> click -> buy funnel with realistic timestamps."""
     session_id = str(uuid.uuid4())
     user_id = random.choice(users)
     product = random.choice(products)
     events = []
 
+    # Generate base timestamp (within past 24 hours)
+    base_time = datetime.utcnow() - timedelta(seconds=random.uniform(0, 24 * 60 * 60))
+    
     # View event (always occurs)
+    view_time = base_time
     events.append({
         "event_id": str(uuid.uuid4()),
         "session_id": session_id,
@@ -89,11 +93,12 @@ def generate_session_events():
         "category": product["category"],
         "price": product["price"],
         "quantity": 1,
-        "timestamp": datetime.utcnow().isoformat() + "Z"
+        "timestamp": view_time.isoformat() + "Z"
     })
 
-    # Click event (30% chance)
-    if random.random() < 0.3:
+    # Click event (50% chance)
+    if random.random() < 0.5:
+        click_time = view_time + timedelta(seconds=random.uniform(1, 5))
         events.append({
             "event_id": str(uuid.uuid4()),
             "session_id": session_id,
@@ -105,11 +110,12 @@ def generate_session_events():
             "category": product["category"],
             "price": product["price"],
             "quantity": 1,
-            "timestamp": datetime.utcnow().isoformat() + "Z"
+            "timestamp": click_time.isoformat() + "Z"
         })
 
-        # Buy event (33% chance after click, so ~10% overall)
-        if random.random() < 0.33:
+        # Buy event (80% chance after click, so ~40% overall)
+        if random.random() < 0.8:
+            buy_time = click_time + timedelta(seconds=random.uniform(5, 60))
             events.append({
                 "event_id": str(uuid.uuid4()),
                 "session_id": session_id,
@@ -117,11 +123,11 @@ def generate_session_events():
                 "event_type": "buy",
                 "product_id": product["product_id"],
                 "product_name": product["product_name"],
-                "brand": product["brand"],  # Fixed: Use product["brand"]
+                "brand": product["brand"],
                 "category": product["category"],
                 "price": product["price"],
                 "quantity": random.randint(1, 5),
-                "timestamp": datetime.utcnow().isoformat() + "Z"
+                "timestamp": buy_time.isoformat() + "Z"
             })
 
     return events
