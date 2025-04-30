@@ -8,8 +8,8 @@ import os
 # Configuration
 OUTPUT_DIR = "data/input/"
 CATALOG_DIR = "data/catalog/"
-BATCH_SIZE = 300
-SLEEP_INTERVAL = 30
+BATCH_SIZE = 100
+SLEEP_INTERVAL = 60
 EVENT_TYPES = ["view", "click", "buy"]
 CATEGORIES = ["Electronics", "Fashion", "Books", "Home & Kitchen", "Toys"]
 
@@ -96,9 +96,9 @@ def generate_session_events():
         "timestamp": view_time.isoformat() + "Z"
     })
 
-    # Click event (50% chance)
-    if random.random() < 0.5:
-        click_time = view_time + timedelta(seconds=random.uniform(1, 5))
+    # Click event (20% chance)
+    if random.random() < 0.2:
+        click_time = view_time + timedelta(seconds=random.uniform(10, 300))
         events.append({
             "event_id": str(uuid.uuid4()),
             "session_id": session_id,
@@ -113,9 +113,9 @@ def generate_session_events():
             "timestamp": click_time.isoformat() + "Z"
         })
 
-        # Buy event (80% chance after click, so ~40% overall)
-        if random.random() < 0.8:
-            buy_time = click_time + timedelta(seconds=random.uniform(5, 60))
+        # Buy event (15% chance after click, so ~3% overall)
+        if random.random() < 0.15:
+            buy_time = click_time + timedelta(seconds=random.uniform(120, 43200))
             events.append({
                 "event_id": str(uuid.uuid4()),
                 "session_id": session_id,
