@@ -8,8 +8,8 @@ import os
 # Configuration
 OUTPUT_DIR = "data/input/"
 CATALOG_DIR = "data/catalog/"
-BATCH_SIZE = 100
-SLEEP_INTERVAL = 60
+BATCH_SIZE = 15
+SLEEP_INTERVAL = 10
 EVENT_TYPES = ["view", "click", "buy"]
 CATEGORIES = ["Electronics", "Fashion", "Books", "Home & Kitchen", "Toys"]
 

@@ -1,799 +1,320 @@
-2025-04-30 11:07:18,132 INFO Found files: ['/data/input/events_2025-04-30T110110.csv', '/data/input/events_2025-04-30T110143.csv', '/data/input/events_2025-04-30T110214.csv', '/data/input/events_2025-04-30T110245.csv', '/data/input/events_2025-04-30T110317.csv', '/data/input/events_2025-04-30T110348.csv', '/data/input/events_2025-04-30T110420.csv', '/data/input/events_2025-04-30T110452.csv', '/data/input/events_2025-04-30T110524.csv', '/data/input/events_2025-04-30T110555.csv', '/data/input/events_2025-04-30T110627.csv', '/data/input/events_2025-04-30T110700.csv']
-2025-04-30 11:07:23,618 INFO File /data/input/events_2025-04-30T110110.csv: 300 rows
-2025-04-30 11:07:24,047 INFO File /data/input/events_2025-04-30T110143.csv: 300 rows
-2025-04-30 11:07:24,433 INFO File /data/input/events_2025-04-30T110214.csv: 300 rows
-2025-04-30 11:07:24,807 INFO File /data/input/events_2025-04-30T110245.csv: 300 rows
-2025-04-30 11:07:25,204 INFO File /data/input/events_2025-04-30T110317.csv: 300 rows
-2025-04-30 11:07:25,516 INFO File /data/input/events_2025-04-30T110348.csv: 300 rows
-2025-04-30 11:07:25,791 INFO File /data/input/events_2025-04-30T110420.csv: 300 rows
-2025-04-30 11:07:26,098 INFO File /data/input/events_2025-04-30T110452.csv: 300 rows
-2025-04-30 11:07:26,383 INFO File /data/input/events_2025-04-30T110524.csv: 300 rows
-2025-04-30 11:07:26,670 INFO File /data/input/events_2025-04-30T110555.csv: 300 rows
-2025-04-30 11:07:26,901 INFO File /data/input/events_2025-04-30T110627.csv: 300 rows
-2025-04-30 11:07:27,133 INFO File /data/input/events_2025-04-30T110700.csv: 300 rows
-2025-04-30 11:07:27,139 INFO Checkpoint directory /data/checkpoints/raw_events is accessible
-2025-04-30 11:07:27,323 INFO Input schema before validation: {"fields":[{"metadata":{},"name":"event_id","nullable":true,"type":"string"},{"metadata":{},"name":"session_id","nullable":true,"type":"string"},{"metadata":{},"name":"user_id","nullable":true,"type":"string"},{"metadata":{},"name":"event_type","nullable":true,"type":"string"},{"metadata":{},"name":"product_id","nullable":true,"type":"string"},{"metadata":{},"name":"product_name","nullable":true,"type":"string"},{"metadata":{},"name":"brand","nullable":true,"type":"string"},{"metadata":{},"name":"category","nullable":true,"type":"string"},{"metadata":{},"name":"price","nullable":true,"type":"double"},{"metadata":{},"name":"quantity","nullable":true,"type":"integer"},{"metadata":{},"name":"timestamp","nullable":true,"type":"timestamp"}],"type":"struct"}
-2025-04-30 11:07:27,710 INFO Transformed schema: {"fields":[{"metadata":{},"name":"event_id","nullable":true,"type":"string"},{"metadata":{},"name":"session_id","nullable":true,"type":"string"},{"metadata":{},"name":"user_id","nullable":true,"type":"string"},{"metadata":{},"name":"event_type","nullable":true,"type":"string"},{"metadata":{},"name":"product_id","nullable":true,"type":"string"},{"metadata":{},"name":"product_name","nullable":true,"type":"string"},{"metadata":{},"name":"brand","nullable":true,"type":"string"},{"metadata":{},"name":"category","nullable":true,"type":"string"},{"metadata":{},"name":"price","nullable":true,"type":"double"},{"metadata":{},"name":"quantity","nullable":true,"type":"integer"},{"metadata":{},"name":"total_price","nullable":true,"type":"double"},{"metadata":{},"name":"event_date","nullable":true,"type":"date"},{"metadata":{},"name":"timestamp","nullable":true,"type":"timestamp"}],"type":"struct"}
-2025-04-30 11:09:40,993 INFO PostgreSQL connection test successful
-2025-04-30 11:09:40,993 INFO Starting raw events query
-2025-04-30 11:09:41,006 INFO Callback Server Starting
-2025-04-30 11:09:41,007 INFO Socket listening on ('127.0.0.1', 36965)
-2025-04-30 11:09:41,910 INFO Raw events query started with checkpoint /data/checkpoints/raw_events
-2025-04-30 11:09:41,911 INFO Started streaming query: raw_events
-2025-04-30 11:09:45,024 INFO Python Server ready to receive messages
-2025-04-30 11:09:45,025 INFO Received command c on object id p0
-2025-04-30 11:09:45,201 INFO Processing batch 0 for table raw_events with 600 rows
-2025-04-30 11:09:45,331 INFO Created temporary table temp_raw_events_0_0240346b_1bad_4c9f_a16d_76c75ccd3595
-2025-04-30 11:09:45,905 INFO Wrote DataFrame to temporary table temp_raw_events_0_0240346b_1bad_4c9f_a16d_76c75ccd3595
-2025-04-30 11:09:45,942 INFO Successfully executed upsert SQL for table raw_events, batch 0
-2025-04-30 11:09:45,971 INFO Dropped temporary table temp_raw_events_0_0240346b_1bad_4c9f_a16d_76c75ccd3595
-2025-04-30 11:09:45,971 INFO Successfully upserted to PostgreSQL table raw_events, batch 0
-2025-04-30 11:10:21,051 INFO Received command c on object id p0
-2025-04-30 11:10:21,202 INFO Processing batch 1 for table raw_events with 300 rows
-2025-04-30 11:10:21,327 INFO Created temporary table temp_raw_events_1_a1f8096f_92da_440e_92ae_9ce2015b58de
-2025-04-30 11:10:21,531 INFO Wrote DataFrame to temporary table temp_raw_events_1_a1f8096f_92da_440e_92ae_9ce2015b58de
-2025-04-30 11:10:21,553 INFO Successfully executed upsert SQL for table raw_events, batch 1
-2025-04-30 11:10:21,569 INFO Dropped temporary table temp_raw_events_1_a1f8096f_92da_440e_92ae_9ce2015b58de
-2025-04-30 11:10:21,570 INFO Successfully upserted to PostgreSQL table raw_events, batch 1
-2025-04-30 11:10:51,105 INFO Received command c on object id p0
-2025-04-30 11:10:51,226 INFO Processing batch 2 for table raw_events with 300 rows
-2025-04-30 11:10:51,320 INFO Created temporary table temp_raw_events_2_3f585a68_bf2f_4ab0_853f_0caeea8214c6
-2025-04-30 11:10:51,533 INFO Wrote DataFrame to temporary table temp_raw_events_2_3f585a68_bf2f_4ab0_853f_0caeea8214c6
-2025-04-30 11:10:51,553 INFO Successfully executed upsert SQL for table raw_events, batch 2
-2025-04-30 11:10:51,569 INFO Dropped temporary table temp_raw_events_2_3f585a68_bf2f_4ab0_853f_0caeea8214c6
-2025-04-30 11:10:51,570 INFO Successfully upserted to PostgreSQL table raw_events, batch 2
-2025-04-30 11:11:21,281 INFO Received command c on object id p0
-2025-04-30 11:11:21,425 INFO Processing batch 3 for table raw_events with 300 rows
-2025-04-30 11:11:21,535 INFO Created temporary table temp_raw_events_3_9a374d90_4591_4bbe_9238_7312cd4d0c90
-2025-04-30 11:11:21,748 INFO Wrote DataFrame to temporary table temp_raw_events_3_9a374d90_4591_4bbe_9238_7312cd4d0c90
-2025-04-30 11:11:21,772 INFO Successfully executed upsert SQL for table raw_events, batch 3
-2025-04-30 11:11:21,790 INFO Dropped temporary table temp_raw_events_3_9a374d90_4591_4bbe_9238_7312cd4d0c90
-2025-04-30 11:11:21,790 INFO Successfully upserted to PostgreSQL table raw_events, batch 3
-2025-04-30 11:11:53,840 INFO Received command c on object id p0
-2025-04-30 11:11:53,970 INFO Processing batch 4 for table raw_events with 300 rows
-2025-04-30 11:11:54,062 INFO Created temporary table temp_raw_events_4_183d7f97_2c75_41e7_bb42_604ed5538939
-2025-04-30 11:11:54,282 INFO Wrote DataFrame to temporary table temp_raw_events_4_183d7f97_2c75_41e7_bb42_604ed5538939
-2025-04-30 11:11:54,305 INFO Successfully executed upsert SQL for table raw_events, batch 4
-2025-04-30 11:11:54,323 INFO Dropped temporary table temp_raw_events_4_183d7f97_2c75_41e7_bb42_604ed5538939
-2025-04-30 11:11:54,324 INFO Successfully upserted to PostgreSQL table raw_events, batch 4
-2025-04-30 11:12:22,243 INFO Received command c on object id p0
-2025-04-30 11:12:22,378 INFO Processing batch 5 for table raw_events with 300 rows
-2025-04-30 11:12:22,488 INFO Created temporary table temp_raw_events_5_2e014d37_b294_4eb6_ba67_2a4c564ed585
-2025-04-30 11:12:22,678 INFO Wrote DataFrame to temporary table temp_raw_events_5_2e014d37_b294_4eb6_ba67_2a4c564ed585
-2025-04-30 11:12:22,699 INFO Successfully executed upsert SQL for table raw_events, batch 5
-2025-04-30 11:12:22,715 INFO Dropped temporary table temp_raw_events_5_2e014d37_b294_4eb6_ba67_2a4c564ed585
-2025-04-30 11:12:22,715 INFO Successfully upserted to PostgreSQL table raw_events, batch 5
-2025-04-30 11:12:51,079 INFO Received command c on object id p0
-2025-04-30 11:12:51,215 INFO Processing batch 6 for table raw_events with 300 rows
-2025-04-30 11:12:51,319 INFO Created temporary table temp_raw_events_6_8763547c_f06a_4e85_b24a_5e7814b90036
-2025-04-30 11:12:51,575 INFO Wrote DataFrame to temporary table temp_raw_events_6_8763547c_f06a_4e85_b24a_5e7814b90036
-2025-04-30 11:12:51,599 INFO Successfully executed upsert SQL for table raw_events, batch 6
-2025-04-30 11:12:51,616 INFO Dropped temporary table temp_raw_events_6_8763547c_f06a_4e85_b24a_5e7814b90036
-2025-04-30 11:12:51,617 INFO Successfully upserted to PostgreSQL table raw_events, batch 6
-2025-04-30 11:13:31,080 INFO Received command c on object id p0
-2025-04-30 11:13:31,210 INFO Processing batch 7 for table raw_events with 300 rows
-2025-04-30 11:13:31,303 INFO Created temporary table temp_raw_events_7_955b3fc7_6c46_4e9e_9455_a795f74f23f8
-2025-04-30 11:13:31,513 INFO Wrote DataFrame to temporary table temp_raw_events_7_955b3fc7_6c46_4e9e_9455_a795f74f23f8
-2025-04-30 11:13:31,534 INFO Successfully executed upsert SQL for table raw_events, batch 7
-2025-04-30 11:13:31,550 INFO Dropped temporary table temp_raw_events_7_955b3fc7_6c46_4e9e_9455_a795f74f23f8
-2025-04-30 11:13:31,551 INFO Successfully upserted to PostgreSQL table raw_events, batch 7
-2025-04-30 11:14:01,046 INFO Received command c on object id p0
-2025-04-30 11:14:01,171 INFO Processing batch 8 for table raw_events with 300 rows
-2025-04-30 11:14:01,270 INFO Created temporary table temp_raw_events_8_b0b866e2_f77a_41e9_acc8_76e03ab71572
-2025-04-30 11:14:01,475 INFO Wrote DataFrame to temporary table temp_raw_events_8_b0b866e2_f77a_41e9_acc8_76e03ab71572
-2025-04-30 11:14:01,500 INFO Successfully executed upsert SQL for table raw_events, batch 8
-2025-04-30 11:14:01,516 INFO Dropped temporary table temp_raw_events_8_b0b866e2_f77a_41e9_acc8_76e03ab71572
-2025-04-30 11:14:01,517 INFO Successfully upserted to PostgreSQL table raw_events, batch 8
-2025-04-30 11:14:31,154 INFO Received command c on object id p0
-2025-04-30 11:14:31,262 INFO Processing batch 9 for table raw_events with 300 rows
-2025-04-30 11:14:31,364 INFO Created temporary table temp_raw_events_9_0721430f_08ee_4e0c_a733_47b08aab0f5e
-2025-04-30 11:14:31,599 INFO Wrote DataFrame to temporary table temp_raw_events_9_0721430f_08ee_4e0c_a733_47b08aab0f5e
-2025-04-30 11:14:31,623 INFO Successfully executed upsert SQL for table raw_events, batch 9
-2025-04-30 11:14:31,639 INFO Dropped temporary table temp_raw_events_9_0721430f_08ee_4e0c_a733_47b08aab0f5e
-2025-04-30 11:14:31,640 INFO Successfully upserted to PostgreSQL table raw_events, batch 9
-2025-04-30 11:15:01,890 INFO Received command c on object id p0
-2025-04-30 11:15:02,017 INFO Processing batch 10 for table raw_events with 300 rows
-2025-04-30 11:15:02,113 INFO Created temporary table temp_raw_events_10_46a36ec2_4fba_4d1c_881f_e1ca4412ee77
-2025-04-30 11:15:02,407 INFO Wrote DataFrame to temporary table temp_raw_events_10_46a36ec2_4fba_4d1c_881f_e1ca4412ee77
-2025-04-30 11:15:02,431 INFO Successfully executed upsert SQL for table raw_events, batch 10
-2025-04-30 11:15:02,446 INFO Dropped temporary table temp_raw_events_10_46a36ec2_4fba_4d1c_881f_e1ca4412ee77
-2025-04-30 11:15:02,447 INFO Successfully upserted to PostgreSQL table raw_events, batch 10
-2025-04-30 11:15:33,056 INFO Received command c on object id p0
-2025-04-30 11:15:33,187 INFO Processing batch 11 for table raw_events with 300 rows
-2025-04-30 11:15:33,294 INFO Created temporary table temp_raw_events_11_92474486_c843_4d86_b9ac_b85120e68c90
-2025-04-30 11:15:33,523 INFO Wrote DataFrame to temporary table temp_raw_events_11_92474486_c843_4d86_b9ac_b85120e68c90
-2025-04-30 11:15:33,554 INFO Successfully executed upsert SQL for table raw_events, batch 11
-2025-04-30 11:15:33,577 INFO Dropped temporary table temp_raw_events_11_92474486_c843_4d86_b9ac_b85120e68c90
-2025-04-30 11:15:33,578 INFO Successfully upserted to PostgreSQL table raw_events, batch 11
-2025-04-30 11:16:01,114 INFO Received command c on object id p0
-2025-04-30 11:16:01,236 INFO Processing batch 12 for table raw_events with 300 rows
-2025-04-30 11:16:01,339 INFO Created temporary table temp_raw_events_12_74b14735_4188_46cf_a80c_578d8296aacd
-2025-04-30 11:16:01,518 INFO Wrote DataFrame to temporary table temp_raw_events_12_74b14735_4188_46cf_a80c_578d8296aacd
-2025-04-30 11:16:01,541 INFO Successfully executed upsert SQL for table raw_events, batch 12
-2025-04-30 11:16:01,557 INFO Dropped temporary table temp_raw_events_12_74b14735_4188_46cf_a80c_578d8296aacd
-2025-04-30 11:16:01,558 INFO Successfully upserted to PostgreSQL table raw_events, batch 12
-2025-04-30 11:16:41,026 INFO Received command c on object id p0
-2025-04-30 11:16:41,141 INFO Processing batch 13 for table raw_events with 300 rows
-2025-04-30 11:16:41,236 INFO Created temporary table temp_raw_events_13_b12b6ea0_e7da_4ebc_a9d4_bd4237f93bef
-2025-04-30 11:16:41,418 INFO Wrote DataFrame to temporary table temp_raw_events_13_b12b6ea0_e7da_4ebc_a9d4_bd4237f93bef
-2025-04-30 11:16:41,440 INFO Successfully executed upsert SQL for table raw_events, batch 13
-2025-04-30 11:16:41,456 INFO Dropped temporary table temp_raw_events_13_b12b6ea0_e7da_4ebc_a9d4_bd4237f93bef
-2025-04-30 11:16:41,457 INFO Successfully upserted to PostgreSQL table raw_events, batch 13
-2025-04-30 11:17:11,172 INFO Received command c on object id p0
-2025-04-30 11:17:11,297 INFO Processing batch 14 for table raw_events with 300 rows
-2025-04-30 11:17:11,390 INFO Created temporary table temp_raw_events_14_2178f05e_0da2_421b_a68b_6fec7f793f42
-2025-04-30 11:17:11,594 INFO Wrote DataFrame to temporary table temp_raw_events_14_2178f05e_0da2_421b_a68b_6fec7f793f42
-2025-04-30 11:17:11,620 INFO Successfully executed upsert SQL for table raw_events, batch 14
-2025-04-30 11:17:11,637 INFO Dropped temporary table temp_raw_events_14_2178f05e_0da2_421b_a68b_6fec7f793f42
-2025-04-30 11:17:11,638 INFO Successfully upserted to PostgreSQL table raw_events, batch 14
-2025-04-30 11:17:42,960 INFO Received command c on object id p0
-2025-04-30 11:17:43,064 INFO Processing batch 15 for table raw_events with 300 rows
-2025-04-30 11:17:43,148 INFO Created temporary table temp_raw_events_15_ec889265_ce9f_4b65_acd5_4de05ab62e42
-2025-04-30 11:17:43,327 INFO Wrote DataFrame to temporary table temp_raw_events_15_ec889265_ce9f_4b65_acd5_4de05ab62e42
-2025-04-30 11:17:43,352 INFO Successfully executed upsert SQL for table raw_events, batch 15
-2025-04-30 11:17:43,369 INFO Dropped temporary table temp_raw_events_15_ec889265_ce9f_4b65_acd5_4de05ab62e42
-2025-04-30 11:17:43,370 INFO Successfully upserted to PostgreSQL table raw_events, batch 15
-2025-04-30 11:18:12,628 INFO Received command c on object id p0
-2025-04-30 11:18:12,749 INFO Processing batch 16 for table raw_events with 300 rows
-2025-04-30 11:18:12,836 INFO Created temporary table temp_raw_events_16_c770cc23_9ac1_41e3_a334_a8fcb4482eec
-2025-04-30 11:18:13,009 INFO Wrote DataFrame to temporary table temp_raw_events_16_c770cc23_9ac1_41e3_a334_a8fcb4482eec
-2025-04-30 11:18:13,032 INFO Successfully executed upsert SQL for table raw_events, batch 16
-2025-04-30 11:18:13,048 INFO Dropped temporary table temp_raw_events_16_c770cc23_9ac1_41e3_a334_a8fcb4482eec
-2025-04-30 11:18:13,049 INFO Successfully upserted to PostgreSQL table raw_events, batch 16
-2025-04-30 11:18:41,053 INFO Received command c on object id p0
-2025-04-30 11:18:41,175 INFO Processing batch 17 for table raw_events with 300 rows
-2025-04-30 11:18:41,276 INFO Created temporary table temp_raw_events_17_94905926_d7cc_4986_8b9d_b79d2573a870
-2025-04-30 11:18:41,464 INFO Wrote DataFrame to temporary table temp_raw_events_17_94905926_d7cc_4986_8b9d_b79d2573a870
-2025-04-30 11:18:41,487 INFO Successfully executed upsert SQL for table raw_events, batch 17
-2025-04-30 11:18:41,504 INFO Dropped temporary table temp_raw_events_17_94905926_d7cc_4986_8b9d_b79d2573a870
-2025-04-30 11:18:41,504 INFO Successfully upserted to PostgreSQL table raw_events, batch 17
-2025-04-30 11:19:20,979 INFO Received command c on object id p0
-2025-04-30 11:19:21,080 INFO Processing batch 18 for table raw_events with 300 rows
-2025-04-30 11:19:21,160 INFO Created temporary table temp_raw_events_18_6923daa6_d2f9_4119_91ce_1d9989740c2d
-2025-04-30 11:19:21,464 INFO Wrote DataFrame to temporary table temp_raw_events_18_6923daa6_d2f9_4119_91ce_1d9989740c2d
-2025-04-30 11:19:21,489 INFO Successfully executed upsert SQL for table raw_events, batch 18
-2025-04-30 11:19:21,507 INFO Dropped temporary table temp_raw_events_18_6923daa6_d2f9_4119_91ce_1d9989740c2d
-2025-04-30 11:19:21,508 INFO Successfully upserted to PostgreSQL table raw_events, batch 18
-2025-04-30 11:19:51,269 INFO Received command c on object id p0
-2025-04-30 11:19:51,388 INFO Processing batch 19 for table raw_events with 300 rows
-2025-04-30 11:19:51,490 INFO Created temporary table temp_raw_events_19_41a95d89_4b35_4e98_ac93_1668f1bd61ee
-2025-04-30 11:19:51,672 INFO Wrote DataFrame to temporary table temp_raw_events_19_41a95d89_4b35_4e98_ac93_1668f1bd61ee
-2025-04-30 11:19:51,696 INFO Successfully executed upsert SQL for table raw_events, batch 19
-2025-04-30 11:19:51,713 INFO Dropped temporary table temp_raw_events_19_41a95d89_4b35_4e98_ac93_1668f1bd61ee
-2025-04-30 11:19:51,714 INFO Successfully upserted to PostgreSQL table raw_events, batch 19
-2025-04-30 11:20:20,902 INFO Received command c on object id p0
-2025-04-30 11:20:20,989 INFO Processing batch 20 for table raw_events with 300 rows
-2025-04-30 11:20:21,082 INFO Created temporary table temp_raw_events_20_938e9db8_1649_4282_8baa_93bc51b2eef1
-2025-04-30 11:20:21,250 INFO Wrote DataFrame to temporary table temp_raw_events_20_938e9db8_1649_4282_8baa_93bc51b2eef1
-2025-04-30 11:20:21,271 INFO Successfully executed upsert SQL for table raw_events, batch 20
-2025-04-30 11:20:21,286 INFO Dropped temporary table temp_raw_events_20_938e9db8_1649_4282_8baa_93bc51b2eef1
-2025-04-30 11:20:21,287 INFO Successfully upserted to PostgreSQL table raw_events, batch 20
-2025-04-30 11:20:52,064 INFO Received command c on object id p0
-2025-04-30 11:20:52,174 INFO Processing batch 21 for table raw_events with 300 rows
-2025-04-30 11:20:52,284 INFO Created temporary table temp_raw_events_21_e92e32b0_b963_45f3_8e6f_2ee4828de814
-2025-04-30 11:20:52,482 INFO Wrote DataFrame to temporary table temp_raw_events_21_e92e32b0_b963_45f3_8e6f_2ee4828de814
-2025-04-30 11:20:52,508 INFO Successfully executed upsert SQL for table raw_events, batch 21
-2025-04-30 11:20:52,525 INFO Dropped temporary table temp_raw_events_21_e92e32b0_b963_45f3_8e6f_2ee4828de814
-2025-04-30 11:20:52,526 INFO Successfully upserted to PostgreSQL table raw_events, batch 21
-2025-04-30 11:21:23,021 INFO Received command c on object id p0
-2025-04-30 11:21:23,145 INFO Processing batch 22 for table raw_events with 300 rows
-2025-04-30 11:21:23,239 INFO Created temporary table temp_raw_events_22_f81850d1_504b_4060_b93b_2e5320de1430
-2025-04-30 11:21:23,447 INFO Wrote DataFrame to temporary table temp_raw_events_22_f81850d1_504b_4060_b93b_2e5320de1430
-2025-04-30 11:21:23,480 INFO Successfully executed upsert SQL for table raw_events, batch 22
-2025-04-30 11:21:23,500 INFO Dropped temporary table temp_raw_events_22_f81850d1_504b_4060_b93b_2e5320de1430
-2025-04-30 11:21:23,500 INFO Successfully upserted to PostgreSQL table raw_events, batch 22
-2025-04-30 11:22:01,006 INFO Received command c on object id p0
-2025-04-30 11:22:01,109 INFO Processing batch 23 for table raw_events with 300 rows
-2025-04-30 11:22:01,191 INFO Created temporary table temp_raw_events_23_a6de296c_1a08_43a4_9991_f5daa4cf1bdc
-2025-04-30 11:22:01,364 INFO Wrote DataFrame to temporary table temp_raw_events_23_a6de296c_1a08_43a4_9991_f5daa4cf1bdc
-2025-04-30 11:22:01,385 INFO Successfully executed upsert SQL for table raw_events, batch 23
-2025-04-30 11:22:01,401 INFO Dropped temporary table temp_raw_events_23_a6de296c_1a08_43a4_9991_f5daa4cf1bdc
-2025-04-30 11:22:01,402 INFO Successfully upserted to PostgreSQL table raw_events, batch 23
-2025-04-30 11:22:31,048 INFO Received command c on object id p0
-2025-04-30 11:22:31,159 INFO Processing batch 24 for table raw_events with 300 rows
-2025-04-30 11:22:31,249 INFO Created temporary table temp_raw_events_24_5dc9f95b_8798_4592_bf73_2e3a99eba2c0
-2025-04-30 11:22:31,425 INFO Wrote DataFrame to temporary table temp_raw_events_24_5dc9f95b_8798_4592_bf73_2e3a99eba2c0
-2025-04-30 11:22:31,446 INFO Successfully executed upsert SQL for table raw_events, batch 24
-2025-04-30 11:22:31,464 INFO Dropped temporary table temp_raw_events_24_5dc9f95b_8798_4592_bf73_2e3a99eba2c0
-2025-04-30 11:22:31,465 INFO Successfully upserted to PostgreSQL table raw_events, batch 24
-2025-04-30 11:23:01,005 INFO Received command c on object id p0
-2025-04-30 11:23:01,107 INFO Processing batch 25 for table raw_events with 300 rows
-2025-04-30 11:23:01,192 INFO Created temporary table temp_raw_events_25_91c29a99_f0b9_49d3_a5a0_09aefbce7997
-2025-04-30 11:23:01,477 INFO Wrote DataFrame to temporary table temp_raw_events_25_91c29a99_f0b9_49d3_a5a0_09aefbce7997
-2025-04-30 11:23:01,526 INFO Successfully executed upsert SQL for table raw_events, batch 25
-2025-04-30 11:23:01,553 INFO Dropped temporary table temp_raw_events_25_91c29a99_f0b9_49d3_a5a0_09aefbce7997
-2025-04-30 11:23:01,554 INFO Successfully upserted to PostgreSQL table raw_events, batch 25
-2025-04-30 11:23:31,727 INFO Received command c on object id p0
-2025-04-30 11:23:31,876 INFO Processing batch 26 for table raw_events with 300 rows
-2025-04-30 11:23:31,970 INFO Created temporary table temp_raw_events_26_a712e0d8_d167_4a9d_9463_0786a3206392
-2025-04-30 11:23:32,152 INFO Wrote DataFrame to temporary table temp_raw_events_26_a712e0d8_d167_4a9d_9463_0786a3206392
-2025-04-30 11:23:32,181 INFO Successfully executed upsert SQL for table raw_events, batch 26
-2025-04-30 11:23:32,203 INFO Dropped temporary table temp_raw_events_26_a712e0d8_d167_4a9d_9463_0786a3206392
-2025-04-30 11:23:32,204 INFO Successfully upserted to PostgreSQL table raw_events, batch 26
-2025-04-30 11:24:02,900 INFO Received command c on object id p0
-2025-04-30 11:24:03,006 INFO Processing batch 27 for table raw_events with 300 rows
-2025-04-30 11:24:03,090 INFO Created temporary table temp_raw_events_27_ac495327_2464_4995_b5a0_386bb3d24492
-2025-04-30 11:24:03,286 INFO Wrote DataFrame to temporary table temp_raw_events_27_ac495327_2464_4995_b5a0_386bb3d24492
-2025-04-30 11:24:03,316 INFO Successfully executed upsert SQL for table raw_events, batch 27
-2025-04-30 11:24:03,337 INFO Dropped temporary table temp_raw_events_27_ac495327_2464_4995_b5a0_386bb3d24492
-2025-04-30 11:24:03,338 INFO Successfully upserted to PostgreSQL table raw_events, batch 27
-2025-04-30 11:24:31,135 INFO Received command c on object id p0
-2025-04-30 11:24:31,242 INFO Processing batch 28 for table raw_events with 300 rows
-2025-04-30 11:24:31,336 INFO Created temporary table temp_raw_events_28_5d335cb2_9b44_47f5_afbf_33e5eb1b079f
-2025-04-30 11:24:31,507 INFO Wrote DataFrame to temporary table temp_raw_events_28_5d335cb2_9b44_47f5_afbf_33e5eb1b079f
-2025-04-30 11:24:31,530 INFO Successfully executed upsert SQL for table raw_events, batch 28
-2025-04-30 11:24:31,547 INFO Dropped temporary table temp_raw_events_28_5d335cb2_9b44_47f5_afbf_33e5eb1b079f
-2025-04-30 11:24:31,548 INFO Successfully upserted to PostgreSQL table raw_events, batch 28
-2025-04-30 11:25:11,089 INFO Received command c on object id p0
-2025-04-30 11:25:11,185 INFO Processing batch 29 for table raw_events with 300 rows
-2025-04-30 11:25:11,268 INFO Created temporary table temp_raw_events_29_4dbd699f_7321_4313_ab5f_07a25e2a9773
-2025-04-30 11:25:11,428 INFO Wrote DataFrame to temporary table temp_raw_events_29_4dbd699f_7321_4313_ab5f_07a25e2a9773
-2025-04-30 11:25:11,448 INFO Successfully executed upsert SQL for table raw_events, batch 29
-2025-04-30 11:25:11,463 INFO Dropped temporary table temp_raw_events_29_4dbd699f_7321_4313_ab5f_07a25e2a9773
-2025-04-30 11:25:11,464 INFO Successfully upserted to PostgreSQL table raw_events, batch 29
-2025-04-30 11:25:41,009 INFO Received command c on object id p0
-2025-04-30 11:25:41,116 INFO Processing batch 30 for table raw_events with 300 rows
-2025-04-30 11:25:41,208 INFO Created temporary table temp_raw_events_30_2e1154dc_9bce_413e_8cfa_9a5e4a312b44
-2025-04-30 11:25:41,407 INFO Wrote DataFrame to temporary table temp_raw_events_30_2e1154dc_9bce_413e_8cfa_9a5e4a312b44
-2025-04-30 11:25:41,431 INFO Successfully executed upsert SQL for table raw_events, batch 30
-2025-04-30 11:25:41,449 INFO Dropped temporary table temp_raw_events_30_2e1154dc_9bce_413e_8cfa_9a5e4a312b44
-2025-04-30 11:25:41,450 INFO Successfully upserted to PostgreSQL table raw_events, batch 30
-2025-04-30 11:26:10,912 INFO Received command c on object id p0
-2025-04-30 11:26:11,036 INFO Processing batch 31 for table raw_events with 300 rows
-2025-04-30 11:26:11,140 INFO Created temporary table temp_raw_events_31_bc1f47ad_1e3e_4d53_a78b_38238be268b1
-2025-04-30 11:26:11,386 INFO Wrote DataFrame to temporary table temp_raw_events_31_bc1f47ad_1e3e_4d53_a78b_38238be268b1
-2025-04-30 11:26:11,410 INFO Successfully executed upsert SQL for table raw_events, batch 31
-2025-04-30 11:26:11,427 INFO Dropped temporary table temp_raw_events_31_bc1f47ad_1e3e_4d53_a78b_38238be268b1
-2025-04-30 11:26:11,428 INFO Successfully upserted to PostgreSQL table raw_events, batch 31
-2025-04-30 11:26:42,938 INFO Received command c on object id p0
-2025-04-30 11:26:43,040 INFO Processing batch 32 for table raw_events with 300 rows
-2025-04-30 11:26:43,122 INFO Created temporary table temp_raw_events_32_48ade42f_64ca_4086_abc0_eb223d2020f2
-2025-04-30 11:26:43,289 INFO Wrote DataFrame to temporary table temp_raw_events_32_48ade42f_64ca_4086_abc0_eb223d2020f2
-2025-04-30 11:26:43,310 INFO Successfully executed upsert SQL for table raw_events, batch 32
-2025-04-30 11:26:43,326 INFO Dropped temporary table temp_raw_events_32_48ade42f_64ca_4086_abc0_eb223d2020f2
-2025-04-30 11:26:43,327 INFO Successfully upserted to PostgreSQL table raw_events, batch 32
-2025-04-30 11:27:12,061 INFO Received command c on object id p0
-2025-04-30 11:27:13,354 INFO Processing batch 33 for table raw_events with 300 rows
-2025-04-30 11:27:13,437 INFO Created temporary table temp_raw_events_33_a46daac4_a81b_4658_9ec0_38a833ee93a8
-2025-04-30 11:27:13,619 INFO Wrote DataFrame to temporary table temp_raw_events_33_a46daac4_a81b_4658_9ec0_38a833ee93a8
-2025-04-30 11:27:13,645 INFO Successfully executed upsert SQL for table raw_events, batch 33
-2025-04-30 11:27:13,663 INFO Dropped temporary table temp_raw_events_33_a46daac4_a81b_4658_9ec0_38a833ee93a8
-2025-04-30 11:27:13,664 INFO Successfully upserted to PostgreSQL table raw_events, batch 33
-2025-04-30 11:27:51,026 INFO Received command c on object id p0
-2025-04-30 11:27:51,119 INFO Processing batch 34 for table raw_events with 300 rows
-2025-04-30 11:27:51,198 INFO Created temporary table temp_raw_events_34_0abb09b2_77d6_46ae_9930_cfc3b0494a45
-2025-04-30 11:27:51,388 INFO Wrote DataFrame to temporary table temp_raw_events_34_0abb09b2_77d6_46ae_9930_cfc3b0494a45
-2025-04-30 11:27:51,410 INFO Successfully executed upsert SQL for table raw_events, batch 34
-2025-04-30 11:27:51,427 INFO Dropped temporary table temp_raw_events_34_0abb09b2_77d6_46ae_9930_cfc3b0494a45
-2025-04-30 11:27:51,428 INFO Successfully upserted to PostgreSQL table raw_events, batch 34
-2025-04-30 11:28:20,992 INFO Received command c on object id p0
-2025-04-30 11:28:21,081 INFO Processing batch 35 for table raw_events with 300 rows
-2025-04-30 11:28:21,151 INFO Created temporary table temp_raw_events_35_05bef98e_3dae_4573_b3e1_b9ba1fd98362
-2025-04-30 11:28:21,330 INFO Wrote DataFrame to temporary table temp_raw_events_35_05bef98e_3dae_4573_b3e1_b9ba1fd98362
-2025-04-30 11:28:21,355 INFO Successfully executed upsert SQL for table raw_events, batch 35
-2025-04-30 11:28:21,373 INFO Dropped temporary table temp_raw_events_35_05bef98e_3dae_4573_b3e1_b9ba1fd98362
-2025-04-30 11:28:21,373 INFO Successfully upserted to PostgreSQL table raw_events, batch 35
-2025-04-30 11:28:51,858 INFO Received command c on object id p0
-2025-04-30 11:28:51,959 INFO Processing batch 36 for table raw_events with 300 rows
-2025-04-30 11:28:52,048 INFO Created temporary table temp_raw_events_36_e4757afa_5db8_44ac_b614_4f33f40d2409
-2025-04-30 11:28:52,222 INFO Wrote DataFrame to temporary table temp_raw_events_36_e4757afa_5db8_44ac_b614_4f33f40d2409
-2025-04-30 11:28:52,246 INFO Successfully executed upsert SQL for table raw_events, batch 36
-2025-04-30 11:28:52,264 INFO Dropped temporary table temp_raw_events_36_e4757afa_5db8_44ac_b614_4f33f40d2409
-2025-04-30 11:28:52,264 INFO Successfully upserted to PostgreSQL table raw_events, batch 36
-2025-04-30 11:29:22,405 INFO Received command c on object id p0
-2025-04-30 11:29:22,498 INFO Processing batch 37 for table raw_events with 300 rows
-2025-04-30 11:29:22,585 INFO Created temporary table temp_raw_events_37_af236d44_2673_4869_aa3f_23a4910b08bb
-2025-04-30 11:29:22,766 INFO Wrote DataFrame to temporary table temp_raw_events_37_af236d44_2673_4869_aa3f_23a4910b08bb
-2025-04-30 11:29:22,790 INFO Successfully executed upsert SQL for table raw_events, batch 37
-2025-04-30 11:29:22,813 INFO Dropped temporary table temp_raw_events_37_af236d44_2673_4869_aa3f_23a4910b08bb
-2025-04-30 11:29:22,814 INFO Successfully upserted to PostgreSQL table raw_events, batch 37
-2025-04-30 11:29:52,948 INFO Received command c on object id p0
-2025-04-30 11:29:53,050 INFO Processing batch 38 for table raw_events with 300 rows
-2025-04-30 11:29:53,129 INFO Created temporary table temp_raw_events_38_a5735b05_1d40_4fc1_af45_aa40091ef988
-2025-04-30 11:29:53,286 INFO Wrote DataFrame to temporary table temp_raw_events_38_a5735b05_1d40_4fc1_af45_aa40091ef988
-2025-04-30 11:29:53,309 INFO Successfully executed upsert SQL for table raw_events, batch 38
-2025-04-30 11:29:53,325 INFO Dropped temporary table temp_raw_events_38_a5735b05_1d40_4fc1_af45_aa40091ef988
-2025-04-30 11:29:53,326 INFO Successfully upserted to PostgreSQL table raw_events, batch 38
-2025-04-30 11:30:31,140 INFO Received command c on object id p0
-2025-04-30 11:30:31,226 INFO Processing batch 39 for table raw_events with 300 rows
-2025-04-30 11:30:31,333 INFO Created temporary table temp_raw_events_39_2a9de310_5666_4969_aa2f_ddae395cdba5
-2025-04-30 11:30:31,500 INFO Wrote DataFrame to temporary table temp_raw_events_39_2a9de310_5666_4969_aa2f_ddae395cdba5
-2025-04-30 11:30:31,521 INFO Successfully executed upsert SQL for table raw_events, batch 39
-2025-04-30 11:30:31,536 INFO Dropped temporary table temp_raw_events_39_2a9de310_5666_4969_aa2f_ddae395cdba5
-2025-04-30 11:30:31,537 INFO Successfully upserted to PostgreSQL table raw_events, batch 39
-2025-04-30 11:31:00,888 INFO Received command c on object id p0
-2025-04-30 11:31:00,997 INFO Processing batch 40 for table raw_events with 300 rows
-2025-04-30 11:31:01,093 INFO Created temporary table temp_raw_events_40_93aae0bc_82ff_4ea1_b4e7_0b2adc519fb1
-2025-04-30 11:31:01,249 INFO Wrote DataFrame to temporary table temp_raw_events_40_93aae0bc_82ff_4ea1_b4e7_0b2adc519fb1
-2025-04-30 11:31:01,273 INFO Successfully executed upsert SQL for table raw_events, batch 40
-2025-04-30 11:31:01,290 INFO Dropped temporary table temp_raw_events_40_93aae0bc_82ff_4ea1_b4e7_0b2adc519fb1
-2025-04-30 11:31:01,290 INFO Successfully upserted to PostgreSQL table raw_events, batch 40
-2025-04-30 11:31:30,959 INFO Received command c on object id p0
-2025-04-30 11:31:31,046 INFO Processing batch 41 for table raw_events with 300 rows
-2025-04-30 11:31:31,178 INFO Created temporary table temp_raw_events_41_4588c167_021c_4e04_8832_25a7e6dd36d2
-2025-04-30 11:31:31,385 INFO Wrote DataFrame to temporary table temp_raw_events_41_4588c167_021c_4e04_8832_25a7e6dd36d2
-2025-04-30 11:31:31,407 INFO Successfully executed upsert SQL for table raw_events, batch 41
-2025-04-30 11:31:31,423 INFO Dropped temporary table temp_raw_events_41_4588c167_021c_4e04_8832_25a7e6dd36d2
-2025-04-30 11:31:31,424 INFO Successfully upserted to PostgreSQL table raw_events, batch 41
-2025-04-30 11:32:01,888 INFO Received command c on object id p0
-2025-04-30 11:32:01,984 INFO Processing batch 42 for table raw_events with 300 rows
-2025-04-30 11:32:02,062 INFO Created temporary table temp_raw_events_42_ea7dd56e_37b6_4bcc_a381_4617484f3ef9
-2025-04-30 11:32:02,247 INFO Wrote DataFrame to temporary table temp_raw_events_42_ea7dd56e_37b6_4bcc_a381_4617484f3ef9
-2025-04-30 11:32:02,273 INFO Successfully executed upsert SQL for table raw_events, batch 42
-2025-04-30 11:32:02,290 INFO Dropped temporary table temp_raw_events_42_ea7dd56e_37b6_4bcc_a381_4617484f3ef9
-2025-04-30 11:32:02,291 INFO Successfully upserted to PostgreSQL table raw_events, batch 42
-2025-04-30 11:32:32,817 INFO Received command c on object id p0
-2025-04-30 11:32:32,914 INFO Processing batch 43 for table raw_events with 300 rows
-2025-04-30 11:32:33,013 INFO Created temporary table temp_raw_events_43_afc801aa_8b93_4102_8c1d_c172f9612906
-2025-04-30 11:32:33,201 INFO Wrote DataFrame to temporary table temp_raw_events_43_afc801aa_8b93_4102_8c1d_c172f9612906
-2025-04-30 11:32:33,223 INFO Successfully executed upsert SQL for table raw_events, batch 43
-2025-04-30 11:32:33,240 INFO Dropped temporary table temp_raw_events_43_afc801aa_8b93_4102_8c1d_c172f9612906
-2025-04-30 11:32:33,241 INFO Successfully upserted to PostgreSQL table raw_events, batch 43
-2025-04-30 11:33:10,950 INFO Received command c on object id p0
-2025-04-30 11:33:11,054 INFO Processing batch 44 for table raw_events with 300 rows
-2025-04-30 11:33:11,135 INFO Created temporary table temp_raw_events_44_8c440030_356f_4a17_acc1_ef13e5825e00
-2025-04-30 11:33:11,307 INFO Wrote DataFrame to temporary table temp_raw_events_44_8c440030_356f_4a17_acc1_ef13e5825e00
-2025-04-30 11:33:11,330 INFO Successfully executed upsert SQL for table raw_events, batch 44
-2025-04-30 11:33:11,346 INFO Dropped temporary table temp_raw_events_44_8c440030_356f_4a17_acc1_ef13e5825e00
-2025-04-30 11:33:11,346 INFO Successfully upserted to PostgreSQL table raw_events, batch 44
-2025-04-30 11:33:41,034 INFO Received command c on object id p0
-2025-04-30 11:33:41,137 INFO Processing batch 45 for table raw_events with 300 rows
-2025-04-30 11:33:41,212 INFO Created temporary table temp_raw_events_45_97da2496_b7b1_450f_9f78_d3297112cfc4
-2025-04-30 11:33:41,376 INFO Wrote DataFrame to temporary table temp_raw_events_45_97da2496_b7b1_450f_9f78_d3297112cfc4
-2025-04-30 11:33:41,402 INFO Successfully executed upsert SQL for table raw_events, batch 45
-2025-04-30 11:33:41,420 INFO Dropped temporary table temp_raw_events_45_97da2496_b7b1_450f_9f78_d3297112cfc4
-2025-04-30 11:33:41,421 INFO Successfully upserted to PostgreSQL table raw_events, batch 45
-2025-04-30 11:34:11,087 INFO Received command c on object id p0
-2025-04-30 11:34:11,186 INFO Processing batch 46 for table raw_events with 300 rows
-2025-04-30 11:34:11,268 INFO Created temporary table temp_raw_events_46_06a24f3d_f1f0_43c7_bc94_712a8d070c75
-2025-04-30 11:34:11,428 INFO Wrote DataFrame to temporary table temp_raw_events_46_06a24f3d_f1f0_43c7_bc94_712a8d070c75
-2025-04-30 11:34:11,450 INFO Successfully executed upsert SQL for table raw_events, batch 46
-2025-04-30 11:34:11,466 INFO Dropped temporary table temp_raw_events_46_06a24f3d_f1f0_43c7_bc94_712a8d070c75
-2025-04-30 11:34:11,467 INFO Successfully upserted to PostgreSQL table raw_events, batch 46
-2025-04-30 11:34:41,004 INFO Received command c on object id p0
-2025-04-30 11:34:41,106 INFO Processing batch 47 for table raw_events with 300 rows
-2025-04-30 11:34:41,182 INFO Created temporary table temp_raw_events_47_f5fe8b8d_287c_44db_a130_03cb180dc123
-2025-04-30 11:34:41,357 INFO Wrote DataFrame to temporary table temp_raw_events_47_f5fe8b8d_287c_44db_a130_03cb180dc123
-2025-04-30 11:34:41,380 INFO Successfully executed upsert SQL for table raw_events, batch 47
-2025-04-30 11:34:41,399 INFO Dropped temporary table temp_raw_events_47_f5fe8b8d_287c_44db_a130_03cb180dc123
-2025-04-30 11:34:41,399 INFO Successfully upserted to PostgreSQL table raw_events, batch 47
-2025-04-30 11:35:12,808 INFO Received command c on object id p0
-2025-04-30 11:35:12,923 INFO Processing batch 48 for table raw_events with 300 rows
-2025-04-30 11:35:13,002 INFO Created temporary table temp_raw_events_48_dd5cfb91_2fff_4c36_b32e_02ddf81ba2e5
-2025-04-30 11:35:13,215 INFO Wrote DataFrame to temporary table temp_raw_events_48_dd5cfb91_2fff_4c36_b32e_02ddf81ba2e5
-2025-04-30 11:35:13,242 INFO Successfully executed upsert SQL for table raw_events, batch 48
-2025-04-30 11:35:13,261 INFO Dropped temporary table temp_raw_events_48_dd5cfb91_2fff_4c36_b32e_02ddf81ba2e5
-2025-04-30 11:35:13,261 INFO Successfully upserted to PostgreSQL table raw_events, batch 48
-2025-04-30 11:35:51,119 INFO Received command c on object id p0
-2025-04-30 11:35:51,213 INFO Processing batch 49 for table raw_events with 300 rows
-2025-04-30 11:35:51,305 INFO Created temporary table temp_raw_events_49_df8311bc_51dc_4fa5_99e6_0b03a901a5f0
-2025-04-30 11:35:51,473 INFO Wrote DataFrame to temporary table temp_raw_events_49_df8311bc_51dc_4fa5_99e6_0b03a901a5f0
-2025-04-30 11:35:51,496 INFO Successfully executed upsert SQL for table raw_events, batch 49
-2025-04-30 11:35:51,513 INFO Dropped temporary table temp_raw_events_49_df8311bc_51dc_4fa5_99e6_0b03a901a5f0
-2025-04-30 11:35:51,514 INFO Successfully upserted to PostgreSQL table raw_events, batch 49
-2025-04-30 11:36:20,912 INFO Received command c on object id p0
-2025-04-30 11:36:20,997 INFO Processing batch 50 for table raw_events with 300 rows
-2025-04-30 11:36:21,080 INFO Created temporary table temp_raw_events_50_90bdd1d9_4894_4929_ab0b_cae8c5983b44
-2025-04-30 11:36:21,232 INFO Wrote DataFrame to temporary table temp_raw_events_50_90bdd1d9_4894_4929_ab0b_cae8c5983b44
-2025-04-30 11:36:21,255 INFO Successfully executed upsert SQL for table raw_events, batch 50
-2025-04-30 11:36:21,272 INFO Dropped temporary table temp_raw_events_50_90bdd1d9_4894_4929_ab0b_cae8c5983b44
-2025-04-30 11:36:21,273 INFO Successfully upserted to PostgreSQL table raw_events, batch 50
-2025-04-30 11:36:50,921 INFO Received command c on object id p0
-2025-04-30 11:36:51,025 INFO Processing batch 51 for table raw_events with 300 rows
-2025-04-30 11:36:51,098 INFO Created temporary table temp_raw_events_51_80ae2967_c940_4968_b1e6_405605ef5d1c
-2025-04-30 11:36:51,308 INFO Wrote DataFrame to temporary table temp_raw_events_51_80ae2967_c940_4968_b1e6_405605ef5d1c
-2025-04-30 11:36:51,331 INFO Successfully executed upsert SQL for table raw_events, batch 51
-2025-04-30 11:36:51,347 INFO Dropped temporary table temp_raw_events_51_80ae2967_c940_4968_b1e6_405605ef5d1c
-2025-04-30 11:36:51,347 INFO Successfully upserted to PostgreSQL table raw_events, batch 51
-2025-04-30 11:37:22,085 INFO Received command c on object id p0
-2025-04-30 11:37:22,187 INFO Processing batch 52 for table raw_events with 300 rows
-2025-04-30 11:37:22,271 INFO Created temporary table temp_raw_events_52_6978a6c5_75fc_410c_bbab_cbb8223c838e
-2025-04-30 11:37:22,442 INFO Wrote DataFrame to temporary table temp_raw_events_52_6978a6c5_75fc_410c_bbab_cbb8223c838e
-2025-04-30 11:37:22,471 INFO Successfully executed upsert SQL for table raw_events, batch 52
-2025-04-30 11:37:22,494 INFO Dropped temporary table temp_raw_events_52_6978a6c5_75fc_410c_bbab_cbb8223c838e
-2025-04-30 11:37:22,495 INFO Successfully upserted to PostgreSQL table raw_events, batch 52
-2025-04-30 11:37:53,110 INFO Received command c on object id p0
-2025-04-30 11:37:53,208 INFO Processing batch 53 for table raw_events with 300 rows
-2025-04-30 11:37:53,285 INFO Created temporary table temp_raw_events_53_96ed6fb6_676f_4ea5_bbb2_c3685f867912
-2025-04-30 11:37:53,501 INFO Wrote DataFrame to temporary table temp_raw_events_53_96ed6fb6_676f_4ea5_bbb2_c3685f867912
-2025-04-30 11:37:53,527 INFO Successfully executed upsert SQL for table raw_events, batch 53
-2025-04-30 11:37:53,544 INFO Dropped temporary table temp_raw_events_53_96ed6fb6_676f_4ea5_bbb2_c3685f867912
-2025-04-30 11:37:53,545 INFO Successfully upserted to PostgreSQL table raw_events, batch 53
-2025-04-30 11:38:31,032 INFO Received command c on object id p0
-2025-04-30 11:38:31,140 INFO Processing batch 54 for table raw_events with 300 rows
-2025-04-30 11:38:31,232 INFO Created temporary table temp_raw_events_54_bfb6cfc5_3df0_49d5_9250_975e483c58c1
-2025-04-30 11:38:31,393 INFO Wrote DataFrame to temporary table temp_raw_events_54_bfb6cfc5_3df0_49d5_9250_975e483c58c1
-2025-04-30 11:38:31,415 INFO Successfully executed upsert SQL for table raw_events, batch 54
-2025-04-30 11:38:31,434 INFO Dropped temporary table temp_raw_events_54_bfb6cfc5_3df0_49d5_9250_975e483c58c1
-2025-04-30 11:38:31,435 INFO Successfully upserted to PostgreSQL table raw_events, batch 54
-2025-04-30 11:39:00,979 INFO Received command c on object id p0
-2025-04-30 11:39:01,130 INFO Processing batch 55 for table raw_events with 300 rows
-2025-04-30 11:39:01,215 INFO Created temporary table temp_raw_events_55_20a41db9_c2d7_4ee1_be09_635c882b5bd7
-2025-04-30 11:39:01,379 INFO Wrote DataFrame to temporary table temp_raw_events_55_20a41db9_c2d7_4ee1_be09_635c882b5bd7
-2025-04-30 11:39:01,403 INFO Successfully executed upsert SQL for table raw_events, batch 55
-2025-04-30 11:39:01,420 INFO Dropped temporary table temp_raw_events_55_20a41db9_c2d7_4ee1_be09_635c882b5bd7
-2025-04-30 11:39:01,421 INFO Successfully upserted to PostgreSQL table raw_events, batch 55
-2025-04-30 11:39:31,257 INFO Received command c on object id p0
-2025-04-30 11:39:31,394 INFO Processing batch 56 for table raw_events with 300 rows
-2025-04-30 11:39:31,492 INFO Created temporary table temp_raw_events_56_1eca3a95_ba53_41a2_897a_d0c82ef1bb21
-2025-04-30 11:39:31,673 INFO Wrote DataFrame to temporary table temp_raw_events_56_1eca3a95_ba53_41a2_897a_d0c82ef1bb21
-2025-04-30 11:39:31,702 INFO Successfully executed upsert SQL for table raw_events, batch 56
-2025-04-30 11:39:31,724 INFO Dropped temporary table temp_raw_events_56_1eca3a95_ba53_41a2_897a_d0c82ef1bb21
-2025-04-30 11:39:31,725 INFO Successfully upserted to PostgreSQL table raw_events, batch 56
-2025-04-30 11:40:01,887 INFO Received command c on object id p0
-2025-04-30 11:40:02,000 INFO Processing batch 57 for table raw_events with 300 rows
-2025-04-30 11:40:02,099 INFO Created temporary table temp_raw_events_57_fc9447f5_3f88_4fde_8058_759f9db84177
-2025-04-30 11:40:02,288 INFO Wrote DataFrame to temporary table temp_raw_events_57_fc9447f5_3f88_4fde_8058_759f9db84177
-2025-04-30 11:40:02,316 INFO Successfully executed upsert SQL for table raw_events, batch 57
-2025-04-30 11:40:02,333 INFO Dropped temporary table temp_raw_events_57_fc9447f5_3f88_4fde_8058_759f9db84177
-2025-04-30 11:40:02,334 INFO Successfully upserted to PostgreSQL table raw_events, batch 57
-2025-04-30 11:40:33,015 INFO Received command c on object id p0
-2025-04-30 11:40:33,110 INFO Processing batch 58 for table raw_events with 300 rows
-2025-04-30 11:40:33,205 INFO Created temporary table temp_raw_events_58_7e198801_b975_4228_b5ae_44c36663c457
-2025-04-30 11:40:33,414 INFO Wrote DataFrame to temporary table temp_raw_events_58_7e198801_b975_4228_b5ae_44c36663c457
-2025-04-30 11:40:34,348 INFO Successfully executed upsert SQL for table raw_events, batch 58
-2025-04-30 11:40:34,365 INFO Dropped temporary table temp_raw_events_58_7e198801_b975_4228_b5ae_44c36663c457
-2025-04-30 11:40:34,367 INFO Successfully upserted to PostgreSQL table raw_events, batch 58
-2025-04-30 11:41:11,138 INFO Received command c on object id p0
-2025-04-30 11:41:11,230 INFO Processing batch 59 for table raw_events with 300 rows
-2025-04-30 11:41:11,313 INFO Created temporary table temp_raw_events_59_370f43d6_4809_44c8_b6b8_255f3197c62b
-2025-04-30 11:41:11,487 INFO Wrote DataFrame to temporary table temp_raw_events_59_370f43d6_4809_44c8_b6b8_255f3197c62b
-2025-04-30 11:41:11,510 INFO Successfully executed upsert SQL for table raw_events, batch 59
-2025-04-30 11:41:11,527 INFO Dropped temporary table temp_raw_events_59_370f43d6_4809_44c8_b6b8_255f3197c62b
-2025-04-30 11:41:11,528 INFO Successfully upserted to PostgreSQL table raw_events, batch 59
-2025-04-30 11:41:40,970 INFO Received command c on object id p0
-2025-04-30 11:41:41,066 INFO Processing batch 60 for table raw_events with 300 rows
-2025-04-30 11:41:41,145 INFO Created temporary table temp_raw_events_60_1fc16e4a_2203_4755_8eee_20df8b195f60
-2025-04-30 11:41:41,308 INFO Wrote DataFrame to temporary table temp_raw_events_60_1fc16e4a_2203_4755_8eee_20df8b195f60
-2025-04-30 11:41:41,331 INFO Successfully executed upsert SQL for table raw_events, batch 60
-2025-04-30 11:41:41,347 INFO Dropped temporary table temp_raw_events_60_1fc16e4a_2203_4755_8eee_20df8b195f60
-2025-04-30 11:41:41,348 INFO Successfully upserted to PostgreSQL table raw_events, batch 60
-2025-04-30 11:42:11,112 INFO Received command c on object id p0
-2025-04-30 11:42:11,228 INFO Processing batch 61 for table raw_events with 300 rows
-2025-04-30 11:42:11,329 INFO Created temporary table temp_raw_events_61_6eee5f73_c739_4260_b3fb_9552dab2696a
-2025-04-30 11:42:11,529 INFO Wrote DataFrame to temporary table temp_raw_events_61_6eee5f73_c739_4260_b3fb_9552dab2696a
-2025-04-30 11:42:11,552 INFO Successfully executed upsert SQL for table raw_events, batch 61
-2025-04-30 11:42:11,570 INFO Dropped temporary table temp_raw_events_61_6eee5f73_c739_4260_b3fb_9552dab2696a
-2025-04-30 11:42:11,570 INFO Successfully upserted to PostgreSQL table raw_events, batch 61
-2025-04-30 11:42:41,348 INFO Received command c on object id p0
-2025-04-30 11:42:41,451 INFO Processing batch 62 for table raw_events with 300 rows
-2025-04-30 11:42:41,537 INFO Created temporary table temp_raw_events_62_61bfc0af_5169_40ec_befa_5cbeb91dcb4a
-2025-04-30 11:42:41,751 INFO Wrote DataFrame to temporary table temp_raw_events_62_61bfc0af_5169_40ec_befa_5cbeb91dcb4a
-2025-04-30 11:42:41,775 INFO Successfully executed upsert SQL for table raw_events, batch 62
-2025-04-30 11:42:41,791 INFO Dropped temporary table temp_raw_events_62_61bfc0af_5169_40ec_befa_5cbeb91dcb4a
-2025-04-30 11:42:41,792 INFO Successfully upserted to PostgreSQL table raw_events, batch 62
-2025-04-30 11:43:11,964 INFO Received command c on object id p0
-2025-04-30 11:43:12,065 INFO Processing batch 63 for table raw_events with 300 rows
-2025-04-30 11:43:12,148 INFO Created temporary table temp_raw_events_63_37abd12c_eada_4132_bf75_5224da375d0c
-2025-04-30 11:43:12,366 INFO Wrote DataFrame to temporary table temp_raw_events_63_37abd12c_eada_4132_bf75_5224da375d0c
-2025-04-30 11:43:12,403 INFO Successfully executed upsert SQL for table raw_events, batch 63
-2025-04-30 11:43:12,425 INFO Dropped temporary table temp_raw_events_63_37abd12c_eada_4132_bf75_5224da375d0c
-2025-04-30 11:43:12,426 INFO Successfully upserted to PostgreSQL table raw_events, batch 63
-2025-04-30 11:43:51,077 INFO Received command c on object id p0
-2025-04-30 11:43:51,180 INFO Processing batch 64 for table raw_events with 300 rows
-2025-04-30 11:43:51,264 INFO Created temporary table temp_raw_events_64_0eeda91e_ea16_4e32_82a7_8ff31e8373aa
-2025-04-30 11:43:51,433 INFO Wrote DataFrame to temporary table temp_raw_events_64_0eeda91e_ea16_4e32_82a7_8ff31e8373aa
-2025-04-30 11:43:51,458 INFO Successfully executed upsert SQL for table raw_events, batch 64
-2025-04-30 11:43:51,474 INFO Dropped temporary table temp_raw_events_64_0eeda91e_ea16_4e32_82a7_8ff31e8373aa
-2025-04-30 11:43:51,474 INFO Successfully upserted to PostgreSQL table raw_events, batch 64
-2025-04-30 11:44:20,929 INFO Received command c on object id p0
-2025-04-30 11:44:21,029 INFO Processing batch 65 for table raw_events with 300 rows
-2025-04-30 11:44:21,108 INFO Created temporary table temp_raw_events_65_14e91ee1_917a_4648_a7f4_c194fddb5b31
-2025-04-30 11:44:21,266 INFO Wrote DataFrame to temporary table temp_raw_events_65_14e91ee1_917a_4648_a7f4_c194fddb5b31
-2025-04-30 11:44:21,294 INFO Successfully executed upsert SQL for table raw_events, batch 65
-2025-04-30 11:44:21,313 INFO Dropped temporary table temp_raw_events_65_14e91ee1_917a_4648_a7f4_c194fddb5b31
-2025-04-30 11:44:21,314 INFO Successfully upserted to PostgreSQL table raw_events, batch 65
-2025-04-30 11:44:51,080 INFO Received command c on object id p0
-2025-04-30 11:44:51,188 INFO Processing batch 66 for table raw_events with 300 rows
-2025-04-30 11:44:51,278 INFO Created temporary table temp_raw_events_66_5accabb3_c136_4631_b34f_4880ed7f72eb
-2025-04-30 11:44:51,454 INFO Wrote DataFrame to temporary table temp_raw_events_66_5accabb3_c136_4631_b34f_4880ed7f72eb
-2025-04-30 11:44:51,480 INFO Successfully executed upsert SQL for table raw_events, batch 66
-2025-04-30 11:44:51,497 INFO Dropped temporary table temp_raw_events_66_5accabb3_c136_4631_b34f_4880ed7f72eb
-2025-04-30 11:44:51,498 INFO Successfully upserted to PostgreSQL table raw_events, batch 66
-2025-04-30 11:45:21,088 INFO Received command c on object id p0
-2025-04-30 11:45:21,204 INFO Processing batch 67 for table raw_events with 300 rows
-2025-04-30 11:45:21,372 INFO Created temporary table temp_raw_events_67_47c83d4a_96a6_4c58_a9e8_855c6500b9d8
-2025-04-30 11:45:21,532 INFO Wrote DataFrame to temporary table temp_raw_events_67_47c83d4a_96a6_4c58_a9e8_855c6500b9d8
-2025-04-30 11:45:21,557 INFO Successfully executed upsert SQL for table raw_events, batch 67
-2025-04-30 11:45:21,576 INFO Dropped temporary table temp_raw_events_67_47c83d4a_96a6_4c58_a9e8_855c6500b9d8
-2025-04-30 11:45:21,576 INFO Successfully upserted to PostgreSQL table raw_events, batch 67
-2025-04-30 11:45:51,060 INFO Received command c on object id p0
-2025-04-30 11:45:51,156 INFO Processing batch 68 for table raw_events with 300 rows
-2025-04-30 11:45:51,238 INFO Created temporary table temp_raw_events_68_99c0b3bc_6d49_419b_9d4d_5130094ad294
-2025-04-30 11:45:51,405 INFO Wrote DataFrame to temporary table temp_raw_events_68_99c0b3bc_6d49_419b_9d4d_5130094ad294
-2025-04-30 11:45:51,429 INFO Successfully executed upsert SQL for table raw_events, batch 68
-2025-04-30 11:45:51,446 INFO Dropped temporary table temp_raw_events_68_99c0b3bc_6d49_419b_9d4d_5130094ad294
-2025-04-30 11:45:51,446 INFO Successfully upserted to PostgreSQL table raw_events, batch 68
-2025-04-30 11:46:21,314 INFO Received command c on object id p0
-2025-04-30 11:46:21,415 INFO Processing batch 69 for table raw_events with 300 rows
-2025-04-30 11:46:21,488 INFO Created temporary table temp_raw_events_69_94d64665_b338_496d_a9c0_2e36df5a1268
-2025-04-30 11:46:21,653 INFO Wrote DataFrame to temporary table temp_raw_events_69_94d64665_b338_496d_a9c0_2e36df5a1268
-2025-04-30 11:46:21,677 INFO Successfully executed upsert SQL for table raw_events, batch 69
-2025-04-30 11:46:21,694 INFO Dropped temporary table temp_raw_events_69_94d64665_b338_496d_a9c0_2e36df5a1268
-2025-04-30 11:46:21,695 INFO Successfully upserted to PostgreSQL table raw_events, batch 69
-2025-04-30 11:46:50,945 INFO Received command c on object id p0
-2025-04-30 11:46:51,043 INFO Processing batch 70 for table raw_events with 300 rows
-2025-04-30 11:46:51,116 INFO Created temporary table temp_raw_events_70_fdfdf062_bbb2_4084_9d1a_3b3845f535f7
-2025-04-30 11:46:51,269 INFO Wrote DataFrame to temporary table temp_raw_events_70_fdfdf062_bbb2_4084_9d1a_3b3845f535f7
-2025-04-30 11:46:51,292 INFO Successfully executed upsert SQL for table raw_events, batch 70
-2025-04-30 11:46:51,309 INFO Dropped temporary table temp_raw_events_70_fdfdf062_bbb2_4084_9d1a_3b3845f535f7
-2025-04-30 11:46:51,309 INFO Successfully upserted to PostgreSQL table raw_events, batch 70
-2025-04-30 11:47:21,073 INFO Received command c on object id p0
-2025-04-30 11:47:21,182 INFO Processing batch 71 for table raw_events with 300 rows
-2025-04-30 11:47:21,266 INFO Created temporary table temp_raw_events_71_a444d7b2_5a35_4f2c_bf84_b9da550fc99d
-2025-04-30 11:47:21,453 INFO Wrote DataFrame to temporary table temp_raw_events_71_a444d7b2_5a35_4f2c_bf84_b9da550fc99d
-2025-04-30 11:47:21,479 INFO Successfully executed upsert SQL for table raw_events, batch 71
-2025-04-30 11:47:21,498 INFO Dropped temporary table temp_raw_events_71_a444d7b2_5a35_4f2c_bf84_b9da550fc99d
-2025-04-30 11:47:21,499 INFO Successfully upserted to PostgreSQL table raw_events, batch 71
-2025-04-30 11:47:51,466 INFO Received command c on object id p0
-2025-04-30 11:47:51,571 INFO Processing batch 72 for table raw_events with 300 rows
-2025-04-30 11:47:51,656 INFO Created temporary table temp_raw_events_72_589092ea_3ac7_4b1e_88b6_96a29830dd1f
-2025-04-30 11:47:51,842 INFO Wrote DataFrame to temporary table temp_raw_events_72_589092ea_3ac7_4b1e_88b6_96a29830dd1f
-2025-04-30 11:47:51,866 INFO Successfully executed upsert SQL for table raw_events, batch 72
-2025-04-30 11:47:51,885 INFO Dropped temporary table temp_raw_events_72_589092ea_3ac7_4b1e_88b6_96a29830dd1f
-2025-04-30 11:47:51,885 INFO Successfully upserted to PostgreSQL table raw_events, batch 72
-2025-04-30 11:48:21,111 INFO Received command c on object id p0
-2025-04-30 11:48:21,215 INFO Processing batch 73 for table raw_events with 300 rows
-2025-04-30 11:48:21,297 INFO Created temporary table temp_raw_events_73_5ea8c89f_2ee6_4d54_9173_5bae6fcb9ceb
-2025-04-30 11:48:21,482 INFO Wrote DataFrame to temporary table temp_raw_events_73_5ea8c89f_2ee6_4d54_9173_5bae6fcb9ceb
-2025-04-30 11:48:21,506 INFO Successfully executed upsert SQL for table raw_events, batch 73
-2025-04-30 11:48:21,523 INFO Dropped temporary table temp_raw_events_73_5ea8c89f_2ee6_4d54_9173_5bae6fcb9ceb
-2025-04-30 11:48:21,524 INFO Successfully upserted to PostgreSQL table raw_events, batch 73
-2025-04-30 13:41:38,889 INFO Checking input path: /data/input/
-2025-04-30 13:41:38,895 INFO Found files: []
-2025-04-30 13:41:38,901 INFO Checkpoint directory /data/checkpoints/raw_events is accessible
-2025-04-30 13:41:41,682 INFO Input schema before validation: {"fields":[{"metadata":{},"name":"event_id","nullable":true,"type":"string"},{"metadata":{},"name":"session_id","nullable":true,"type":"string"},{"metadata":{},"name":"user_id","nullable":true,"type":"string"},{"metadata":{},"name":"event_type","nullable":true,"type":"string"},{"metadata":{},"name":"product_id","nullable":true,"type":"string"},{"metadata":{},"name":"product_name","nullable":true,"type":"string"},{"metadata":{},"name":"brand","nullable":true,"type":"string"},{"metadata":{},"name":"category","nullable":true,"type":"string"},{"metadata":{},"name":"price","nullable":true,"type":"double"},{"metadata":{},"name":"quantity","nullable":true,"type":"integer"},{"metadata":{},"name":"timestamp","nullable":true,"type":"timestamp"}],"type":"struct"}
-2025-04-30 13:41:42,269 INFO Transformed schema: {"fields":[{"metadata":{},"name":"event_id","nullable":true,"type":"string"},{"metadata":{},"name":"session_id","nullable":true,"type":"string"},{"metadata":{},"name":"user_id","nullable":true,"type":"string"},{"metadata":{},"name":"event_type","nullable":true,"type":"string"},{"metadata":{},"name":"product_id","nullable":true,"type":"string"},{"metadata":{},"name":"product_name","nullable":true,"type":"string"},{"metadata":{},"name":"brand","nullable":true,"type":"string"},{"metadata":{},"name":"category","nullable":true,"type":"string"},{"metadata":{},"name":"price","nullable":true,"type":"double"},{"metadata":{},"name":"quantity","nullable":true,"type":"integer"},{"metadata":{},"name":"total_price","nullable":true,"type":"double"},{"metadata":{},"name":"event_date","nullable":true,"type":"date"},{"metadata":{},"name":"timestamp","nullable":true,"type":"timestamp"}],"type":"struct"}
-2025-04-30 13:43:49,886 INFO Successfully sampled transformed_df
-2025-04-30 13:43:54,201 INFO PostgreSQL connection test successful
-2025-04-30 13:43:54,202 INFO Starting raw events query
-2025-04-30 13:43:54,219 INFO Callback Server Starting
-2025-04-30 13:43:54,220 INFO Socket listening on ('127.0.0.1', 35859)
-2025-04-30 13:43:55,044 INFO Raw events query started with checkpoint /data/checkpoints/raw_events
-2025-04-30 13:43:55,045 INFO Started streaming query: raw_events
-2025-04-30 14:03:11,796 INFO Python Server ready to receive messages
-2025-04-30 14:03:11,797 INFO Received command c on object id p0
-2025-04-30 14:03:12,856 INFO Processing batch 0 for table raw_events with 300 rows
-2025-04-30 14:03:13,113 INFO Created temporary table temp_raw_events_0_caf24f4b_7b0f_4b89_a0dc_349c3f4f908c
-2025-04-30 14:03:15,360 INFO Wrote DataFrame to temporary table temp_raw_events_0_caf24f4b_7b0f_4b89_a0dc_349c3f4f908c
-2025-04-30 14:03:15,385 INFO Successfully executed upsert SQL for table raw_events, batch 0
-2025-04-30 14:03:15,404 INFO Dropped temporary table temp_raw_events_0_caf24f4b_7b0f_4b89_a0dc_349c3f4f908c
-2025-04-30 14:03:15,405 INFO Successfully upserted to PostgreSQL table raw_events, batch 0
-2025-04-30 14:03:41,234 INFO Received command c on object id p0
-2025-04-30 14:03:41,457 INFO Processing batch 1 for table raw_events with 300 rows
-2025-04-30 14:03:41,601 INFO Created temporary table temp_raw_events_1_fb559ed5_5b2a_4d87_bdf7_ee28cc61f45d
-2025-04-30 14:03:41,900 INFO Wrote DataFrame to temporary table temp_raw_events_1_fb559ed5_5b2a_4d87_bdf7_ee28cc61f45d
-2025-04-30 14:03:41,923 INFO Successfully executed upsert SQL for table raw_events, batch 1
-2025-04-30 14:03:41,941 INFO Dropped temporary table temp_raw_events_1_fb559ed5_5b2a_4d87_bdf7_ee28cc61f45d
-2025-04-30 14:03:41,941 INFO Successfully upserted to PostgreSQL table raw_events, batch 1
-2025-04-30 14:04:11,107 INFO Received command c on object id p0
-2025-04-30 14:04:11,274 INFO Processing batch 2 for table raw_events with 300 rows
-2025-04-30 14:04:11,381 INFO Created temporary table temp_raw_events_2_85b7c7d7_29cb_4334_a479_8ac68c174577
-2025-04-30 14:04:11,633 INFO Wrote DataFrame to temporary table temp_raw_events_2_85b7c7d7_29cb_4334_a479_8ac68c174577
-2025-04-30 14:04:11,655 INFO Successfully executed upsert SQL for table raw_events, batch 2
-2025-04-30 14:04:11,672 INFO Dropped temporary table temp_raw_events_2_85b7c7d7_29cb_4334_a479_8ac68c174577
-2025-04-30 14:04:11,673 INFO Successfully upserted to PostgreSQL table raw_events, batch 2
-2025-04-30 14:04:41,118 INFO Received command c on object id p0
-2025-04-30 14:04:41,261 INFO Processing batch 3 for table raw_events with 300 rows
-2025-04-30 14:04:41,522 INFO Created temporary table temp_raw_events_3_a0c38e99_fa94_4584_991c_2ce33024dfe7
-2025-04-30 14:04:41,764 INFO Wrote DataFrame to temporary table temp_raw_events_3_a0c38e99_fa94_4584_991c_2ce33024dfe7
-2025-04-30 14:04:41,786 INFO Successfully executed upsert SQL for table raw_events, batch 3
-2025-04-30 14:04:41,803 INFO Dropped temporary table temp_raw_events_3_a0c38e99_fa94_4584_991c_2ce33024dfe7
-2025-04-30 14:04:41,804 INFO Successfully upserted to PostgreSQL table raw_events, batch 3
-2025-04-30 14:05:11,067 INFO Received command c on object id p0
-2025-04-30 14:05:11,206 INFO Processing batch 4 for table raw_events with 300 rows
-2025-04-30 14:05:11,307 INFO Created temporary table temp_raw_events_4_28b854e4_382c_4f01_872b_b7253edced99
-2025-04-30 14:05:11,559 INFO Wrote DataFrame to temporary table temp_raw_events_4_28b854e4_382c_4f01_872b_b7253edced99
-2025-04-30 14:05:11,580 INFO Successfully executed upsert SQL for table raw_events, batch 4
-2025-04-30 14:05:11,597 INFO Dropped temporary table temp_raw_events_4_28b854e4_382c_4f01_872b_b7253edced99
-2025-04-30 14:05:11,597 INFO Successfully upserted to PostgreSQL table raw_events, batch 4
-2025-04-30 14:05:41,100 INFO Received command c on object id p0
-2025-04-30 14:05:41,258 INFO Processing batch 5 for table raw_events with 300 rows
-2025-04-30 14:05:41,362 INFO Created temporary table temp_raw_events_5_907f5ff0_f987_4639_81d6_ccae77c8dbe2
-2025-04-30 14:05:41,619 INFO Wrote DataFrame to temporary table temp_raw_events_5_907f5ff0_f987_4639_81d6_ccae77c8dbe2
-2025-04-30 14:05:41,654 INFO Successfully executed upsert SQL for table raw_events, batch 5
-2025-04-30 14:05:41,676 INFO Dropped temporary table temp_raw_events_5_907f5ff0_f987_4639_81d6_ccae77c8dbe2
-2025-04-30 14:05:41,678 INFO Successfully upserted to PostgreSQL table raw_events, batch 5
-2025-04-30 14:06:11,241 INFO Received command c on object id p0
-2025-04-30 14:06:11,374 INFO Processing batch 6 for table raw_events with 300 rows
-2025-04-30 14:06:11,472 INFO Created temporary table temp_raw_events_6_13c985df_813b_4d28_bc45_90f7c205fefe
-2025-04-30 14:06:11,665 INFO Wrote DataFrame to temporary table temp_raw_events_6_13c985df_813b_4d28_bc45_90f7c205fefe
-2025-04-30 14:06:11,686 INFO Successfully executed upsert SQL for table raw_events, batch 6
-2025-04-30 14:06:11,702 INFO Dropped temporary table temp_raw_events_6_13c985df_813b_4d28_bc45_90f7c205fefe
-2025-04-30 14:06:11,703 INFO Successfully upserted to PostgreSQL table raw_events, batch 6
-2025-04-30 14:06:51,095 INFO Received command c on object id p0
-2025-04-30 14:06:51,226 INFO Processing batch 7 for table raw_events with 300 rows
-2025-04-30 14:06:51,331 INFO Created temporary table temp_raw_events_7_b9cd3c02_e486_4fcb_80d5_be63f0239cd7
-2025-04-30 14:06:51,535 INFO Wrote DataFrame to temporary table temp_raw_events_7_b9cd3c02_e486_4fcb_80d5_be63f0239cd7
-2025-04-30 14:06:51,561 INFO Successfully executed upsert SQL for table raw_events, batch 7
-2025-04-30 14:06:51,579 INFO Dropped temporary table temp_raw_events_7_b9cd3c02_e486_4fcb_80d5_be63f0239cd7
-2025-04-30 14:06:51,580 INFO Successfully upserted to PostgreSQL table raw_events, batch 7
-2025-04-30 14:07:21,022 INFO Received command c on object id p0
-2025-04-30 14:07:21,146 INFO Processing batch 8 for table raw_events with 300 rows
-2025-04-30 14:07:21,242 INFO Created temporary table temp_raw_events_8_3199f14b_6974_4848_ace8_b8fe5b82948e
-2025-04-30 14:07:21,439 INFO Wrote DataFrame to temporary table temp_raw_events_8_3199f14b_6974_4848_ace8_b8fe5b82948e
-2025-04-30 14:07:21,462 INFO Successfully executed upsert SQL for table raw_events, batch 8
-2025-04-30 14:07:21,479 INFO Dropped temporary table temp_raw_events_8_3199f14b_6974_4848_ace8_b8fe5b82948e
-2025-04-30 14:07:21,480 INFO Successfully upserted to PostgreSQL table raw_events, batch 8
-2025-04-30 14:07:51,164 INFO Received command c on object id p0
-2025-04-30 14:07:51,283 INFO Processing batch 9 for table raw_events with 300 rows
-2025-04-30 14:07:51,368 INFO Created temporary table temp_raw_events_9_ca2d18d2_2e3e_43c3_8199_89ccf0bb2532
-2025-04-30 14:07:51,576 INFO Wrote DataFrame to temporary table temp_raw_events_9_ca2d18d2_2e3e_43c3_8199_89ccf0bb2532
-2025-04-30 14:07:51,600 INFO Successfully executed upsert SQL for table raw_events, batch 9
-2025-04-30 14:07:51,618 INFO Dropped temporary table temp_raw_events_9_ca2d18d2_2e3e_43c3_8199_89ccf0bb2532
-2025-04-30 14:07:51,619 INFO Successfully upserted to PostgreSQL table raw_events, batch 9
-2025-04-30 14:08:20,996 INFO Received command c on object id p0
-2025-04-30 14:08:21,107 INFO Processing batch 10 for table raw_events with 300 rows
-2025-04-30 14:08:21,195 INFO Created temporary table temp_raw_events_10_49b3652e_fd0e_4731_8c67_a50f33648047
-2025-04-30 14:08:21,398 INFO Wrote DataFrame to temporary table temp_raw_events_10_49b3652e_fd0e_4731_8c67_a50f33648047
-2025-04-30 14:08:21,422 INFO Successfully executed upsert SQL for table raw_events, batch 10
-2025-04-30 14:08:21,439 INFO Dropped temporary table temp_raw_events_10_49b3652e_fd0e_4731_8c67_a50f33648047
-2025-04-30 14:08:21,440 INFO Successfully upserted to PostgreSQL table raw_events, batch 10
-2025-04-30 14:08:51,073 INFO Received command c on object id p0
-2025-04-30 14:08:51,171 INFO Processing batch 11 for table raw_events with 300 rows
-2025-04-30 14:08:51,257 INFO Created temporary table temp_raw_events_11_eb3551f0_9331_4ecf_80da_d94cb67d3c73
-2025-04-30 14:08:51,477 INFO Wrote DataFrame to temporary table temp_raw_events_11_eb3551f0_9331_4ecf_80da_d94cb67d3c73
-2025-04-30 14:08:51,499 INFO Successfully executed upsert SQL for table raw_events, batch 11
-2025-04-30 14:08:51,514 INFO Dropped temporary table temp_raw_events_11_eb3551f0_9331_4ecf_80da_d94cb67d3c73
-2025-04-30 14:08:51,515 INFO Successfully upserted to PostgreSQL table raw_events, batch 11
-2025-04-30 14:09:21,206 INFO Received command c on object id p0
-2025-04-30 14:09:21,312 INFO Processing batch 12 for table raw_events with 300 rows
-2025-04-30 14:09:21,409 INFO Created temporary table temp_raw_events_12_b80f2d22_de27_415e_8f52_14e31bfda36b
-2025-04-30 14:09:21,604 INFO Wrote DataFrame to temporary table temp_raw_events_12_b80f2d22_de27_415e_8f52_14e31bfda36b
-2025-04-30 14:09:21,626 INFO Successfully executed upsert SQL for table raw_events, batch 12
-2025-04-30 14:09:21,643 INFO Dropped temporary table temp_raw_events_12_b80f2d22_de27_415e_8f52_14e31bfda36b
-2025-04-30 14:09:21,644 INFO Successfully upserted to PostgreSQL table raw_events, batch 12
-2025-04-30 14:09:51,098 INFO Received command c on object id p0
-2025-04-30 14:09:51,201 INFO Processing batch 13 for table raw_events with 300 rows
-2025-04-30 14:09:51,357 INFO Created temporary table temp_raw_events_13_cc14c6a2_87d4_4859_b28e_a7c6ac24eb7e
-2025-04-30 14:09:51,549 INFO Wrote DataFrame to temporary table temp_raw_events_13_cc14c6a2_87d4_4859_b28e_a7c6ac24eb7e
-2025-04-30 14:09:51,575 INFO Successfully executed upsert SQL for table raw_events, batch 13
-2025-04-30 14:09:51,591 INFO Dropped temporary table temp_raw_events_13_cc14c6a2_87d4_4859_b28e_a7c6ac24eb7e
-2025-04-30 14:09:51,592 INFO Successfully upserted to PostgreSQL table raw_events, batch 13
-2025-04-30 14:10:00,967 INFO Received command c on object id p0
-2025-04-30 14:10:01,075 INFO Processing batch 14 for table raw_events with 100 rows
-2025-04-30 14:10:01,171 INFO Created temporary table temp_raw_events_14_f3159d8f_7e9c_4972_98e6_b7523a5b8f2b
-2025-04-30 14:10:01,363 INFO Wrote DataFrame to temporary table temp_raw_events_14_f3159d8f_7e9c_4972_98e6_b7523a5b8f2b
-2025-04-30 14:10:01,385 INFO Successfully executed upsert SQL for table raw_events, batch 14
-2025-04-30 14:10:01,403 INFO Dropped temporary table temp_raw_events_14_f3159d8f_7e9c_4972_98e6_b7523a5b8f2b
-2025-04-30 14:10:01,404 INFO Successfully upserted to PostgreSQL table raw_events, batch 14
-2025-04-30 14:11:11,035 INFO Received command c on object id p0
-2025-04-30 14:11:11,133 INFO Processing batch 15 for table raw_events with 100 rows
-2025-04-30 14:11:11,227 INFO Created temporary table temp_raw_events_15_057eee6b_fe61_4597_8de8_e9afc7491e2d
-2025-04-30 14:11:11,417 INFO Wrote DataFrame to temporary table temp_raw_events_15_057eee6b_fe61_4597_8de8_e9afc7491e2d
-2025-04-30 14:11:11,443 INFO Successfully executed upsert SQL for table raw_events, batch 15
-2025-04-30 14:11:11,462 INFO Dropped temporary table temp_raw_events_15_057eee6b_fe61_4597_8de8_e9afc7491e2d
-2025-04-30 14:11:11,463 INFO Successfully upserted to PostgreSQL table raw_events, batch 15
-2025-04-30 14:12:11,206 INFO Received command c on object id p0
-2025-04-30 14:12:11,344 INFO Processing batch 16 for table raw_events with 100 rows
-2025-04-30 14:12:11,429 INFO Created temporary table temp_raw_events_16_d649a659_2366_4c52_aa03_3b67a3961525
-2025-04-30 14:12:11,600 INFO Wrote DataFrame to temporary table temp_raw_events_16_d649a659_2366_4c52_aa03_3b67a3961525
-2025-04-30 14:12:11,635 INFO Successfully executed upsert SQL for table raw_events, batch 16
-2025-04-30 14:12:11,667 INFO Dropped temporary table temp_raw_events_16_d649a659_2366_4c52_aa03_3b67a3961525
-2025-04-30 14:12:11,668 INFO Successfully upserted to PostgreSQL table raw_events, batch 16
-2025-04-30 14:13:12,209 INFO Received command c on object id p0
-2025-04-30 14:13:12,356 INFO Processing batch 17 for table raw_events with 100 rows
-2025-04-30 14:13:12,479 INFO Created temporary table temp_raw_events_17_b1ab1f29_979f_4772_a7ba_f7c015918ee5
-2025-04-30 14:13:12,687 INFO Wrote DataFrame to temporary table temp_raw_events_17_b1ab1f29_979f_4772_a7ba_f7c015918ee5
-2025-04-30 14:13:12,711 INFO Successfully executed upsert SQL for table raw_events, batch 17
-2025-04-30 14:13:12,731 INFO Dropped temporary table temp_raw_events_17_b1ab1f29_979f_4772_a7ba_f7c015918ee5
-2025-04-30 14:13:12,732 INFO Successfully upserted to PostgreSQL table raw_events, batch 17
-2025-04-30 14:14:11,102 INFO Received command c on object id p0
-2025-04-30 14:14:11,210 INFO Processing batch 18 for table raw_events with 100 rows
-2025-04-30 14:14:11,309 INFO Created temporary table temp_raw_events_18_7b79896c_bc60_4ec5_83cd_f263e3b84686
-2025-04-30 14:14:11,478 INFO Wrote DataFrame to temporary table temp_raw_events_18_7b79896c_bc60_4ec5_83cd_f263e3b84686
-2025-04-30 14:14:11,497 INFO Successfully executed upsert SQL for table raw_events, batch 18
-2025-04-30 14:14:11,514 INFO Dropped temporary table temp_raw_events_18_7b79896c_bc60_4ec5_83cd_f263e3b84686
-2025-04-30 14:14:11,515 INFO Successfully upserted to PostgreSQL table raw_events, batch 18
-2025-04-30 14:15:21,183 INFO Received command c on object id p0
-2025-04-30 14:15:21,307 INFO Processing batch 19 for table raw_events with 100 rows
-2025-04-30 14:15:21,410 INFO Created temporary table temp_raw_events_19_b377cc7a_56c6_406e_b934_638ffd73ea19
-2025-04-30 14:15:21,587 INFO Wrote DataFrame to temporary table temp_raw_events_19_b377cc7a_56c6_406e_b934_638ffd73ea19
-2025-04-30 14:15:21,607 INFO Successfully executed upsert SQL for table raw_events, batch 19
-2025-04-30 14:15:21,628 INFO Dropped temporary table temp_raw_events_19_b377cc7a_56c6_406e_b934_638ffd73ea19
-2025-04-30 14:15:21,628 INFO Successfully upserted to PostgreSQL table raw_events, batch 19
-2025-04-30 14:16:20,961 INFO Received command c on object id p0
-2025-04-30 14:16:21,058 INFO Processing batch 20 for table raw_events with 100 rows
-2025-04-30 14:16:21,151 INFO Created temporary table temp_raw_events_20_ef3808ed_4772_4106_8925_0c2e50f92088
-2025-04-30 14:16:21,318 INFO Wrote DataFrame to temporary table temp_raw_events_20_ef3808ed_4772_4106_8925_0c2e50f92088
-2025-04-30 14:16:21,338 INFO Successfully executed upsert SQL for table raw_events, batch 20
-2025-04-30 14:16:21,355 INFO Dropped temporary table temp_raw_events_20_ef3808ed_4772_4106_8925_0c2e50f92088
-2025-04-30 14:16:21,356 INFO Successfully upserted to PostgreSQL table raw_events, batch 20
-2025-04-30 14:17:21,910 INFO Received command c on object id p0
-2025-04-30 14:17:22,051 INFO Processing batch 21 for table raw_events with 100 rows
-2025-04-30 14:17:22,205 INFO Created temporary table temp_raw_events_21_607f676c_76f8_4b4b_8433_3f11ff806ff2
-2025-04-30 14:17:22,359 INFO Wrote DataFrame to temporary table temp_raw_events_21_607f676c_76f8_4b4b_8433_3f11ff806ff2
-2025-04-30 14:17:22,378 INFO Successfully executed upsert SQL for table raw_events, batch 21
-2025-04-30 14:17:22,395 INFO Dropped temporary table temp_raw_events_21_607f676c_76f8_4b4b_8433_3f11ff806ff2
-2025-04-30 14:17:22,396 INFO Successfully upserted to PostgreSQL table raw_events, batch 21
-2025-04-30 14:18:21,053 INFO Received command c on object id p0
-2025-04-30 14:18:21,689 INFO Processing batch 22 for table raw_events with 100 rows
-2025-04-30 14:18:21,772 INFO Created temporary table temp_raw_events_22_d4a5b943_a18a_4d32_81b5_0c15fe05b599
-2025-04-30 14:18:22,690 INFO Wrote DataFrame to temporary table temp_raw_events_22_d4a5b943_a18a_4d32_81b5_0c15fe05b599
-2025-04-30 14:18:22,711 INFO Successfully executed upsert SQL for table raw_events, batch 22
-2025-04-30 14:18:22,729 INFO Dropped temporary table temp_raw_events_22_d4a5b943_a18a_4d32_81b5_0c15fe05b599
-2025-04-30 14:18:22,729 INFO Successfully upserted to PostgreSQL table raw_events, batch 22
-2025-04-30 14:19:31,042 INFO Received command c on object id p0
-2025-04-30 14:19:31,128 INFO Processing batch 23 for table raw_events with 100 rows
-2025-04-30 14:19:31,205 INFO Created temporary table temp_raw_events_23_43fede2b_b8eb_4e53_82bb_52544a3042d3
-2025-04-30 14:19:31,390 INFO Wrote DataFrame to temporary table temp_raw_events_23_43fede2b_b8eb_4e53_82bb_52544a3042d3
-2025-04-30 14:19:31,408 INFO Successfully executed upsert SQL for table raw_events, batch 23
-2025-04-30 14:19:31,424 INFO Dropped temporary table temp_raw_events_23_43fede2b_b8eb_4e53_82bb_52544a3042d3
-2025-04-30 14:19:31,425 INFO Successfully upserted to PostgreSQL table raw_events, batch 23
-2025-04-30 14:20:31,058 INFO Received command c on object id p0
-2025-04-30 14:20:31,145 INFO Processing batch 24 for table raw_events with 100 rows
-2025-04-30 14:20:31,243 INFO Created temporary table temp_raw_events_24_78c735eb_b22e_4f81_a742_ac9340d1141b
-2025-04-30 14:20:31,417 INFO Wrote DataFrame to temporary table temp_raw_events_24_78c735eb_b22e_4f81_a742_ac9340d1141b
-2025-04-30 14:20:31,437 INFO Successfully executed upsert SQL for table raw_events, batch 24
-2025-04-30 14:20:31,459 INFO Dropped temporary table temp_raw_events_24_78c735eb_b22e_4f81_a742_ac9340d1141b
-2025-04-30 14:20:31,459 INFO Successfully upserted to PostgreSQL table raw_events, batch 24
-2025-04-30 14:21:31,292 INFO Received command c on object id p0
-2025-04-30 14:21:31,390 INFO Processing batch 25 for table raw_events with 100 rows
-2025-04-30 14:21:31,483 INFO Created temporary table temp_raw_events_25_f93a4ca7_ad17_4319_acff_49c529e60025
-2025-04-30 14:21:31,659 INFO Wrote DataFrame to temporary table temp_raw_events_25_f93a4ca7_ad17_4319_acff_49c529e60025
-2025-04-30 14:21:31,727 INFO Successfully executed upsert SQL for table raw_events, batch 25
-2025-04-30 14:21:31,744 INFO Dropped temporary table temp_raw_events_25_f93a4ca7_ad17_4319_acff_49c529e60025
-2025-04-30 14:21:31,745 INFO Successfully upserted to PostgreSQL table raw_events, batch 25
-2025-04-30 14:22:31,540 INFO Received command c on object id p0
-2025-04-30 14:22:32,416 INFO Processing batch 26 for table raw_events with 100 rows
-2025-04-30 14:22:32,510 INFO Created temporary table temp_raw_events_26_ac0f190a_4b00_4471_b8c4_0231ef172177
-2025-04-30 14:22:32,667 INFO Wrote DataFrame to temporary table temp_raw_events_26_ac0f190a_4b00_4471_b8c4_0231ef172177
-2025-04-30 14:22:32,686 INFO Successfully executed upsert SQL for table raw_events, batch 26
-2025-04-30 14:22:32,703 INFO Dropped temporary table temp_raw_events_26_ac0f190a_4b00_4471_b8c4_0231ef172177
-2025-04-30 14:22:32,704 INFO Successfully upserted to PostgreSQL table raw_events, batch 26
-2025-04-30 14:23:41,059 INFO Received command c on object id p0
-2025-04-30 14:23:41,159 INFO Processing batch 27 for table raw_events with 100 rows
-2025-04-30 14:23:41,261 INFO Created temporary table temp_raw_events_27_a05a9290_a862_4450_8dd7_529c31404645
-2025-04-30 14:23:41,429 INFO Wrote DataFrame to temporary table temp_raw_events_27_a05a9290_a862_4450_8dd7_529c31404645
-2025-04-30 14:23:41,450 INFO Successfully executed upsert SQL for table raw_events, batch 27
-2025-04-30 14:23:41,467 INFO Dropped temporary table temp_raw_events_27_a05a9290_a862_4450_8dd7_529c31404645
-2025-04-30 14:23:41,467 INFO Successfully upserted to PostgreSQL table raw_events, batch 27
-2025-04-30 14:24:41,129 INFO Received command c on object id p0
-2025-04-30 14:24:41,252 INFO Processing batch 28 for table raw_events with 100 rows
-2025-04-30 14:24:41,327 INFO Created temporary table temp_raw_events_28_654aac6a_fd34_48f4_b614_24ae889e8fb9
-2025-04-30 14:24:41,494 INFO Wrote DataFrame to temporary table temp_raw_events_28_654aac6a_fd34_48f4_b614_24ae889e8fb9
-2025-04-30 14:24:41,516 INFO Successfully executed upsert SQL for table raw_events, batch 28
-2025-04-30 14:24:41,534 INFO Dropped temporary table temp_raw_events_28_654aac6a_fd34_48f4_b614_24ae889e8fb9
-2025-04-30 14:24:41,534 INFO Successfully upserted to PostgreSQL table raw_events, batch 28
-2025-04-30 14:25:41,343 INFO Received command c on object id p0
-2025-04-30 14:25:41,429 INFO Processing batch 29 for table raw_events with 100 rows
-2025-04-30 14:25:41,518 INFO Created temporary table temp_raw_events_29_dabdbc42_86d2_43e3_920d_b1fbc309b5e6
-2025-04-30 14:25:41,702 INFO Wrote DataFrame to temporary table temp_raw_events_29_dabdbc42_86d2_43e3_920d_b1fbc309b5e6
-2025-04-30 14:25:41,726 INFO Successfully executed upsert SQL for table raw_events, batch 29
-2025-04-30 14:25:41,745 INFO Dropped temporary table temp_raw_events_29_dabdbc42_86d2_43e3_920d_b1fbc309b5e6
-2025-04-30 14:25:41,746 INFO Successfully upserted to PostgreSQL table raw_events, batch 29
-2025-04-30 14:26:41,480 INFO Received command c on object id p0
-2025-04-30 14:26:42,368 INFO Processing batch 30 for table raw_events with 100 rows
-2025-04-30 14:26:42,605 INFO Created temporary table temp_raw_events_30_7059bd76_dffe_4eb5_ba0a_eb0efbab48d4
-2025-04-30 14:26:42,799 INFO Wrote DataFrame to temporary table temp_raw_events_30_7059bd76_dffe_4eb5_ba0a_eb0efbab48d4
-2025-04-30 14:26:42,819 INFO Successfully executed upsert SQL for table raw_events, batch 30
-2025-04-30 14:26:42,837 INFO Dropped temporary table temp_raw_events_30_7059bd76_dffe_4eb5_ba0a_eb0efbab48d4
-2025-04-30 14:26:42,837 INFO Successfully upserted to PostgreSQL table raw_events, batch 30
-2025-04-30 14:27:51,012 INFO Received command c on object id p0
-2025-04-30 14:27:51,112 INFO Processing batch 31 for table raw_events with 100 rows
-2025-04-30 14:27:51,201 INFO Created temporary table temp_raw_events_31_456bde19_f94b_47e1_9a17_30813845a3bc
-2025-04-30 14:27:51,373 INFO Wrote DataFrame to temporary table temp_raw_events_31_456bde19_f94b_47e1_9a17_30813845a3bc
-2025-04-30 14:27:51,395 INFO Successfully executed upsert SQL for table raw_events, batch 31
-2025-04-30 14:27:51,413 INFO Dropped temporary table temp_raw_events_31_456bde19_f94b_47e1_9a17_30813845a3bc
-2025-04-30 14:27:51,414 INFO Successfully upserted to PostgreSQL table raw_events, batch 31
-2025-04-30 14:28:51,000 INFO Received command c on object id p0
-2025-04-30 14:28:51,101 INFO Processing batch 32 for table raw_events with 100 rows
-2025-04-30 14:28:51,183 INFO Created temporary table temp_raw_events_32_3bf30730_6636_4b58_8e3a_0e1b8b6ec7ec
-2025-04-30 14:28:51,376 INFO Wrote DataFrame to temporary table temp_raw_events_32_3bf30730_6636_4b58_8e3a_0e1b8b6ec7ec
-2025-04-30 14:28:51,397 INFO Successfully executed upsert SQL for table raw_events, batch 32
-2025-04-30 14:28:51,417 INFO Dropped temporary table temp_raw_events_32_3bf30730_6636_4b58_8e3a_0e1b8b6ec7ec
-2025-04-30 14:28:51,417 INFO Successfully upserted to PostgreSQL table raw_events, batch 32
-2025-04-30 14:29:51,025 INFO Received command c on object id p0
-2025-04-30 14:29:51,119 INFO Processing batch 33 for table raw_events with 100 rows
-2025-04-30 14:29:51,213 INFO Created temporary table temp_raw_events_33_582f41bf_0eb3_4e61_9d6b_c0f0a4161cab
-2025-04-30 14:29:51,387 INFO Wrote DataFrame to temporary table temp_raw_events_33_582f41bf_0eb3_4e61_9d6b_c0f0a4161cab
-2025-04-30 14:29:51,409 INFO Successfully executed upsert SQL for table raw_events, batch 33
-2025-04-30 14:29:51,426 INFO Dropped temporary table temp_raw_events_33_582f41bf_0eb3_4e61_9d6b_c0f0a4161cab
-2025-04-30 14:29:51,427 INFO Successfully upserted to PostgreSQL table raw_events, batch 33
-2025-04-30 14:30:52,156 INFO Received command c on object id p0
-2025-04-30 14:30:52,251 INFO Processing batch 34 for table raw_events with 100 rows
-2025-04-30 14:30:52,331 INFO Created temporary table temp_raw_events_34_747edfe5_a89f_4d45_bd0a_2acb7cc74a5e
-2025-04-30 14:30:52,495 INFO Wrote DataFrame to temporary table temp_raw_events_34_747edfe5_a89f_4d45_bd0a_2acb7cc74a5e
-2025-04-30 14:30:52,516 INFO Successfully executed upsert SQL for table raw_events, batch 34
-2025-04-30 14:30:52,535 INFO Dropped temporary table temp_raw_events_34_747edfe5_a89f_4d45_bd0a_2acb7cc74a5e
-2025-04-30 14:30:52,536 INFO Successfully upserted to PostgreSQL table raw_events, batch 34
+2025-05-01 07:11:19,055 INFO Checking input path: /data/input/
+2025-05-01 07:11:19,061 INFO Found files: ['/data/input/events_2025-05-01T070826.csv', '/data/input/events_2025-05-01T071105.csv', '/data/input/events_2025-05-01T071115.csv']
+2025-05-01 07:11:24,596 INFO File /data/input/events_2025-05-01T070826.csv: 15 rows
+2025-05-01 07:11:24,971 INFO File /data/input/events_2025-05-01T071105.csv: 15 rows
+2025-05-01 07:11:25,286 INFO File /data/input/events_2025-05-01T071115.csv: 15 rows
+2025-05-01 07:11:25,293 INFO Checkpoint directory /data/checkpoints/raw_events is accessible
+2025-05-01 07:11:25,328 INFO Input schema before validation: {"fields":[{"metadata":{},"name":"event_id","nullable":true,"type":"string"},{"metadata":{},"name":"session_id","nullable":true,"type":"string"},{"metadata":{},"name":"user_id","nullable":true,"type":"string"},{"metadata":{},"name":"event_type","nullable":true,"type":"string"},{"metadata":{},"name":"product_id","nullable":true,"type":"string"},{"metadata":{},"name":"product_name","nullable":true,"type":"string"},{"metadata":{},"name":"brand","nullable":true,"type":"string"},{"metadata":{},"name":"category","nullable":true,"type":"string"},{"metadata":{},"name":"price","nullable":true,"type":"double"},{"metadata":{},"name":"quantity","nullable":true,"type":"integer"},{"metadata":{},"name":"timestamp","nullable":true,"type":"timestamp"}],"type":"struct"}
+2025-05-01 07:11:25,738 INFO Transformed schema: {"fields":[{"metadata":{},"name":"event_id","nullable":true,"type":"string"},{"metadata":{},"name":"session_id","nullable":true,"type":"string"},{"metadata":{},"name":"user_id","nullable":true,"type":"string"},{"metadata":{},"name":"event_type","nullable":true,"type":"string"},{"metadata":{},"name":"product_id","nullable":true,"type":"string"},{"metadata":{},"name":"product_name","nullable":true,"type":"string"},{"metadata":{},"name":"brand","nullable":true,"type":"string"},{"metadata":{},"name":"category","nullable":true,"type":"string"},{"metadata":{},"name":"price","nullable":true,"type":"double"},{"metadata":{},"name":"quantity","nullable":true,"type":"integer"},{"metadata":{},"name":"total_price","nullable":true,"type":"double"},{"metadata":{},"name":"event_date","nullable":true,"type":"date"},{"metadata":{},"name":"timestamp","nullable":true,"type":"timestamp"}],"type":"struct"}
+2025-05-01 07:13:27,461 INFO Successfully sampled transformed_df
+2025-05-01 07:13:30,844 INFO PostgreSQL connection test successful
+2025-05-01 07:13:30,844 INFO Starting raw events query
+2025-05-01 07:13:30,861 INFO Callback Server Starting
+2025-05-01 07:13:30,861 INFO Socket listening on ('127.0.0.1', 36069)
+2025-05-01 07:13:30,989 INFO Raw events query started with checkpoint /data/checkpoints/raw_events
+2025-05-01 07:13:30,989 INFO Started streaming query: raw_events
+2025-05-01 07:14:02,415 INFO Python Server ready to receive messages
+2025-05-01 07:14:02,415 INFO Received command c on object id p0
+2025-05-01 07:14:02,511 INFO Processing batch 176 for table raw_events with 0 rows
+2025-05-01 07:14:02,538 INFO No data to upsert for table raw_events, batch 176
+2025-05-01 07:14:07,116 INFO Received command c on object id p0
+2025-05-01 07:14:07,302 INFO Processing batch 177 for table raw_events with 30 rows
+2025-05-01 07:14:07,441 INFO Created temporary table temp_raw_events_177_6482155d_d9ac_45bc_ae23_c26afb32f52f
+2025-05-01 07:14:07,765 INFO Wrote DataFrame to temporary table temp_raw_events_177_6482155d_d9ac_45bc_ae23_c26afb32f52f
+2025-05-01 07:14:07,785 INFO Successfully executed upsert SQL for table raw_events, batch 177
+2025-05-01 07:14:07,802 INFO Dropped temporary table temp_raw_events_177_6482155d_d9ac_45bc_ae23_c26afb32f52f
+2025-05-01 07:14:07,803 INFO Successfully upserted to PostgreSQL table raw_events, batch 177
+2025-05-01 07:14:15,928 INFO Received command c on object id p0
+2025-05-01 07:14:16,116 INFO Processing batch 178 for table raw_events with 30 rows
+2025-05-01 07:14:16,207 INFO Created temporary table temp_raw_events_178_289725b3_ca9d_439a_8108_ffef48effa92
+2025-05-01 07:14:16,398 INFO Wrote DataFrame to temporary table temp_raw_events_178_289725b3_ca9d_439a_8108_ffef48effa92
+2025-05-01 07:14:16,416 INFO Successfully executed upsert SQL for table raw_events, batch 178
+2025-05-01 07:14:16,433 INFO Dropped temporary table temp_raw_events_178_289725b3_ca9d_439a_8108_ffef48effa92
+2025-05-01 07:14:16,434 INFO Successfully upserted to PostgreSQL table raw_events, batch 178
+2025-05-01 07:14:26,138 INFO Received command c on object id p0
+2025-05-01 07:14:26,325 INFO Processing batch 179 for table raw_events with 15 rows
+2025-05-01 07:14:26,431 INFO Created temporary table temp_raw_events_179_bd102121_ea9f_4c1c_afaf_b51b47ccc6e0
+2025-05-01 07:14:26,624 INFO Wrote DataFrame to temporary table temp_raw_events_179_bd102121_ea9f_4c1c_afaf_b51b47ccc6e0
+2025-05-01 07:14:26,642 INFO Successfully executed upsert SQL for table raw_events, batch 179
+2025-05-01 07:14:26,659 INFO Dropped temporary table temp_raw_events_179_bd102121_ea9f_4c1c_afaf_b51b47ccc6e0
+2025-05-01 07:14:26,659 INFO Successfully upserted to PostgreSQL table raw_events, batch 179
+2025-05-01 07:14:35,522 INFO Received command c on object id p0
+2025-05-01 07:14:35,640 INFO Processing batch 180 for table raw_events with 15 rows
+2025-05-01 07:14:35,745 INFO Created temporary table temp_raw_events_180_e066ad1b_6935_47f3_b7d2_fa94249ea05f
+2025-05-01 07:14:35,955 INFO Wrote DataFrame to temporary table temp_raw_events_180_e066ad1b_6935_47f3_b7d2_fa94249ea05f
+2025-05-01 07:14:35,972 INFO Successfully executed upsert SQL for table raw_events, batch 180
+2025-05-01 07:14:35,989 INFO Dropped temporary table temp_raw_events_180_e066ad1b_6935_47f3_b7d2_fa94249ea05f
+2025-05-01 07:14:35,990 INFO Successfully upserted to PostgreSQL table raw_events, batch 180
+2025-05-01 07:14:46,112 INFO Received command c on object id p0
+2025-05-01 07:14:46,246 INFO Processing batch 181 for table raw_events with 15 rows
+2025-05-01 07:14:46,334 INFO Created temporary table temp_raw_events_181_9fbd5a4b_07d2_40ae_85b4_573cd26e5e6d
+2025-05-01 07:14:46,520 INFO Wrote DataFrame to temporary table temp_raw_events_181_9fbd5a4b_07d2_40ae_85b4_573cd26e5e6d
+2025-05-01 07:14:46,539 INFO Successfully executed upsert SQL for table raw_events, batch 181
+2025-05-01 07:14:46,556 INFO Dropped temporary table temp_raw_events_181_9fbd5a4b_07d2_40ae_85b4_573cd26e5e6d
+2025-05-01 07:14:46,557 INFO Successfully upserted to PostgreSQL table raw_events, batch 181
+2025-05-01 07:14:55,034 INFO Received command c on object id p0
+2025-05-01 07:14:55,144 INFO Processing batch 182 for table raw_events with 15 rows
+2025-05-01 07:14:55,237 INFO Created temporary table temp_raw_events_182_113d2f74_419d_44b8_9d64_f97c6dbb99ec
+2025-05-01 07:14:55,433 INFO Wrote DataFrame to temporary table temp_raw_events_182_113d2f74_419d_44b8_9d64_f97c6dbb99ec
+2025-05-01 07:14:55,452 INFO Successfully executed upsert SQL for table raw_events, batch 182
+2025-05-01 07:14:55,468 INFO Dropped temporary table temp_raw_events_182_113d2f74_419d_44b8_9d64_f97c6dbb99ec
+2025-05-01 07:14:55,469 INFO Successfully upserted to PostgreSQL table raw_events, batch 182
+2025-05-01 07:15:05,767 INFO Received command c on object id p0
+2025-05-01 07:15:05,882 INFO Processing batch 183 for table raw_events with 15 rows
+2025-05-01 07:15:05,990 INFO Created temporary table temp_raw_events_183_be2b389e_8256_4cb0_b124_447c49f14a91
+2025-05-01 07:15:06,172 INFO Wrote DataFrame to temporary table temp_raw_events_183_be2b389e_8256_4cb0_b124_447c49f14a91
+2025-05-01 07:15:06,190 INFO Successfully executed upsert SQL for table raw_events, batch 183
+2025-05-01 07:15:06,207 INFO Dropped temporary table temp_raw_events_183_be2b389e_8256_4cb0_b124_447c49f14a91
+2025-05-01 07:15:06,208 INFO Successfully upserted to PostgreSQL table raw_events, batch 183
+2025-05-01 07:15:15,833 INFO Received command c on object id p0
+2025-05-01 07:15:15,953 INFO Processing batch 184 for table raw_events with 15 rows
+2025-05-01 07:15:16,044 INFO Created temporary table temp_raw_events_184_a6e97746_4a48_4826_9278_e3a09b8fb00b
+2025-05-01 07:15:16,228 INFO Wrote DataFrame to temporary table temp_raw_events_184_a6e97746_4a48_4826_9278_e3a09b8fb00b
+2025-05-01 07:15:16,247 INFO Successfully executed upsert SQL for table raw_events, batch 184
+2025-05-01 07:15:16,264 INFO Dropped temporary table temp_raw_events_184_a6e97746_4a48_4826_9278_e3a09b8fb00b
+2025-05-01 07:15:16,265 INFO Successfully upserted to PostgreSQL table raw_events, batch 184
+2025-05-01 07:15:25,973 INFO Received command c on object id p0
+2025-05-01 07:15:26,093 INFO Processing batch 185 for table raw_events with 15 rows
+2025-05-01 07:15:26,181 INFO Created temporary table temp_raw_events_185_44bc1cf4_6a8e_43a2_81cc_4f9b7b51067a
+2025-05-01 07:15:26,413 INFO Wrote DataFrame to temporary table temp_raw_events_185_44bc1cf4_6a8e_43a2_81cc_4f9b7b51067a
+2025-05-01 07:15:26,431 INFO Successfully executed upsert SQL for table raw_events, batch 185
+2025-05-01 07:15:26,449 INFO Dropped temporary table temp_raw_events_185_44bc1cf4_6a8e_43a2_81cc_4f9b7b51067a
+2025-05-01 07:15:26,450 INFO Successfully upserted to PostgreSQL table raw_events, batch 185
+2025-05-01 07:15:36,885 INFO Received command c on object id p0
+2025-05-01 07:15:37,024 INFO Processing batch 186 for table raw_events with 15 rows
+2025-05-01 07:15:37,112 INFO Created temporary table temp_raw_events_186_5796637d_3c7f_4c4c_b7f4_d717d876cfef
+2025-05-01 07:15:37,365 INFO Wrote DataFrame to temporary table temp_raw_events_186_5796637d_3c7f_4c4c_b7f4_d717d876cfef
+2025-05-01 07:15:37,388 INFO Successfully executed upsert SQL for table raw_events, batch 186
+2025-05-01 07:15:37,410 INFO Dropped temporary table temp_raw_events_186_5796637d_3c7f_4c4c_b7f4_d717d876cfef
+2025-05-01 07:15:37,411 INFO Successfully upserted to PostgreSQL table raw_events, batch 186
+2025-05-01 07:15:45,990 INFO Received command c on object id p0
+2025-05-01 07:15:46,109 INFO Processing batch 187 for table raw_events with 15 rows
+2025-05-01 07:15:46,207 INFO Created temporary table temp_raw_events_187_afb5891b_c9ac_4c93_ac53_4e5c2eb770d9
+2025-05-01 07:15:46,389 INFO Wrote DataFrame to temporary table temp_raw_events_187_afb5891b_c9ac_4c93_ac53_4e5c2eb770d9
+2025-05-01 07:15:46,406 INFO Successfully executed upsert SQL for table raw_events, batch 187
+2025-05-01 07:15:46,424 INFO Dropped temporary table temp_raw_events_187_afb5891b_c9ac_4c93_ac53_4e5c2eb770d9
+2025-05-01 07:15:46,425 INFO Successfully upserted to PostgreSQL table raw_events, batch 187
+2025-05-01 07:15:55,894 INFO Received command c on object id p0
+2025-05-01 07:15:56,006 INFO Processing batch 188 for table raw_events with 15 rows
+2025-05-01 07:15:56,094 INFO Created temporary table temp_raw_events_188_a8fbcb51_460d_4a73_acf0_b58f1e09f0b3
+2025-05-01 07:15:56,260 INFO Wrote DataFrame to temporary table temp_raw_events_188_a8fbcb51_460d_4a73_acf0_b58f1e09f0b3
+2025-05-01 07:15:56,279 INFO Successfully executed upsert SQL for table raw_events, batch 188
+2025-05-01 07:15:56,296 INFO Dropped temporary table temp_raw_events_188_a8fbcb51_460d_4a73_acf0_b58f1e09f0b3
+2025-05-01 07:15:56,297 INFO Successfully upserted to PostgreSQL table raw_events, batch 188
+2025-05-01 07:16:06,740 INFO Received command c on object id p0
+2025-05-01 07:16:06,851 INFO Processing batch 189 for table raw_events with 15 rows
+2025-05-01 07:16:06,935 INFO Created temporary table temp_raw_events_189_12c8b07c_e138_466e_a17b_b4adb40ff4dc
+2025-05-01 07:16:07,114 INFO Wrote DataFrame to temporary table temp_raw_events_189_12c8b07c_e138_466e_a17b_b4adb40ff4dc
+2025-05-01 07:16:07,131 INFO Successfully executed upsert SQL for table raw_events, batch 189
+2025-05-01 07:16:07,148 INFO Dropped temporary table temp_raw_events_189_12c8b07c_e138_466e_a17b_b4adb40ff4dc
+2025-05-01 07:16:07,149 INFO Successfully upserted to PostgreSQL table raw_events, batch 189
+2025-05-01 07:16:15,641 INFO Received command c on object id p0
+2025-05-01 07:16:15,745 INFO Processing batch 190 for table raw_events with 15 rows
+2025-05-01 07:16:15,843 INFO Created temporary table temp_raw_events_190_fefb93be_1541_4361_b454_00ec2d29e583
+2025-05-01 07:16:16,008 INFO Wrote DataFrame to temporary table temp_raw_events_190_fefb93be_1541_4361_b454_00ec2d29e583
+2025-05-01 07:16:16,026 INFO Successfully executed upsert SQL for table raw_events, batch 190
+2025-05-01 07:16:16,042 INFO Dropped temporary table temp_raw_events_190_fefb93be_1541_4361_b454_00ec2d29e583
+2025-05-01 07:16:16,043 INFO Successfully upserted to PostgreSQL table raw_events, batch 190
+2025-05-01 07:16:25,777 INFO Received command c on object id p0
+2025-05-01 07:16:25,885 INFO Processing batch 191 for table raw_events with 15 rows
+2025-05-01 07:16:25,975 INFO Created temporary table temp_raw_events_191_fd886528_dcb1_4416_a45b_5873146c0d40
+2025-05-01 07:16:26,143 INFO Wrote DataFrame to temporary table temp_raw_events_191_fd886528_dcb1_4416_a45b_5873146c0d40
+2025-05-01 07:16:26,161 INFO Successfully executed upsert SQL for table raw_events, batch 191
+2025-05-01 07:16:26,178 INFO Dropped temporary table temp_raw_events_191_fd886528_dcb1_4416_a45b_5873146c0d40
+2025-05-01 07:16:26,179 INFO Successfully upserted to PostgreSQL table raw_events, batch 191
+2025-05-01 07:16:36,004 INFO Received command c on object id p0
+2025-05-01 07:16:36,120 INFO Processing batch 192 for table raw_events with 15 rows
+2025-05-01 07:16:36,202 INFO Created temporary table temp_raw_events_192_88a2eed9_1cbd_4e25_ab60_7ffba882243a
+2025-05-01 07:16:36,373 INFO Wrote DataFrame to temporary table temp_raw_events_192_88a2eed9_1cbd_4e25_ab60_7ffba882243a
+2025-05-01 07:16:36,392 INFO Successfully executed upsert SQL for table raw_events, batch 192
+2025-05-01 07:16:36,409 INFO Dropped temporary table temp_raw_events_192_88a2eed9_1cbd_4e25_ab60_7ffba882243a
+2025-05-01 07:16:36,410 INFO Successfully upserted to PostgreSQL table raw_events, batch 192
+2025-05-01 07:16:45,915 INFO Received command c on object id p0
+2025-05-01 07:16:46,011 INFO Processing batch 193 for table raw_events with 15 rows
+2025-05-01 07:16:46,102 INFO Created temporary table temp_raw_events_193_4e834349_2489_4410_9802_678689433a19
+2025-05-01 07:16:46,266 INFO Wrote DataFrame to temporary table temp_raw_events_193_4e834349_2489_4410_9802_678689433a19
+2025-05-01 07:16:46,284 INFO Successfully executed upsert SQL for table raw_events, batch 193
+2025-05-01 07:16:46,301 INFO Dropped temporary table temp_raw_events_193_4e834349_2489_4410_9802_678689433a19
+2025-05-01 07:16:46,302 INFO Successfully upserted to PostgreSQL table raw_events, batch 193
+2025-05-01 07:16:55,842 INFO Received command c on object id p0
+2025-05-01 07:16:55,962 INFO Processing batch 194 for table raw_events with 15 rows
+2025-05-01 07:16:56,055 INFO Created temporary table temp_raw_events_194_701189de_c5f4_4a4e_95af_78187379af34
+2025-05-01 07:16:56,241 INFO Wrote DataFrame to temporary table temp_raw_events_194_701189de_c5f4_4a4e_95af_78187379af34
+2025-05-01 07:16:56,263 INFO Successfully executed upsert SQL for table raw_events, batch 194
+2025-05-01 07:16:56,280 INFO Dropped temporary table temp_raw_events_194_701189de_c5f4_4a4e_95af_78187379af34
+2025-05-01 07:16:56,281 INFO Successfully upserted to PostgreSQL table raw_events, batch 194
+2025-05-01 07:17:05,917 INFO Received command c on object id p0
+2025-05-01 07:17:06,038 INFO Processing batch 195 for table raw_events with 15 rows
+2025-05-01 07:17:06,133 INFO Created temporary table temp_raw_events_195_a7c6af4e_fff9_4d61_939d_ff0ea0684a31
+2025-05-01 07:17:06,322 INFO Wrote DataFrame to temporary table temp_raw_events_195_a7c6af4e_fff9_4d61_939d_ff0ea0684a31
+2025-05-01 07:17:06,340 INFO Successfully executed upsert SQL for table raw_events, batch 195
+2025-05-01 07:17:06,357 INFO Dropped temporary table temp_raw_events_195_a7c6af4e_fff9_4d61_939d_ff0ea0684a31
+2025-05-01 07:17:06,358 INFO Successfully upserted to PostgreSQL table raw_events, batch 195
+2025-05-01 07:17:16,040 INFO Received command c on object id p0
+2025-05-01 07:17:16,153 INFO Processing batch 196 for table raw_events with 15 rows
+2025-05-01 07:17:16,256 INFO Created temporary table temp_raw_events_196_8df97599_6812_4fd4_af5d_0872cc09c55e
+2025-05-01 07:17:16,434 INFO Wrote DataFrame to temporary table temp_raw_events_196_8df97599_6812_4fd4_af5d_0872cc09c55e
+2025-05-01 07:17:16,451 INFO Successfully executed upsert SQL for table raw_events, batch 196
+2025-05-01 07:17:16,468 INFO Dropped temporary table temp_raw_events_196_8df97599_6812_4fd4_af5d_0872cc09c55e
+2025-05-01 07:17:16,469 INFO Successfully upserted to PostgreSQL table raw_events, batch 196
+2025-05-01 07:17:26,831 INFO Received command c on object id p0
+2025-05-01 07:17:26,969 INFO Processing batch 197 for table raw_events with 15 rows
+2025-05-01 07:17:27,100 INFO Created temporary table temp_raw_events_197_d5d4c9aa_41fa_49a1_9bf8_c45f131f7e13
+2025-05-01 07:17:27,296 INFO Wrote DataFrame to temporary table temp_raw_events_197_d5d4c9aa_41fa_49a1_9bf8_c45f131f7e13
+2025-05-01 07:17:27,314 INFO Successfully executed upsert SQL for table raw_events, batch 197
+2025-05-01 07:17:27,330 INFO Dropped temporary table temp_raw_events_197_d5d4c9aa_41fa_49a1_9bf8_c45f131f7e13
+2025-05-01 07:17:27,331 INFO Successfully upserted to PostgreSQL table raw_events, batch 197
+2025-05-01 07:17:35,415 INFO Received command c on object id p0
+2025-05-01 07:17:35,533 INFO Processing batch 198 for table raw_events with 15 rows
+2025-05-01 07:17:35,638 INFO Created temporary table temp_raw_events_198_b539a0bd_f449_46d5_b0b4_c9dedbe49946
+2025-05-01 07:17:35,812 INFO Wrote DataFrame to temporary table temp_raw_events_198_b539a0bd_f449_46d5_b0b4_c9dedbe49946
+2025-05-01 07:17:35,830 INFO Successfully executed upsert SQL for table raw_events, batch 198
+2025-05-01 07:17:35,849 INFO Dropped temporary table temp_raw_events_198_b539a0bd_f449_46d5_b0b4_c9dedbe49946
+2025-05-01 07:17:35,849 INFO Successfully upserted to PostgreSQL table raw_events, batch 198
+2025-05-01 07:17:48,073 INFO Received command c on object id p0
+2025-05-01 07:17:48,189 INFO Processing batch 199 for table raw_events with 15 rows
+2025-05-01 07:17:48,281 INFO Created temporary table temp_raw_events_199_d2fa6961_e33f_4537_b70c_2ffe74415512
+2025-05-01 07:17:48,464 INFO Wrote DataFrame to temporary table temp_raw_events_199_d2fa6961_e33f_4537_b70c_2ffe74415512
+2025-05-01 07:17:48,482 INFO Successfully executed upsert SQL for table raw_events, batch 199
+2025-05-01 07:17:48,500 INFO Dropped temporary table temp_raw_events_199_d2fa6961_e33f_4537_b70c_2ffe74415512
+2025-05-01 07:17:48,501 INFO Successfully upserted to PostgreSQL table raw_events, batch 199
+2025-05-01 07:17:54,971 INFO Received command c on object id p0
+2025-05-01 07:17:55,092 INFO Processing batch 200 for table raw_events with 15 rows
+2025-05-01 07:17:55,187 INFO Created temporary table temp_raw_events_200_418391cb_a00c_42ae_b19a_9c8d18c5da68
+2025-05-01 07:17:55,392 INFO Wrote DataFrame to temporary table temp_raw_events_200_418391cb_a00c_42ae_b19a_9c8d18c5da68
+2025-05-01 07:17:55,411 INFO Successfully executed upsert SQL for table raw_events, batch 200
+2025-05-01 07:17:55,428 INFO Dropped temporary table temp_raw_events_200_418391cb_a00c_42ae_b19a_9c8d18c5da68
+2025-05-01 07:17:55,429 INFO Successfully upserted to PostgreSQL table raw_events, batch 200
+2025-05-01 07:18:06,200 INFO Received command c on object id p0
+2025-05-01 07:18:06,316 INFO Processing batch 201 for table raw_events with 15 rows
+2025-05-01 07:18:06,415 INFO Created temporary table temp_raw_events_201_f1f386bf_47d6_4a0c_8c34_6415e09dbade
+2025-05-01 07:18:06,591 INFO Wrote DataFrame to temporary table temp_raw_events_201_f1f386bf_47d6_4a0c_8c34_6415e09dbade
+2025-05-01 07:18:06,609 INFO Successfully executed upsert SQL for table raw_events, batch 201
+2025-05-01 07:18:06,626 INFO Dropped temporary table temp_raw_events_201_f1f386bf_47d6_4a0c_8c34_6415e09dbade
+2025-05-01 07:18:06,627 INFO Successfully upserted to PostgreSQL table raw_events, batch 201
+2025-05-01 07:18:16,317 INFO Received command c on object id p0
+2025-05-01 07:18:16,421 INFO Processing batch 202 for table raw_events with 15 rows
+2025-05-01 07:18:16,514 INFO Created temporary table temp_raw_events_202_7be34179_60d6_4906_ba2c_97c233bb4d8e
+2025-05-01 07:18:16,693 INFO Wrote DataFrame to temporary table temp_raw_events_202_7be34179_60d6_4906_ba2c_97c233bb4d8e
+2025-05-01 07:18:16,711 INFO Successfully executed upsert SQL for table raw_events, batch 202
+2025-05-01 07:18:16,728 INFO Dropped temporary table temp_raw_events_202_7be34179_60d6_4906_ba2c_97c233bb4d8e
+2025-05-01 07:18:16,729 INFO Successfully upserted to PostgreSQL table raw_events, batch 202
+2025-05-01 07:18:25,789 INFO Received command c on object id p0
+2025-05-01 07:18:25,900 INFO Processing batch 203 for table raw_events with 15 rows
+2025-05-01 07:18:25,994 INFO Created temporary table temp_raw_events_203_abe8611e_c942_4bb1_8545_b5712a01ebf5
+2025-05-01 07:18:26,167 INFO Wrote DataFrame to temporary table temp_raw_events_203_abe8611e_c942_4bb1_8545_b5712a01ebf5
+2025-05-01 07:18:26,184 INFO Successfully executed upsert SQL for table raw_events, batch 203
+2025-05-01 07:18:26,201 INFO Dropped temporary table temp_raw_events_203_abe8611e_c942_4bb1_8545_b5712a01ebf5
+2025-05-01 07:18:26,202 INFO Successfully upserted to PostgreSQL table raw_events, batch 203
+2025-05-01 07:18:36,356 INFO Received command c on object id p0
+2025-05-01 07:18:36,453 INFO Processing batch 204 for table raw_events with 15 rows
+2025-05-01 07:18:36,539 INFO Created temporary table temp_raw_events_204_01300d58_b2a2_4dd1_be1a_60164b77d8ff
+2025-05-01 07:18:36,709 INFO Wrote DataFrame to temporary table temp_raw_events_204_01300d58_b2a2_4dd1_be1a_60164b77d8ff
+2025-05-01 07:18:36,727 INFO Successfully executed upsert SQL for table raw_events, batch 204
+2025-05-01 07:18:36,744 INFO Dropped temporary table temp_raw_events_204_01300d58_b2a2_4dd1_be1a_60164b77d8ff
+2025-05-01 07:18:36,745 INFO Successfully upserted to PostgreSQL table raw_events, batch 204
+2025-05-01 07:18:45,907 INFO Received command c on object id p0
+2025-05-01 07:18:46,010 INFO Processing batch 205 for table raw_events with 15 rows
+2025-05-01 07:18:46,121 INFO Created temporary table temp_raw_events_205_c1366510_0856_4760_a91c_2cf12f3a4959
+2025-05-01 07:18:46,292 INFO Wrote DataFrame to temporary table temp_raw_events_205_c1366510_0856_4760_a91c_2cf12f3a4959
+2025-05-01 07:18:46,309 INFO Successfully executed upsert SQL for table raw_events, batch 205
+2025-05-01 07:18:46,326 INFO Dropped temporary table temp_raw_events_205_c1366510_0856_4760_a91c_2cf12f3a4959
+2025-05-01 07:18:46,327 INFO Successfully upserted to PostgreSQL table raw_events, batch 205
+2025-05-01 07:18:55,364 INFO Received command c on object id p0
+2025-05-01 07:18:55,466 INFO Processing batch 206 for table raw_events with 15 rows
+2025-05-01 07:18:55,556 INFO Created temporary table temp_raw_events_206_f53ef6c4_f70d_42a2_a1ea_3830d0453139
+2025-05-01 07:18:55,720 INFO Wrote DataFrame to temporary table temp_raw_events_206_f53ef6c4_f70d_42a2_a1ea_3830d0453139
+2025-05-01 07:18:55,738 INFO Successfully executed upsert SQL for table raw_events, batch 206
+2025-05-01 07:18:55,755 INFO Dropped temporary table temp_raw_events_206_f53ef6c4_f70d_42a2_a1ea_3830d0453139
+2025-05-01 07:18:55,756 INFO Successfully upserted to PostgreSQL table raw_events, batch 206
+2025-05-01 07:19:05,676 INFO Received command c on object id p0
+2025-05-01 07:19:05,777 INFO Processing batch 207 for table raw_events with 15 rows
+2025-05-01 07:19:05,868 INFO Created temporary table temp_raw_events_207_75500f3e_c1f3_42b4_9bd4_7071f6a18849
+2025-05-01 07:19:06,036 INFO Wrote DataFrame to temporary table temp_raw_events_207_75500f3e_c1f3_42b4_9bd4_7071f6a18849
+2025-05-01 07:19:06,055 INFO Successfully executed upsert SQL for table raw_events, batch 207
+2025-05-01 07:19:06,071 INFO Dropped temporary table temp_raw_events_207_75500f3e_c1f3_42b4_9bd4_7071f6a18849
+2025-05-01 07:19:06,072 INFO Successfully upserted to PostgreSQL table raw_events, batch 207
+2025-05-01 07:19:16,112 INFO Received command c on object id p0
+2025-05-01 07:19:16,223 INFO Processing batch 208 for table raw_events with 15 rows
+2025-05-01 07:19:16,317 INFO Created temporary table temp_raw_events_208_27415e37_265e_4dd9_95bf_80bc59034cd9
+2025-05-01 07:19:16,477 INFO Wrote DataFrame to temporary table temp_raw_events_208_27415e37_265e_4dd9_95bf_80bc59034cd9
+2025-05-01 07:19:16,494 INFO Successfully executed upsert SQL for table raw_events, batch 208
+2025-05-01 07:19:16,510 INFO Dropped temporary table temp_raw_events_208_27415e37_265e_4dd9_95bf_80bc59034cd9
+2025-05-01 07:19:16,510 INFO Successfully upserted to PostgreSQL table raw_events, batch 208
+2025-05-01 07:19:27,183 INFO Received command c on object id p0
+2025-05-01 07:19:27,276 INFO Processing batch 209 for table raw_events with 15 rows
+2025-05-01 07:19:27,361 INFO Created temporary table temp_raw_events_209_19ac3c1c_cc7c_4915_ad33_cfd8cc6b2053
+2025-05-01 07:19:27,520 INFO Wrote DataFrame to temporary table temp_raw_events_209_19ac3c1c_cc7c_4915_ad33_cfd8cc6b2053
+2025-05-01 07:19:27,537 INFO Successfully executed upsert SQL for table raw_events, batch 209
+2025-05-01 07:19:27,554 INFO Dropped temporary table temp_raw_events_209_19ac3c1c_cc7c_4915_ad33_cfd8cc6b2053
+2025-05-01 07:19:27,555 INFO Successfully upserted to PostgreSQL table raw_events, batch 209
+2025-05-01 07:19:34,837 INFO Received command c on object id p0
+2025-05-01 07:19:34,929 INFO Processing batch 210 for table raw_events with 15 rows
+2025-05-01 07:19:35,019 INFO Created temporary table temp_raw_events_210_714a82a6_ab14_4ad5_84ed_9091e5e1bd27
+2025-05-01 07:19:35,190 INFO Wrote DataFrame to temporary table temp_raw_events_210_714a82a6_ab14_4ad5_84ed_9091e5e1bd27
+2025-05-01 07:19:35,208 INFO Successfully executed upsert SQL for table raw_events, batch 210
+2025-05-01 07:19:35,225 INFO Dropped temporary table temp_raw_events_210_714a82a6_ab14_4ad5_84ed_9091e5e1bd27
+2025-05-01 07:19:35,226 INFO Successfully upserted to PostgreSQL table raw_events, batch 210
+2025-05-01 07:19:45,814 INFO Received command c on object id p0
+2025-05-01 07:19:45,931 INFO Processing batch 211 for table raw_events with 15 rows
+2025-05-01 07:19:46,027 INFO Created temporary table temp_raw_events_211_8d023bfb_bec3_4be3_9ab3_5fc54b053a23
+2025-05-01 07:19:46,186 INFO Wrote DataFrame to temporary table temp_raw_events_211_8d023bfb_bec3_4be3_9ab3_5fc54b053a23
+2025-05-01 07:19:46,203 INFO Successfully executed upsert SQL for table raw_events, batch 211
+2025-05-01 07:19:46,219 INFO Dropped temporary table temp_raw_events_211_8d023bfb_bec3_4be3_9ab3_5fc54b053a23
+2025-05-01 07:19:46,220 INFO Successfully upserted to PostgreSQL table raw_events, batch 211
+2025-05-01 07:19:56,499 INFO Received command c on object id p0
+2025-05-01 07:19:56,611 INFO Processing batch 212 for table raw_events with 15 rows
+2025-05-01 07:19:56,696 INFO Created temporary table temp_raw_events_212_df820104_bd51_4679_9e4c_50f07bfdb5e6
+2025-05-01 07:19:56,855 INFO Wrote DataFrame to temporary table temp_raw_events_212_df820104_bd51_4679_9e4c_50f07bfdb5e6
+2025-05-01 07:19:56,873 INFO Successfully executed upsert SQL for table raw_events, batch 212
+2025-05-01 07:19:56,892 INFO Dropped temporary table temp_raw_events_212_df820104_bd51_4679_9e4c_50f07bfdb5e6
+2025-05-01 07:19:56,892 INFO Successfully upserted to PostgreSQL table raw_events, batch 212
+2025-05-01 07:20:05,757 INFO Received command c on object id p0
+2025-05-01 07:20:05,858 INFO Processing batch 213 for table raw_events with 15 rows
+2025-05-01 07:20:05,940 INFO Created temporary table temp_raw_events_213_04475c9c_4dad_4463_8620_846971eed181
+2025-05-01 07:20:06,111 INFO Wrote DataFrame to temporary table temp_raw_events_213_04475c9c_4dad_4463_8620_846971eed181
+2025-05-01 07:20:06,129 INFO Successfully executed upsert SQL for table raw_events, batch 213
+2025-05-01 07:20:06,146 INFO Dropped temporary table temp_raw_events_213_04475c9c_4dad_4463_8620_846971eed181
+2025-05-01 07:20:06,147 INFO Successfully upserted to PostgreSQL table raw_events, batch 213
+2025-05-01 07:20:16,226 INFO Received command c on object id p0
+2025-05-01 07:20:16,335 INFO Processing batch 214 for table raw_events with 15 rows
+2025-05-01 07:20:16,440 INFO Created temporary table temp_raw_events_214_c3cd6c46_ae74_432b_ac41_49bf1ed87728
+2025-05-01 07:20:16,627 INFO Wrote DataFrame to temporary table temp_raw_events_214_c3cd6c46_ae74_432b_ac41_49bf1ed87728
+2025-05-01 07:20:16,647 INFO Successfully executed upsert SQL for table raw_events, batch 214
+2025-05-01 07:20:16,665 INFO Dropped temporary table temp_raw_events_214_c3cd6c46_ae74_432b_ac41_49bf1ed87728
+2025-05-01 07:20:16,666 INFO Successfully upserted to PostgreSQL table raw_events, batch 214
+2025-05-01 07:20:25,400 INFO Received command c on object id p0
+2025-05-01 07:20:25,497 INFO Processing batch 215 for table raw_events with 15 rows
+2025-05-01 07:20:25,576 INFO Created temporary table temp_raw_events_215_1d4f04eb_cdf6_4b42_9a32_7b4857689b82
+2025-05-01 07:20:25,729 INFO Wrote DataFrame to temporary table temp_raw_events_215_1d4f04eb_cdf6_4b42_9a32_7b4857689b82
+2025-05-01 07:20:25,746 INFO Successfully executed upsert SQL for table raw_events, batch 215
+2025-05-01 07:20:25,761 INFO Dropped temporary table temp_raw_events_215_1d4f04eb_cdf6_4b42_9a32_7b4857689b82
+2025-05-01 07:20:25,762 INFO Successfully upserted to PostgreSQL table raw_events, batch 215
+2025-05-01 07:20:36,842 INFO Received command c on object id p0
+2025-05-01 07:20:37,055 INFO Processing batch 216 for table raw_events with 15 rows
+2025-05-01 07:20:37,195 INFO Created temporary table temp_raw_events_216_677738ec_f1b9_42c1_983a_3b859a32bf70
+2025-05-01 07:20:37,426 INFO Wrote DataFrame to temporary table temp_raw_events_216_677738ec_f1b9_42c1_983a_3b859a32bf70
+2025-05-01 07:20:37,446 INFO Successfully executed upsert SQL for table raw_events, batch 216
+2025-05-01 07:20:37,467 INFO Dropped temporary table temp_raw_events_216_677738ec_f1b9_42c1_983a_3b859a32bf70
+2025-05-01 07:20:37,468 INFO Successfully upserted to PostgreSQL table raw_events, batch 216
+2025-05-01 07:20:46,018 INFO Received command c on object id p0
+2025-05-01 07:20:46,113 INFO Processing batch 217 for table raw_events with 15 rows
+2025-05-01 07:20:46,206 INFO Created temporary table temp_raw_events_217_e25d8cbe_ff77_45eb_8460_80750156ddde
+2025-05-01 07:20:46,384 INFO Wrote DataFrame to temporary table temp_raw_events_217_e25d8cbe_ff77_45eb_8460_80750156ddde
+2025-05-01 07:20:46,402 INFO Successfully executed upsert SQL for table raw_events, batch 217
+2025-05-01 07:20:46,419 INFO Dropped temporary table temp_raw_events_217_e25d8cbe_ff77_45eb_8460_80750156ddde
+2025-05-01 07:20:46,420 INFO Successfully upserted to PostgreSQL table raw_events, batch 217
+2025-05-01 07:20:56,598 INFO Received command c on object id p0
+2025-05-01 07:20:56,697 INFO Processing batch 218 for table raw_events with 15 rows
+2025-05-01 07:20:56,785 INFO Created temporary table temp_raw_events_218_cb36360c_9898_465e_8e5e_c090bd166424
+2025-05-01 07:20:56,970 INFO Wrote DataFrame to temporary table temp_raw_events_218_cb36360c_9898_465e_8e5e_c090bd166424
+2025-05-01 07:20:56,992 INFO Successfully executed upsert SQL for table raw_events, batch 218
+2025-05-01 07:20:57,022 INFO Dropped temporary table temp_raw_events_218_cb36360c_9898_465e_8e5e_c090bd166424
+2025-05-01 07:20:57,023 INFO Successfully upserted to PostgreSQL table raw_events, batch 218
+2025-05-01 07:21:06,960 INFO Received command c on object id p0
+2025-05-01 07:21:07,073 INFO Processing batch 219 for table raw_events with 15 rows
+2025-05-01 07:21:07,164 INFO Created temporary table temp_raw_events_219_5481f1ba_27eb_4fba_bdca_abe190d7bab5
+2025-05-01 07:21:07,330 INFO Wrote DataFrame to temporary table temp_raw_events_219_5481f1ba_27eb_4fba_bdca_abe190d7bab5
+2025-05-01 07:21:07,348 INFO Successfully executed upsert SQL for table raw_events, batch 219
+2025-05-01 07:21:07,365 INFO Dropped temporary table temp_raw_events_219_5481f1ba_27eb_4fba_bdca_abe190d7bab5
+2025-05-01 07:21:07,366 INFO Successfully upserted to PostgreSQL table raw_events, batch 219
