@@ -1,0 +1,247 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "P2F527C6EA7EAE43B"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 70
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 5,
+      "interval": "1s",
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "/^avg_heartbeat$/",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "P2F527C6EA7EAE43B"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  NOW() AS \"time\",\r\n  AVG(heart_rate) AS avg_heartbeat\r\nFROM heartbeats\r\nWHERE timestamp >= NOW() - INTERVAL '5 seconds'\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Average heartbeat",
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "P2F527C6EA7EAE43B"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "displayMode": "lcd",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "",
+          "values": true
+        },
+        "showUnfilled": true,
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "P2F527C6EA7EAE43B"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT DISTINCT ON (customer_id)\r\n  customer_id,\r\n  heart_rate AS current_heart_rate\r\nFROM heartbeats\r\nORDER BY customer_id, timestamp DESC\r\n",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": ["value"],
+                "type": "column"
+              }
+            ]
+          ],
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          },
+          "timeColumn": "timestamp",
+          "where": []
+        }
+      ],
+      "title": "Current heart rate per customer",
+      "transparent": true,
+      "type": "bargauge"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 38,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "isNone": true,
+          "selected": true,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "customer_id",
+        "options": [],
+        "query": "SELECT DISTINCT customer_id FROM heartbeats",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "2025-05-09T12:55:15.841Z",
+    "to": "2025-05-09T15:42:09.511Z"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Heartbeat Monitoring Dashboard",
+  "uid": "heartbeat_dashboard",
+  "version": 1,
+  "weekStart": ""
+}
