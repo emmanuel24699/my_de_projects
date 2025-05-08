@@ -7,4 +7,3 @@ CREATE TABLE IF NOT EXISTS heartbeats (
 );
 
 CREATE INDEX IF NOT EXISTS idx_timestamp ON heartbeats (timestamp);
-CREATE INDEX IF NOT EXISTS idx_customer_id ON heartbeats (customer_id);
