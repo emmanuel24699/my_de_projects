@@ -9,7 +9,7 @@ services:
     networks:
       - heartbeat-network
     healthcheck:
-      test: ["CMD", "echo", "ruok", "|", "nc", "-z", "localhost", "2181"]
+      test: ["CMD-SHELL", "echo ruok | nc localhost 2181"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -125,6 +125,29 @@ services:
       - ./scripts:/app/scripts
     networks:
       - heartbeat-network
+
+  grafana:
+    image: grafana/grafana:10.2.0
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards/dashboards
+      - grafana-data:/var/lib/grafana
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+      GF_PATHS_PROVISIONING: "/etc/grafana/provisioning"
+    networks:
+      - heartbeat-network
+
+volumes:
+  grafana-data:
 
 networks:
   heartbeat-network:
