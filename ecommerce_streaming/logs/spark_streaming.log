@@ -2760,3 +2760,233 @@
 2025-05-09 00:18:46,453 INFO Batch 153 written to PostgreSQL
 2025-05-09 00:18:56,204 INFO Received command c on object id p0
 2025-05-09 00:18:56,410 INFO Batch 154 written to PostgreSQL
+2025-05-09 00:20:36,510 INFO Starting raw events query
+2025-05-09 00:20:36,547 INFO Callback Server Starting
+2025-05-09 00:20:36,548 INFO Socket listening on ('127.0.0.1', 41135)
+2025-05-09 00:21:13,570 INFO Python Server ready to receive messages
+2025-05-09 00:21:13,571 INFO Received command c on object id p0
+2025-05-09 00:21:18,342 INFO Batch 155 written to PostgreSQL
+2025-05-09 00:21:24,721 INFO Received command c on object id p0
+2025-05-09 00:21:25,091 INFO Batch 156 written to PostgreSQL
+2025-05-09 00:21:32,029 INFO Received command c on object id p0
+2025-05-09 00:21:32,360 INFO Batch 157 written to PostgreSQL
+2025-05-09 00:21:39,895 INFO Received command c on object id p0
+2025-05-09 00:21:40,204 INFO Batch 158 written to PostgreSQL
+2025-05-09 00:21:47,217 INFO Received command c on object id p0
+2025-05-09 00:21:47,544 INFO Batch 159 written to PostgreSQL
+2025-05-09 00:21:56,158 INFO Received command c on object id p0
+2025-05-09 00:21:56,444 INFO Batch 160 written to PostgreSQL
+2025-05-09 00:22:06,382 INFO Received command c on object id p0
+2025-05-09 00:22:06,672 INFO Batch 161 written to PostgreSQL
+2025-05-09 00:22:15,684 INFO Received command c on object id p0
+2025-05-09 00:22:16,088 INFO Batch 162 written to PostgreSQL
+2025-05-09 00:22:27,371 INFO Received command c on object id p0
+2025-05-09 00:22:27,621 INFO Batch 163 written to PostgreSQL
+2025-05-09 00:22:34,653 INFO Received command c on object id p0
+2025-05-09 00:22:34,913 INFO Batch 164 written to PostgreSQL
+2025-05-09 00:22:46,704 INFO Received command c on object id p0
+2025-05-09 00:22:46,930 INFO Batch 165 written to PostgreSQL
+2025-05-09 00:22:56,537 INFO Received command c on object id p0
+2025-05-09 00:22:56,769 INFO Batch 166 written to PostgreSQL
+2025-05-09 00:23:06,416 INFO Received command c on object id p0
+2025-05-09 00:23:06,701 INFO Batch 167 written to PostgreSQL
+2025-05-09 00:23:18,000 INFO Received command c on object id p0
+2025-05-09 00:23:18,230 INFO Batch 168 written to PostgreSQL
+2025-05-09 00:23:26,537 INFO Received command c on object id p0
+2025-05-09 00:23:26,815 INFO Batch 169 written to PostgreSQL
+2025-05-09 00:23:37,120 INFO Received command c on object id p0
+2025-05-09 00:23:37,400 INFO Batch 170 written to PostgreSQL
+2025-05-09 00:23:47,576 INFO Received command c on object id p0
+2025-05-09 00:23:47,821 INFO Batch 171 written to PostgreSQL
+2025-05-09 00:23:57,233 INFO Received command c on object id p0
+2025-05-09 00:23:57,459 INFO Batch 172 written to PostgreSQL
+2025-05-09 00:24:05,480 INFO Received command c on object id p0
+2025-05-09 00:24:05,701 INFO Batch 173 written to PostgreSQL
+2025-05-09 00:24:15,887 INFO Received command c on object id p0
+2025-05-09 00:24:16,089 INFO Batch 174 written to PostgreSQL
+2025-05-09 00:24:26,170 INFO Received command c on object id p0
+2025-05-09 00:24:26,387 INFO Batch 175 written to PostgreSQL
+2025-05-09 00:24:36,324 INFO Received command c on object id p0
+2025-05-09 00:24:36,552 INFO Batch 176 written to PostgreSQL
+2025-05-09 00:24:46,732 INFO Received command c on object id p0
+2025-05-09 00:24:46,943 INFO Batch 177 written to PostgreSQL
+2025-05-09 00:24:57,062 INFO Received command c on object id p0
+2025-05-09 00:24:57,268 INFO Batch 178 written to PostgreSQL
+2025-05-09 00:25:05,975 INFO Received command c on object id p0
+2025-05-09 00:25:06,179 INFO Batch 179 written to PostgreSQL
+2025-05-09 00:25:16,715 INFO Received command c on object id p0
+2025-05-09 00:25:16,934 INFO Batch 180 written to PostgreSQL
+2025-05-09 00:25:35,707 INFO Received command c on object id p0
+2025-05-09 00:25:35,915 INFO Batch 181 written to PostgreSQL
+2025-05-09 00:25:46,187 INFO Received command c on object id p0
+2025-05-09 00:25:46,473 INFO Batch 182 written to PostgreSQL
+2025-05-09 00:25:55,902 INFO Received command c on object id p0
+2025-05-09 00:25:56,098 INFO Batch 183 written to PostgreSQL
+2025-05-09 00:26:06,040 INFO Received command c on object id p0
+2025-05-09 00:26:06,266 INFO Batch 184 written to PostgreSQL
+2025-05-09 00:26:16,909 INFO Received command c on object id p0
+2025-05-09 00:26:17,132 INFO Batch 185 written to PostgreSQL
+2025-05-09 00:26:26,059 INFO Received command c on object id p0
+2025-05-09 00:26:26,256 INFO Batch 186 written to PostgreSQL
+2025-05-09 00:26:35,664 INFO Received command c on object id p0
+2025-05-09 00:26:35,857 INFO Batch 187 written to PostgreSQL
+2025-05-09 00:26:48,359 INFO Received command c on object id p0
+2025-05-09 00:26:48,687 INFO Batch 188 written to PostgreSQL
+2025-05-09 00:26:56,323 INFO Received command c on object id p0
+2025-05-09 00:26:56,555 INFO Batch 189 written to PostgreSQL
+2025-05-09 00:27:05,402 INFO Received command c on object id p0
+2025-05-09 00:27:05,615 INFO Batch 190 written to PostgreSQL
+2025-05-09 00:27:16,382 INFO Received command c on object id p0
+2025-05-09 00:27:16,711 INFO Batch 191 written to PostgreSQL
+2025-05-09 00:27:26,263 INFO Received command c on object id p0
+2025-05-09 00:27:26,474 INFO Batch 192 written to PostgreSQL
+2025-05-09 00:27:36,174 INFO Received command c on object id p0
+2025-05-09 00:27:36,370 INFO Batch 193 written to PostgreSQL
+2025-05-09 00:27:45,069 INFO Received command c on object id p0
+2025-05-09 00:27:45,253 INFO Batch 194 written to PostgreSQL
+2025-05-09 00:27:56,629 INFO Received command c on object id p0
+2025-05-09 00:27:56,821 INFO Batch 195 written to PostgreSQL
+2025-05-09 00:28:05,890 INFO Received command c on object id p0
+2025-05-09 00:28:06,094 INFO Batch 196 written to PostgreSQL
+2025-05-09 00:28:16,759 INFO Received command c on object id p0
+2025-05-09 00:28:16,962 INFO Batch 197 written to PostgreSQL
+2025-05-09 00:28:37,530 INFO Received command c on object id p0
+2025-05-09 00:28:37,745 INFO Batch 198 written to PostgreSQL
+2025-05-09 00:28:45,765 INFO Received command c on object id p0
+2025-05-09 00:28:45,975 INFO Batch 199 written to PostgreSQL
+2025-05-09 00:29:05,952 INFO Received command c on object id p0
+2025-05-09 00:29:06,166 INFO Batch 200 written to PostgreSQL
+2025-05-09 00:29:16,623 INFO Received command c on object id p0
+2025-05-09 00:29:16,862 INFO Batch 201 written to PostgreSQL
+2025-05-09 00:29:26,346 INFO Received command c on object id p0
+2025-05-09 00:29:26,561 INFO Batch 202 written to PostgreSQL
+2025-05-09 00:29:36,256 INFO Received command c on object id p0
+2025-05-09 00:29:36,476 INFO Batch 203 written to PostgreSQL
+2025-05-09 00:29:46,542 INFO Received command c on object id p0
+2025-05-09 00:29:46,744 INFO Batch 204 written to PostgreSQL
+2025-05-09 00:29:56,725 INFO Received command c on object id p0
+2025-05-09 00:29:56,979 INFO Batch 205 written to PostgreSQL
+2025-05-09 00:30:06,910 INFO Received command c on object id p0
+2025-05-09 00:30:07,099 INFO Batch 206 written to PostgreSQL
+2025-05-09 00:30:16,945 INFO Received command c on object id p0
+2025-05-09 00:30:17,132 INFO Batch 207 written to PostgreSQL
+2025-05-09 00:30:27,988 INFO Received command c on object id p0
+2025-05-09 00:30:28,208 INFO Batch 208 written to PostgreSQL
+2025-05-09 00:30:36,439 INFO Received command c on object id p0
+2025-05-09 00:30:36,635 INFO Batch 209 written to PostgreSQL
+2025-05-09 00:30:46,380 INFO Received command c on object id p0
+2025-05-09 00:30:46,605 INFO Batch 210 written to PostgreSQL
+2025-05-09 00:30:54,277 INFO Received command c on object id p0
+2025-05-09 00:30:54,472 INFO Batch 211 written to PostgreSQL
+2025-05-09 00:31:16,313 INFO Received command c on object id p0
+2025-05-09 00:31:16,576 INFO Batch 212 written to PostgreSQL
+2025-05-09 00:31:26,992 INFO Received command c on object id p0
+2025-05-09 00:31:27,191 INFO Batch 213 written to PostgreSQL
+2025-05-09 00:31:36,479 INFO Received command c on object id p0
+2025-05-09 00:31:36,653 INFO Batch 214 written to PostgreSQL
+2025-05-09 00:31:46,522 INFO Received command c on object id p0
+2025-05-09 00:31:46,732 INFO Batch 215 written to PostgreSQL
+2025-05-09 00:31:56,851 INFO Received command c on object id p0
+2025-05-09 00:31:57,052 INFO Batch 216 written to PostgreSQL
+2025-05-09 00:32:06,769 INFO Received command c on object id p0
+2025-05-09 00:32:06,985 INFO Batch 217 written to PostgreSQL
+2025-05-09 00:32:17,803 INFO Received command c on object id p0
+2025-05-09 00:32:17,983 INFO Batch 218 written to PostgreSQL
+2025-05-09 00:32:26,529 INFO Received command c on object id p0
+2025-05-09 00:32:26,704 INFO Batch 219 written to PostgreSQL
+2025-05-09 00:32:34,778 INFO Received command c on object id p0
+2025-05-09 00:32:34,961 INFO Batch 220 written to PostgreSQL
+2025-05-09 00:32:46,223 INFO Received command c on object id p0
+2025-05-09 00:32:46,411 INFO Batch 221 written to PostgreSQL
+2025-05-09 00:32:56,389 INFO Received command c on object id p0
+2025-05-09 00:32:56,575 INFO Batch 222 written to PostgreSQL
+2025-05-09 00:33:06,363 INFO Received command c on object id p0
+2025-05-09 00:33:06,548 INFO Batch 223 written to PostgreSQL
+2025-05-09 00:33:16,803 INFO Received command c on object id p0
+2025-05-09 00:33:17,023 INFO Batch 224 written to PostgreSQL
+2025-05-09 00:33:26,266 INFO Received command c on object id p0
+2025-05-09 00:33:26,468 INFO Batch 225 written to PostgreSQL
+2025-05-09 00:33:36,542 INFO Received command c on object id p0
+2025-05-09 00:33:36,719 INFO Batch 226 written to PostgreSQL
+2025-05-09 00:33:46,762 INFO Received command c on object id p0
+2025-05-09 00:33:46,958 INFO Batch 227 written to PostgreSQL
+2025-05-09 00:33:59,356 INFO Received command c on object id p0
+2025-05-09 00:33:59,576 INFO Batch 228 written to PostgreSQL
+2025-05-09 05:04:57,249 INFO Received command c on object id p0
+2025-05-09 05:04:57,538 INFO Batch 229 written to PostgreSQL
+2025-05-09 05:05:03,321 INFO Received command c on object id p0
+2025-05-09 05:05:03,463 INFO Batch 230 written to PostgreSQL
+2025-05-09 05:05:13,332 INFO Received command c on object id p0
+2025-05-09 05:05:13,464 INFO Batch 231 written to PostgreSQL
+2025-05-09 05:05:23,259 INFO Received command c on object id p0
+2025-05-09 05:05:23,387 INFO Batch 232 written to PostgreSQL
+2025-05-09 05:05:33,056 INFO Received command c on object id p0
+2025-05-09 05:05:33,182 INFO Batch 233 written to PostgreSQL
+2025-05-09 05:05:43,008 INFO Received command c on object id p0
+2025-05-09 05:05:43,128 INFO Batch 234 written to PostgreSQL
+2025-05-09 05:05:53,440 INFO Received command c on object id p0
+2025-05-09 05:05:53,574 INFO Batch 235 written to PostgreSQL
+2025-05-09 05:06:03,344 INFO Received command c on object id p0
+2025-05-09 05:06:03,461 INFO Batch 236 written to PostgreSQL
+2025-05-09 05:06:13,272 INFO Received command c on object id p0
+2025-05-09 05:06:13,396 INFO Batch 237 written to PostgreSQL
+2025-05-09 05:06:28,100 INFO Received command c on object id p0
+2025-05-09 05:06:28,295 INFO Batch 238 written to PostgreSQL
+2025-05-09 05:06:36,392 INFO Received command c on object id p0
+2025-05-09 05:06:36,579 INFO Batch 239 written to PostgreSQL
+2025-05-09 05:06:46,300 INFO Received command c on object id p0
+2025-05-09 05:06:46,519 INFO Batch 240 written to PostgreSQL
+2025-05-09 05:06:56,156 INFO Received command c on object id p0
+2025-05-09 05:06:56,357 INFO Batch 241 written to PostgreSQL
+2025-05-09 05:07:05,922 INFO Received command c on object id p0
+2025-05-09 05:07:06,110 INFO Batch 242 written to PostgreSQL
+2025-05-09 05:07:16,204 INFO Received command c on object id p0
+2025-05-09 05:07:16,493 INFO Batch 243 written to PostgreSQL
+2025-05-09 05:07:26,704 INFO Received command c on object id p0
+2025-05-09 05:07:26,892 INFO Batch 244 written to PostgreSQL
+2025-05-09 05:07:37,291 INFO Received command c on object id p0
+2025-05-09 05:07:37,475 INFO Batch 245 written to PostgreSQL
+2025-05-09 05:07:46,492 INFO Received command c on object id p0
+2025-05-09 05:07:46,693 INFO Batch 246 written to PostgreSQL
+2025-05-09 05:07:56,544 INFO Received command c on object id p0
+2025-05-09 05:07:56,782 INFO Batch 247 written to PostgreSQL
+2025-05-09 05:08:08,299 INFO Received command c on object id p0
+2025-05-09 05:08:08,484 INFO Batch 248 written to PostgreSQL
+2025-05-09 05:08:15,592 INFO Received command c on object id p0
+2025-05-09 05:08:15,790 INFO Batch 249 written to PostgreSQL
+2025-05-09 05:08:26,277 INFO Received command c on object id p0
+2025-05-09 05:08:26,460 INFO Batch 250 written to PostgreSQL
+2025-05-09 05:08:36,562 INFO Received command c on object id p0
+2025-05-09 05:08:36,764 INFO Batch 251 written to PostgreSQL
+2025-05-09 05:08:45,416 INFO Received command c on object id p0
+2025-05-09 05:08:45,597 INFO Batch 252 written to PostgreSQL
+2025-05-09 05:08:56,214 INFO Received command c on object id p0
+2025-05-09 05:08:56,402 INFO Batch 253 written to PostgreSQL
+2025-05-09 05:09:06,970 INFO Received command c on object id p0
+2025-05-09 05:09:07,157 INFO Batch 254 written to PostgreSQL
+2025-05-09 05:09:15,927 INFO Received command c on object id p0
+2025-05-09 05:09:16,091 INFO Batch 255 written to PostgreSQL
+2025-05-09 05:09:26,472 INFO Received command c on object id p0
+2025-05-09 05:09:26,648 INFO Batch 256 written to PostgreSQL
+2025-05-09 05:09:36,990 INFO Received command c on object id p0
+2025-05-09 05:09:37,186 INFO Batch 257 written to PostgreSQL
+2025-05-09 05:09:45,858 INFO Received command c on object id p0
+2025-05-09 05:09:46,045 INFO Batch 258 written to PostgreSQL
+2025-05-09 05:09:55,733 INFO Received command c on object id p0
+2025-05-09 05:09:55,911 INFO Batch 259 written to PostgreSQL
+2025-05-09 05:10:06,008 INFO Received command c on object id p0
+2025-05-09 05:10:06,214 INFO Batch 260 written to PostgreSQL
+2025-05-09 05:10:16,569 INFO Received command c on object id p0
+2025-05-09 05:10:16,789 INFO Batch 261 written to PostgreSQL
+2025-05-09 05:10:26,279 INFO Received command c on object id p0
+2025-05-09 05:10:26,454 INFO Batch 262 written to PostgreSQL
+2025-05-09 05:10:35,667 INFO Received command c on object id p0
+2025-05-09 05:10:35,876 INFO Batch 263 written to PostgreSQL
+2025-05-09 05:10:46,057 INFO Received command c on object id p0
+2025-05-09 05:10:46,238 INFO Batch 264 written to PostgreSQL
+2025-05-09 05:10:56,675 INFO Received command c on object id p0
+2025-05-09 05:10:56,913 INFO Batch 265 written to PostgreSQL
+2025-05-09 05:11:06,847 INFO Received command c on object id p0
+2025-05-09 05:11:07,061 INFO Batch 266 written to PostgreSQL
+2025-05-09 05:11:16,680 INFO Received command c on object id p0
+2025-05-09 05:11:16,863 INFO Batch 267 written to PostgreSQL
