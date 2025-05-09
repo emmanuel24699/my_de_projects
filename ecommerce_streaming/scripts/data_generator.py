@@ -1,9 +1,14 @@
 import uuid
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, UTC
 import pandas as pd
 import random
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+logger = logging.getLogger(__name__)
 
 # Configuration
 OUTPUT_DIR = "data/input/"
@@ -30,13 +35,19 @@ NUM_USERS = 1000
 users = [f"user_{str(i).zfill(6)}" for i in range(NUM_USERS)]
 
 def save_product_catalog():
-    pd.DataFrame(products).to_csv(f"{CATALOG_DIR}/products.csv", index=False)
+    try:
+        os.makedirs(CATALOG_DIR, exist_ok=True)
+        pd.DataFrame(products).to_csv(f"{CATALOG_DIR}/products.csv", index=False)
+        logger.info("Saved product catalog to %s", f"{CATALOG_DIR}/products.csv")
+    except Exception as e:
+        logger.error("Failed to save product catalog: %s", str(e))
+        raise
 
 def generate_session_events():
     session_id = str(uuid.uuid4())
     user_id = random.choice(users)
     product = random.choice(products)
-    base_time = datetime.utcnow() - timedelta(seconds=random.uniform(0, 24 * 60 * 60))
+    base_time = datetime.now(UTC) - timedelta(seconds=random.uniform(0, 24 * 60 * 60))
     events = []
 
     # View event
@@ -47,7 +58,7 @@ def generate_session_events():
         "event_type": "view",
         **product,
         "quantity": 1,
-        "timestamp": (base_time).isoformat() + "Z"
+        "timestamp": base_time.isoformat() + "Z"
     })
 
     # Click event (20% chance)
@@ -85,17 +96,28 @@ def generate_batch(batch_size):
     return events[:batch_size]
 
 def save_batch(events):
-    timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H%M%S")
-    pd.DataFrame(events).to_csv(f"{OUTPUT_DIR}/events_{timestamp}.csv", index=False)
+    try:
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        timestamp = datetime.now(UTC).strftime("%Y-%m-%dT%H%M%S")
+        filename = f"{OUTPUT_DIR}/events_{timestamp}.csv"
+        pd.DataFrame(events).to_csv(filename, index=False)
+        logger.info("Saved %d events to %s", len(events), filename)
+    except Exception as e:
+        logger.error("Failed to save batch: %s", str(e))
+        raise
 
 def main():
     save_product_catalog()
     while True:
-        save_batch(generate_batch(BATCH_SIZE))
-        time.sleep(SLEEP_INTERVAL)
+        try:
+            save_batch(generate_batch(BATCH_SIZE))
+            time.sleep(SLEEP_INTERVAL)
+        except Exception as e:
+            logger.error("Error in main loop: %s", str(e))
+            time.sleep(SLEEP_INTERVAL)  # Continue after error
 
 if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("Stopped data generator.")
+        logger.info("Stopped data generator.")

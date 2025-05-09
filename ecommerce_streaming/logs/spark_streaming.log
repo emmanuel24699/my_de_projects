@@ -2990,3 +2990,444 @@
 2025-05-09 05:11:07,061 INFO Batch 266 written to PostgreSQL
 2025-05-09 05:11:16,680 INFO Received command c on object id p0
 2025-05-09 05:11:16,863 INFO Batch 267 written to PostgreSQL
+2025-05-09 05:16:04,976 INFO Starting raw events query
+2025-05-09 05:16:05,011 INFO Callback Server Starting
+2025-05-09 05:16:05,011 INFO Socket listening on ('127.0.0.1', 37169)
+2025-05-09 05:16:36,000 INFO Python Server ready to receive messages
+2025-05-09 05:16:36,001 INFO Received command c on object id p0
+2025-05-09 05:16:39,501 INFO Batch 268 written to PostgreSQL
+2025-05-09 05:16:46,396 INFO Received command c on object id p0
+2025-05-09 05:16:46,826 INFO Batch 269 written to PostgreSQL
+2025-05-09 05:16:51,896 INFO Received command c on object id p0
+2025-05-09 05:16:52,232 INFO Batch 270 written to PostgreSQL
+2025-05-09 05:16:59,137 INFO Received command c on object id p0
+2025-05-09 05:16:59,496 INFO Batch 271 written to PostgreSQL
+2025-05-09 05:17:06,468 INFO Received command c on object id p0
+2025-05-09 05:17:06,746 INFO Batch 272 written to PostgreSQL
+2025-05-09 05:17:16,415 INFO Received command c on object id p0
+2025-05-09 05:17:16,684 INFO Batch 273 written to PostgreSQL
+2025-05-09 05:17:26,038 INFO Received command c on object id p0
+2025-05-09 05:17:26,295 INFO Batch 274 written to PostgreSQL
+2025-05-09 05:17:36,583 INFO Received command c on object id p0
+2025-05-09 05:17:36,926 INFO Batch 275 written to PostgreSQL
+2025-05-09 05:17:47,132 INFO Received command c on object id p0
+2025-05-09 05:17:47,421 INFO Batch 276 written to PostgreSQL
+2025-05-09 05:17:57,023 INFO Received command c on object id p0
+2025-05-09 05:17:57,393 INFO Batch 277 written to PostgreSQL
+2025-05-09 05:18:07,255 INFO Received command c on object id p0
+2025-05-09 05:18:07,536 INFO Batch 278 written to PostgreSQL
+2025-05-09 05:18:16,597 INFO Received command c on object id p0
+2025-05-09 05:18:16,829 INFO Batch 279 written to PostgreSQL
+2025-05-09 05:18:27,050 INFO Received command c on object id p0
+2025-05-09 05:18:27,310 INFO Batch 280 written to PostgreSQL
+2025-05-09 05:18:35,670 INFO Received command c on object id p0
+2025-05-09 05:18:35,905 INFO Batch 281 written to PostgreSQL
+2025-05-09 05:18:46,819 INFO Received command c on object id p0
+2025-05-09 05:18:47,055 INFO Batch 282 written to PostgreSQL
+2025-05-09 05:18:56,358 INFO Received command c on object id p0
+2025-05-09 05:18:56,579 INFO Batch 283 written to PostgreSQL
+2025-05-09 05:19:05,695 INFO Received command c on object id p0
+2025-05-09 05:19:05,913 INFO Batch 284 written to PostgreSQL
+2025-05-09 05:19:16,818 INFO Received command c on object id p0
+2025-05-09 05:19:17,022 INFO Batch 285 written to PostgreSQL
+2025-05-09 05:19:25,812 INFO Received command c on object id p0
+2025-05-09 05:19:26,143 INFO Batch 286 written to PostgreSQL
+2025-05-09 05:19:36,323 INFO Received command c on object id p0
+2025-05-09 05:19:36,566 INFO Batch 287 written to PostgreSQL
+2025-05-09 05:19:48,160 INFO Received command c on object id p0
+2025-05-09 05:19:48,424 INFO Batch 288 written to PostgreSQL
+2025-05-09 05:19:56,567 INFO Received command c on object id p0
+2025-05-09 05:19:56,779 INFO Batch 289 written to PostgreSQL
+2025-05-09 05:20:06,944 INFO Received command c on object id p0
+2025-05-09 05:20:07,188 INFO Batch 290 written to PostgreSQL
+2025-05-09 05:20:16,694 INFO Received command c on object id p0
+2025-05-09 05:20:16,914 INFO Batch 291 written to PostgreSQL
+2025-05-09 05:20:26,188 INFO Received command c on object id p0
+2025-05-09 05:20:26,391 INFO Batch 292 written to PostgreSQL
+2025-05-09 05:20:36,807 INFO Received command c on object id p0
+2025-05-09 05:20:36,995 INFO Batch 293 written to PostgreSQL
+2025-05-09 05:20:46,965 INFO Received command c on object id p0
+2025-05-09 05:20:47,171 INFO Batch 294 written to PostgreSQL
+2025-05-09 05:20:56,259 INFO Received command c on object id p0
+2025-05-09 05:20:56,468 INFO Batch 295 written to PostgreSQL
+2025-05-09 05:21:05,879 INFO Received command c on object id p0
+2025-05-09 05:21:06,058 INFO Batch 296 written to PostgreSQL
+2025-05-09 05:21:15,818 INFO Received command c on object id p0
+2025-05-09 05:21:16,005 INFO Batch 297 written to PostgreSQL
+2025-05-09 05:21:27,188 INFO Received command c on object id p0
+2025-05-09 05:21:27,412 INFO Batch 298 written to PostgreSQL
+2025-05-09 05:21:36,573 INFO Received command c on object id p0
+2025-05-09 05:21:36,777 INFO Batch 299 written to PostgreSQL
+2025-05-09 05:21:46,157 INFO Received command c on object id p0
+2025-05-09 05:21:46,356 INFO Batch 300 written to PostgreSQL
+2025-05-09 05:21:55,745 INFO Received command c on object id p0
+2025-05-09 05:21:55,945 INFO Batch 301 written to PostgreSQL
+2025-05-09 05:22:06,437 INFO Received command c on object id p0
+2025-05-09 05:22:06,626 INFO Batch 302 written to PostgreSQL
+2025-05-09 05:22:16,540 INFO Received command c on object id p0
+2025-05-09 05:22:16,734 INFO Batch 303 written to PostgreSQL
+2025-05-09 05:22:26,027 INFO Received command c on object id p0
+2025-05-09 05:22:26,218 INFO Batch 304 written to PostgreSQL
+2025-05-09 05:22:36,286 INFO Received command c on object id p0
+2025-05-09 05:22:36,508 INFO Batch 305 written to PostgreSQL
+2025-05-09 05:22:46,831 INFO Received command c on object id p0
+2025-05-09 05:22:47,026 INFO Batch 306 written to PostgreSQL
+2025-05-09 05:22:56,234 INFO Received command c on object id p0
+2025-05-09 05:22:56,417 INFO Batch 307 written to PostgreSQL
+2025-05-09 05:23:07,870 INFO Received command c on object id p0
+2025-05-09 05:23:08,051 INFO Batch 308 written to PostgreSQL
+2025-05-09 05:23:16,194 INFO Received command c on object id p0
+2025-05-09 05:23:16,392 INFO Batch 309 written to PostgreSQL
+2025-05-09 05:23:26,396 INFO Received command c on object id p0
+2025-05-09 05:23:26,582 INFO Batch 310 written to PostgreSQL
+2025-05-09 05:23:36,699 INFO Received command c on object id p0
+2025-05-09 05:23:36,909 INFO Batch 311 written to PostgreSQL
+2025-05-09 05:23:46,672 INFO Received command c on object id p0
+2025-05-09 05:23:46,858 INFO Batch 312 written to PostgreSQL
+2025-05-09 05:23:56,224 INFO Received command c on object id p0
+2025-05-09 05:23:56,415 INFO Batch 313 written to PostgreSQL
+2025-05-09 05:24:06,784 INFO Received command c on object id p0
+2025-05-09 05:24:06,971 INFO Batch 314 written to PostgreSQL
+2025-05-09 05:24:15,687 INFO Received command c on object id p0
+2025-05-09 05:24:15,888 INFO Batch 315 written to PostgreSQL
+2025-05-09 05:24:26,029 INFO Received command c on object id p0
+2025-05-09 05:24:26,220 INFO Batch 316 written to PostgreSQL
+2025-05-09 05:24:36,811 INFO Received command c on object id p0
+2025-05-09 05:24:37,002 INFO Batch 317 written to PostgreSQL
+2025-05-09 05:24:48,001 INFO Received command c on object id p0
+2025-05-09 05:24:48,181 INFO Batch 318 written to PostgreSQL
+2025-05-09 05:24:55,973 INFO Received command c on object id p0
+2025-05-09 05:24:56,181 INFO Batch 319 written to PostgreSQL
+2025-05-09 05:25:05,810 INFO Received command c on object id p0
+2025-05-09 05:25:06,004 INFO Batch 320 written to PostgreSQL
+2025-05-09 05:25:16,370 INFO Received command c on object id p0
+2025-05-09 05:25:16,557 INFO Batch 321 written to PostgreSQL
+2025-05-09 05:25:25,787 INFO Received command c on object id p0
+2025-05-09 05:25:25,987 INFO Batch 322 written to PostgreSQL
+2025-05-09 05:25:36,468 INFO Received command c on object id p0
+2025-05-09 05:25:36,664 INFO Batch 323 written to PostgreSQL
+2025-05-09 05:25:46,027 INFO Received command c on object id p0
+2025-05-09 05:25:46,223 INFO Batch 324 written to PostgreSQL
+2025-05-09 05:25:55,954 INFO Received command c on object id p0
+2025-05-09 05:25:56,142 INFO Batch 325 written to PostgreSQL
+2025-05-09 05:26:07,167 INFO Received command c on object id p0
+2025-05-09 05:26:07,450 INFO Batch 326 written to PostgreSQL
+2025-05-09 05:34:44,430 INFO Received command c on object id p0
+2025-05-09 05:34:44,642 INFO Batch 327 written to PostgreSQL
+2025-05-09 05:34:48,693 INFO Received command c on object id p0
+2025-05-09 05:34:48,814 INFO Batch 328 written to PostgreSQL
+2025-05-09 07:09:26,976 INFO Starting raw events query
+2025-05-09 07:09:27,102 INFO Callback Server Starting
+2025-05-09 07:09:27,104 INFO Socket listening on ('127.0.0.1', 42893)
+2025-05-09 07:10:15,808 INFO Python Server ready to receive messages
+2025-05-09 07:10:15,809 INFO Received command c on object id p0
+2025-05-09 07:10:20,538 ERROR Failed to write batch 329 to PostgreSQL: An error occurred while calling o203.save.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 0.0 failed 1 times, most recent failure: Lost task 0.0 in stage 0.0 (TID 0) (1edc9582caa1 executor driver): java.sql.BatchUpdateException: Batch entry 0 INSERT INTO raw_events ("event_id","session_id","user_id","event_type","product_id","product_name","brand","category","price","quantity","total_price","event_date","timestamp") VALUES (('cfe69971-4e23-4582-b708-5ae4a76b06ce'),('dedaf9cf-62d7-47ab-a2d1-6ab1e0978e45'),('user_000976'),('view'),('prod_000024'),('Elite Blaster'),('Nerf'),('Toys'),('39.99'::double precision),('1'::int4),('39.99'::double precision),('2025-05-08 +00'::date),('2025-05-08 07:11:40.779392+00'::timestamp)) was aborted: ERROR: duplicate key value violates unique constraint "raw_events_pkey"
+  Detail: Key (event_id)=(cfe69971-4e23-4582-b708-5ae4a76b06ce) already exists.  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:165)
+	at org.postgresql.core.ResultHandlerDelegate.handleError(ResultHandlerDelegate.java:52)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:580)
+	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:888)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:912)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1739)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:753)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:904)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:903)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2433)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "raw_events_pkey"
+  Detail: Key (event_id)=(cfe69971-4e23-4582-b708-5ae4a76b06ce) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	... 21 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2414)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2433)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2458)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$1(RDD.scala:1039)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:410)
+	at org.apache.spark.rdd.RDD.foreachPartition(RDD.scala:1037)
+	at org.apache.spark.sql.Dataset.$anonfun$foreachPartition$1(Dataset.scala:3516)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.Dataset.$anonfun$withNewRDDExecutionId$1(Dataset.scala:4310)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.Dataset.withNewRDDExecutionId(Dataset.scala:4308)
+	at org.apache.spark.sql.Dataset.foreachPartition(Dataset.scala:3516)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.saveTable(JdbcUtils.scala:903)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:70)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:48)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:364)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:251)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.sendCommand(ClientServerConnection.java:244)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:384)
+	at py4j.CallbackClient.sendCommand(CallbackClient.java:356)
+	at py4j.reflection.PythonProxyHandler.invoke(PythonProxyHandler.java:106)
+	at jdk.proxy3/jdk.proxy3.$Proxy31.call(Unknown Source)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1$adapted(ForeachBatchSink.scala:53)
+	at org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:732)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+Caused by: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO raw_events ("event_id","session_id","user_id","event_type","product_id","product_name","brand","category","price","quantity","total_price","event_date","timestamp") VALUES (('cfe69971-4e23-4582-b708-5ae4a76b06ce'),('dedaf9cf-62d7-47ab-a2d1-6ab1e0978e45'),('user_000976'),('view'),('prod_000024'),('Elite Blaster'),('Nerf'),('Toys'),('39.99'::double precision),('1'::int4),('39.99'::double precision),('2025-05-08 +00'::date),('2025-05-08 07:11:40.779392+00'::timestamp)) was aborted: ERROR: duplicate key value violates unique constraint "raw_events_pkey"
+  Detail: Key (event_id)=(cfe69971-4e23-4582-b708-5ae4a76b06ce) already exists.  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:165)
+	at org.postgresql.core.ResultHandlerDelegate.handleError(ResultHandlerDelegate.java:52)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:580)
+	at org.postgresql.jdbc.PgStatement.internalExecuteBatch(PgStatement.java:888)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:912)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1739)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.savePartition(JdbcUtils.scala:753)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1(JdbcUtils.scala:904)
+	at org.apache.spark.sql.execution.datasources.jdbc.JdbcUtils$.$anonfun$saveTable$1$adapted(JdbcUtils.scala:903)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2(RDD.scala:1039)
+	at org.apache.spark.rdd.RDD.$anonfun$foreachPartition$2$adapted(RDD.scala:1039)
+	at org.apache.spark.SparkContext.$anonfun$runJob$5(SparkContext.scala:2433)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "raw_events_pkey"
+  Detail: Key (event_id)=(cfe69971-4e23-4582-b708-5ae4a76b06ce) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	... 21 more
+
+2025-05-09 07:10:27,480 INFO Received command c on object id p0
+2025-05-09 07:10:27,829 INFO Batch 330 written to PostgreSQL
+2025-05-09 07:10:36,746 INFO Received command c on object id p0
+2025-05-09 07:10:37,050 INFO Batch 331 written to PostgreSQL
+2025-05-09 07:10:47,053 INFO Received command c on object id p0
+2025-05-09 07:10:47,369 INFO Batch 332 written to PostgreSQL
+2025-05-09 07:10:56,595 INFO Received command c on object id p0
+2025-05-09 07:10:56,872 INFO Batch 333 written to PostgreSQL
+2025-05-09 07:11:05,800 INFO Received command c on object id p0
+2025-05-09 07:11:06,061 INFO Batch 334 written to PostgreSQL
+2025-05-09 07:11:16,059 INFO Received command c on object id p0
+2025-05-09 07:11:16,303 INFO Batch 335 written to PostgreSQL
+2025-05-09 07:11:26,380 INFO Received command c on object id p0
+2025-05-09 07:11:26,618 INFO Batch 336 written to PostgreSQL
+2025-05-09 07:11:37,241 INFO Received command c on object id p0
+2025-05-09 07:11:37,478 INFO Batch 337 written to PostgreSQL
+2025-05-09 07:11:46,344 INFO Received command c on object id p0
+2025-05-09 07:11:46,576 INFO Batch 338 written to PostgreSQL
+2025-05-09 07:11:55,866 INFO Received command c on object id p0
+2025-05-09 07:11:56,112 INFO Batch 339 written to PostgreSQL
+2025-05-09 07:12:06,347 INFO Received command c on object id p0
+2025-05-09 07:12:06,583 INFO Batch 340 written to PostgreSQL
+2025-05-09 07:12:16,436 INFO Received command c on object id p0
+2025-05-09 07:12:16,667 INFO Batch 341 written to PostgreSQL
+2025-05-09 07:12:26,593 INFO Received command c on object id p0
+2025-05-09 07:12:26,801 INFO Batch 342 written to PostgreSQL
+2025-05-09 07:12:36,119 INFO Received command c on object id p0
+2025-05-09 07:12:36,349 INFO Batch 343 written to PostgreSQL
+2025-05-09 07:12:46,698 INFO Received command c on object id p0
+2025-05-09 07:12:46,969 INFO Batch 344 written to PostgreSQL
+2025-05-09 07:12:56,992 INFO Received command c on object id p0
+2025-05-09 07:12:56,833 INFO Batch 345 written to PostgreSQL
+2025-05-09 07:13:07,794 INFO Received command c on object id p0
+2025-05-09 07:13:08,106 INFO Batch 346 written to PostgreSQL
+2025-05-09 07:13:18,341 INFO Received command c on object id p0
+2025-05-09 07:13:18,649 INFO Batch 347 written to PostgreSQL
+2025-05-09 07:13:26,487 INFO Received command c on object id p0
+2025-05-09 07:13:26,168 INFO Batch 348 written to PostgreSQL
+2025-05-09 07:13:37,020 INFO Received command c on object id p0
+2025-05-09 07:13:37,341 INFO Batch 349 written to PostgreSQL
+2025-05-09 07:13:46,488 INFO Received command c on object id p0
+2025-05-09 07:13:46,691 INFO Batch 350 written to PostgreSQL
+2025-05-09 07:13:55,830 INFO Received command c on object id p0
+2025-05-09 07:13:55,612 INFO Batch 351 written to PostgreSQL
+2025-05-09 07:14:06,108 INFO Received command c on object id p0
+2025-05-09 07:14:06,336 INFO Batch 352 written to PostgreSQL
+2025-05-09 07:14:16,140 INFO Received command c on object id p0
+2025-05-09 07:14:16,393 INFO Batch 353 written to PostgreSQL
+2025-05-09 07:14:25,873 INFO Received command c on object id p0
+2025-05-09 07:14:26,100 INFO Batch 354 written to PostgreSQL
+2025-05-09 07:14:36,910 INFO Received command c on object id p0
+2025-05-09 07:14:37,137 INFO Batch 355 written to PostgreSQL
+2025-05-09 07:14:46,316 INFO Received command c on object id p0
+2025-05-09 07:14:46,540 INFO Batch 356 written to PostgreSQL
+2025-05-09 07:14:56,587 INFO Received command c on object id p0
+2025-05-09 07:14:56,788 INFO Batch 357 written to PostgreSQL
+2025-05-09 07:15:06,052 INFO Received command c on object id p0
+2025-05-09 07:15:06,269 INFO Batch 358 written to PostgreSQL
+2025-05-09 07:15:15,820 INFO Received command c on object id p0
+2025-05-09 07:15:16,077 INFO Batch 359 written to PostgreSQL
+2025-05-09 07:15:25,852 INFO Received command c on object id p0
+2025-05-09 07:15:26,058 INFO Batch 360 written to PostgreSQL
+2025-05-09 07:15:36,271 INFO Received command c on object id p0
+2025-05-09 07:15:36,468 INFO Batch 361 written to PostgreSQL
+2025-05-09 07:15:47,457 INFO Received command c on object id p0
+2025-05-09 07:15:47,709 INFO Batch 362 written to PostgreSQL
+2025-05-09 07:15:57,438 INFO Received command c on object id p0
+2025-05-09 07:15:57,662 INFO Batch 363 written to PostgreSQL
+2025-05-09 07:16:07,532 INFO Received command c on object id p0
+2025-05-09 07:16:07,765 INFO Batch 364 written to PostgreSQL
+2025-05-09 07:16:17,408 INFO Received command c on object id p0
+2025-05-09 07:16:17,635 INFO Batch 365 written to PostgreSQL
+2025-05-09 07:16:26,724 INFO Received command c on object id p0
+2025-05-09 07:16:26,943 INFO Batch 366 written to PostgreSQL
+2025-05-09 07:16:36,115 INFO Received command c on object id p0
+2025-05-09 07:16:36,353 INFO Batch 367 written to PostgreSQL
+2025-05-09 07:16:46,592 INFO Received command c on object id p0
+2025-05-09 07:16:46,820 INFO Batch 368 written to PostgreSQL
+2025-05-09 07:16:55,785 INFO Received command c on object id p0
+2025-05-09 07:16:56,011 INFO Batch 369 written to PostgreSQL
+2025-05-09 07:17:06,644 INFO Received command c on object id p0
+2025-05-09 07:17:06,854 INFO Batch 370 written to PostgreSQL
+2025-05-09 07:17:16,956 INFO Received command c on object id p0
+2025-05-09 07:17:17,192 INFO Batch 371 written to PostgreSQL
+2025-05-09 07:17:26,474 INFO Received command c on object id p0
+2025-05-09 07:17:26,706 INFO Batch 372 written to PostgreSQL
+2025-05-09 07:17:37,070 INFO Received command c on object id p0
+2025-05-09 07:17:37,290 INFO Batch 373 written to PostgreSQL
+2025-05-09 07:17:47,070 INFO Received command c on object id p0
+2025-05-09 07:17:47,338 INFO Batch 374 written to PostgreSQL
+2025-05-09 07:17:57,204 INFO Received command c on object id p0
+2025-05-09 07:17:57,482 INFO Batch 375 written to PostgreSQL
+2025-05-09 07:18:06,713 INFO Received command c on object id p0
+2025-05-09 07:18:06,914 INFO Batch 376 written to PostgreSQL
+2025-05-09 07:18:18,531 INFO Received command c on object id p0
+2025-05-09 07:18:18,730 INFO Batch 377 written to PostgreSQL
+2025-05-09 07:18:25,854 INFO Received command c on object id p0
+2025-05-09 07:18:26,061 INFO Batch 378 written to PostgreSQL
+2025-05-09 07:18:36,307 INFO Received command c on object id p0
+2025-05-09 07:18:36,530 INFO Batch 379 written to PostgreSQL
+2025-05-09 07:18:46,444 INFO Received command c on object id p0
+2025-05-09 07:18:46,635 INFO Batch 380 written to PostgreSQL
+2025-05-09 07:20:22,202 INFO Starting raw events query
+2025-05-09 07:20:22,238 INFO Callback Server Starting
+2025-05-09 07:20:22,238 INFO Socket listening on ('127.0.0.1', 46775)
+2025-05-09 07:21:00,211 INFO Python Server ready to receive messages
+2025-05-09 07:21:00,212 INFO Received command c on object id p0
+2025-05-09 07:21:04,292 INFO Batch 381 written to PostgreSQL
+2025-05-09 07:21:10,475 INFO Received command c on object id p0
+2025-05-09 07:21:10,928 INFO Batch 382 written to PostgreSQL
+2025-05-09 07:21:17,101 INFO Received command c on object id p0
+2025-05-09 07:21:17,550 INFO Batch 383 written to PostgreSQL
+2025-05-09 07:21:26,533 INFO Received command c on object id p0
+2025-05-09 07:21:27,015 INFO Batch 384 written to PostgreSQL
+2025-05-09 07:21:37,282 INFO Received command c on object id p0
+2025-05-09 07:21:37,644 INFO Batch 385 written to PostgreSQL
+2025-05-09 07:21:47,132 INFO Received command c on object id p0
+2025-05-09 07:21:47,464 INFO Batch 386 written to PostgreSQL
+2025-05-09 07:21:56,141 INFO Received command c on object id p0
+2025-05-09 07:21:56,439 INFO Batch 387 written to PostgreSQL
+2025-05-09 07:22:06,325 INFO Received command c on object id p0
+2025-05-09 07:22:06,609 INFO Batch 388 written to PostgreSQL
+2025-05-09 07:22:16,047 INFO Received command c on object id p0
+2025-05-09 07:22:16,277 INFO Batch 389 written to PostgreSQL
+2025-05-09 07:22:56,823 INFO Received command c on object id p0
+2025-05-09 07:22:57,254 INFO Batch 390 written to PostgreSQL
+2025-05-09 07:23:06,443 INFO Received command c on object id p0
+2025-05-09 07:23:06,691 INFO Batch 391 written to PostgreSQL
+2025-05-09 07:23:15,936 INFO Received command c on object id p0
+2025-05-09 07:23:16,153 INFO Batch 392 written to PostgreSQL
+2025-05-09 07:23:26,280 INFO Received command c on object id p0
+2025-05-09 07:23:26,491 INFO Batch 393 written to PostgreSQL
+2025-05-09 07:23:36,173 INFO Received command c on object id p0
+2025-05-09 07:23:36,390 INFO Batch 394 written to PostgreSQL
