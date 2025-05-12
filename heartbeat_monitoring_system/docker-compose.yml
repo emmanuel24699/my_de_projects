@@ -100,6 +100,7 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - ./scripts:/app/scripts
+      - ./logs:/app/logs
     networks:
       - heartbeat-network
 
@@ -123,6 +124,7 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - ./scripts:/app/scripts
+      - ./logs:/app/logs
     networks:
       - heartbeat-network
 
