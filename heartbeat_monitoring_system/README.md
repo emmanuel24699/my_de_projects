@@ -1,4 +1,4 @@
-[⚠️ Suspicious Content] # Real-Time Customer Heart Beat Monitoring System
+ # Real-Time Customer Heart Beat Monitoring System
 
 ## Project Overview
 
