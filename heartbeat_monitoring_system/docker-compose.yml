@@ -70,7 +70,7 @@ services:
     volumes:
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "5432:5432"
+      - "5434:5432"
     networks:
       - heartbeat-network
     healthcheck:
@@ -100,6 +100,7 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - ./scripts:/app/scripts
+      - ./logs:/app/logs
     networks:
       - heartbeat-network
 
@@ -123,6 +124,7 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - ./scripts:/app/scripts
+      - ./logs:/app/logs
     networks:
       - heartbeat-network
 

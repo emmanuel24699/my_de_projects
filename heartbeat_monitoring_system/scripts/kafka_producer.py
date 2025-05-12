@@ -5,10 +5,19 @@ import logging
 from confluent_kafka import Producer
 from data_generator import generate_heart_rate_data
 
+# Create logs directory if it doesn't exist
+os.makedirs("logs", exist_ok=True)
+# Set log file path
+producer_logs = "logs/producer.logs"
+
 # --- Configure Logging ---
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s"
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers = [
+        logging.FileHandler(producer_logs),
+        logging.StreamHandler()
+    ]
 )
 logger = logging.getLogger(__name__)
 
@@ -43,9 +52,10 @@ def main():
     bootstrap_servers = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "kafka:9092")
     topic = "heartbeats"
 
-    producer = create_producer(bootstrap_servers)
+    producer = create_producer(bootstrap_servers) # Create kafka producer instance
 
     logger.info("Producer started, generating and sending heart rate data...")
+    # Generate and send heart rate data
     try:
         for data in generate_heart_rate_data():
             producer.produce(
@@ -54,12 +64,12 @@ def main():
                 value=json.dumps(data).encode("utf-8"),
                 callback=delivery_report
             )
-            producer.poll(0)
-            producer.flush()
+            producer.poll(0) # Process delivery callbacks immediately
+            producer.flush() # Ensure each message is sent before generating next.
     except KeyboardInterrupt:
         logger.info("Producer stopped by user.")
     finally:
-        producer.flush()
+        producer.flush() # Send any pending messages before exiting.
         logger.info("Producer flushed and closed.")
 
 if __name__ == "__main__":
