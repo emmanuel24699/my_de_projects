@@ -5,12 +5,22 @@ import logging
 import psycopg2
 from confluent_kafka import Consumer, KafkaError
 
-# --- Logging Configuration ---
+# Create logs directory if it doesn't exist
+os.makedirs("logs", exist_ok=True)
+# Set log file path
+consumer_logs = "logs/consumer.logs"
+
+# --- Configure Logging ---
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s"
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers = [
+        logging.FileHandler(consumer_logs),
+        logging.StreamHandler()
+    ]
 )
 logger = logging.getLogger(__name__)
+
 
 # --- Database Connection ---
 def get_db_connection(max_retries=5, retry_delay=5):
