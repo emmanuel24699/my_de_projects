@@ -9,7 +9,7 @@ def generate_heart_rate_data(num_customers=10):
     while True:
         customer_id = random.choice(customer_ids)
         timestamp = datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
-        heart_rate = random.randint(60, 100)  # Normal range
+        heart_rate = random.randint(60, 100)  #
         yield {
             "customer_id": customer_id,
             "timestamp": timestamp,
