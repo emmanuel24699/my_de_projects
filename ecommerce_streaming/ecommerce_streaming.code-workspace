@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "ecommerce_env/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "python.linting.lintOnSave": true,
+    "files.exclude": {
+      "**/.env": false,
+      "**/secrets.env": false
+    },
+    "workbench.editorAssociations": {
+      "*.copilotmd": "vscode.markdown.preview.editor"
+    }
+  }
+}
