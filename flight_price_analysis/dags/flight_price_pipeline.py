@@ -127,13 +127,24 @@ def load_to_postgres():
             if not table_exists:
                 conn.execute("BEGIN")
                 conn.execute("""
-                    CREATE TABLE flights (
-                        airline VARCHAR(50), source VARCHAR(3), source_name VARCHAR(100),
-                        destination VARCHAR(3), destination_name VARCHAR(100), departure_datetime TIMESTAMP,
-                        arrival_datetime TIMESTAMP, duration_hours DECIMAL(10,2), stopovers VARCHAR(10),
-                        aircraft_type VARCHAR(50), travel_class VARCHAR(20), booking_source VARCHAR(20),
-                        base_fare_bdt DECIMAL(15,2), tax_surcharge_bdt DECIMAL(15,2), total_fare_bdt DECIMAL(15,2),
-                        seasonality VARCHAR(20), days_before_departure INTEGER
+                    CREATE TABLE IF NOT EXISTS flights (
+                        airline VARCHAR(50), 
+                        source VARCHAR(3), 
+                        source_name VARCHAR(100),
+                        destination VARCHAR(3), 
+                        destination_name VARCHAR(100), 
+                        departure_datetime TIMESTAMP,
+                        arrival_datetime TIMESTAMP, 
+                        duration_hours DECIMAL(10,2), 
+                        stopovers VARCHAR(10),
+                        aircraft_type VARCHAR(50), 
+                        travel_class VARCHAR(20), 
+                        booking_source VARCHAR(20),
+                        base_fare_bdt DECIMAL(15,2), 
+                        tax_surcharge_bdt DECIMAL(15,2), 
+                        total_fare_bdt DECIMAL(15,2),
+                        seasonality VARCHAR(20), 
+                        days_before_departure INTEGER
                     )
                 """)
                 conn.execute("COMMIT")
