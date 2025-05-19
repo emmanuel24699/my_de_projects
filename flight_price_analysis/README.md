@@ -52,7 +52,7 @@ The pipeline is defined in the Airflow DAG `flight_price_pipeline_by_Emmanuel_Gl
 
 ### DAG Structure
 
-![DAG structure](/images/DAG%20structure.png)
+![DAG structure](./images/DAG%20structure.png)
 
 ```
 ingest_csv_to_mysql → validate_transform_data → load_to_postgres → compute_kpis
